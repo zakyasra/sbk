@@ -5,7 +5,7 @@ import React from "react";
 import Image from "next/image";
 import logo from "@/assets/navbar/logo.svg";
 import underline from "@/assets/navbar/nav-underline.svg";
-import "../styles/navbar.css";
+import "../styles/navbar.scss";
 import Link from "next/link";
 
 const Navbar = () => {
