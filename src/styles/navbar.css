@@ -1,0 +1,20 @@
+.text-radial {
+	background: -webkit-linear-gradient(#2565aa, #0d243c);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@keyframes draw-line {
+	from {
+		opacity: 0;
+		width: 0%;
+	}
+	to {
+		opacity: 1;
+		width: 100%;
+	}
+}
+
+.animate-draw-line {
+	animation: draw-line 1s ease-in-out;
+}
