@@ -1,0 +1,142 @@
+/* Testimonials */
+#testimonials {
+	background-color: #f9f9f9;
+	padding: 120px 0;
+	width: auto;
+}
+.testimonials-container {
+	width: 90vw;
+	margin: 0 auto;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 48px;
+}
+#testimonials .left-section,
+#testimonials .right-section {
+	width: 50%;
+}
+#testimonials .left-section .title {
+	color: #fdbc3d;
+	font-size: 24px;
+	font-weight: bold;
+	font-family: "Inter", sans-serif;
+}
+#testimonials .left-section .sub-title {
+	color: #331b3b;
+	font-size: 34px;
+	font-weight: bold;
+	font-family: "Inter", sans-serif;
+	margin-top: 14px;
+}
+#testimonials .left-section .desc {
+	color: #514f6e;
+	font-size: 18px;
+	font-weight: 400;
+	font-family: "Inter", sans-serif;
+	margin-top: 14px;
+	margin-bottom: 104px;
+	line-height: 30px;
+}
+#testimonials .card {
+	/* width: 50%; */
+	border-radius: 16px;
+	border: 1px solid #9a9daa87;
+	box-shadow: 2px 1px 10px 2px #667299;
+	padding: 48px;
+}
+
+#testimonials .profile-picture {
+	border-radius: 50%;
+}
+#testimonials .card-desc {
+	position: relative;
+}
+#testimonials .card-desc p {
+	color: #514f6e;
+	font-size: 18px;
+	font-weight: 400;
+	font-family: "Inter", sans-serif;
+	margin-bottom: 24px;
+	line-height: 30px;
+}
+#testimonials .card-main {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+#testimonials .card-name {
+	font-size: 18px;
+	font-weight: bold;
+	font-family: "Outfit", sans-serif;
+	margin-bottom: 8px;
+	color: #170f49;
+}
+#testimonials .card-job {
+	font-size: 18px;
+	font-weight: 400;
+	font-family: "Outfit", sans-serif;
+	margin-bottom: 8px;
+	color: #6f6c90;
+}
+#testimonials .card-desc .profile-picture {
+	position: absolute;
+	top: -30px;
+	right: -25px;
+}
+/* testimonials right section */
+#testimonials .right-section {
+	display: flex;
+	align-items: start;
+	flex-direction: column;
+	gap: 48px;
+}
+#testimonials .icon-quotation {
+	position: absolute;
+	top: -30px;
+	right: -25px;
+}
+@media screen and (max-width: 1200px) {
+	#testimonials .card {
+		padding: 48px 24px;
+	}
+}
+@media screen and (max-width: 768px) {
+	#testimonials {
+		padding: 0;
+	}
+	.testimonials-container {
+		padding: 96px 48px 96px;
+		flex-direction: column;
+		width: auto;
+	}
+	#testimonials .left-section,
+	#testimonials .right-section {
+		width: 100%;
+	}
+	#testimonials .left-section .desc {
+		margin-bottom: 48px;
+	}
+}
+@media screen and (max-width: 576px) {
+	.testimonials-container {
+		padding: 48px 12px 48px;
+	}
+	#testimonials {
+		padding: 0 12px;
+	}
+	#testimonials .card {
+		box-shadow: 1px 4px 1px #667299;
+	}
+	#testimonials .left-section .title {
+		font-size: 20px;
+	}
+	#testimonials .left-section .sub-title {
+		font-size: 30px;
+	}
+	#testimonials .left-section .desc {
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 24px;
+	}
+}

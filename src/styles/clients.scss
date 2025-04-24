@@ -1,0 +1,12 @@
+.card-container {
+	gap: 34px;
+	.card {
+		border-radius: 12px;
+		border: 1px solid #757d8d;
+		border-left: 13px solid #0590e6 !important;
+		// width: 277px;
+
+		height: 93px;
+		box-sizing: border-box;
+	}
+}
