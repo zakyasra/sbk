@@ -4,8 +4,11 @@ import iconQuotation from "@/assets/testimonials/icon-quotation.svg";
 import "../styles/testimonials.scss";
 const Testimonials = () => {
 	return (
-		<article id="testimonials" className="md:mb-20 mb-12">
-			<div className="testimonials-container">
+		<article
+			id="testimonials"
+			className="md:mb-20 mb-12 xl:px-16 lg:px-14 md:px-12 sm:px-9 px-6"
+		>
+			<div className="testimonials-container ">
 				<div className="left-section">
 					<div className="title">TESTIMONIALS</div>
 					<div className="sub-title">Hear what our clients say</div>

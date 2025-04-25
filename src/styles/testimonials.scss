@@ -1,12 +1,10 @@
 /* Testimonials */
 #testimonials {
 	background-color: #f9f9f9;
-	padding: 120px 0;
 	width: auto;
 }
 .testimonials-container {
 	width: 90vw;
-	margin: 0 auto;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
@@ -101,12 +99,8 @@
 		padding: 48px 24px;
 	}
 }
-@media screen and (max-width: 768px) {
-	#testimonials {
-		padding: 0;
-	}
+@media screen and (max-width: 992px) {
 	.testimonials-container {
-		padding: 96px 48px 96px;
 		flex-direction: column;
 		width: auto;
 	}
@@ -119,12 +113,6 @@
 	}
 }
 @media screen and (max-width: 576px) {
-	.testimonials-container {
-		padding: 48px 12px 48px;
-	}
-	#testimonials {
-		padding: 0 12px;
-	}
 	#testimonials .card {
 		box-shadow: 1px 4px 1px #667299;
 	}

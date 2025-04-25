@@ -5,9 +5,11 @@ const AboutUs = () => {
 	return (
 		<div className="flex items-center md:flex-row flex-col justify-between md:gap-12 mt-24 ff-poppins md:mb-20 mb-14">
 			{/* left section */}
-			<Image src={aboutImage} alt="icon about" />
+			<div className="md:w-1/2">
+				<Image src={aboutImage} alt="icon about" className="w-auto" />
+			</div>
 			{/* rightsection */}
-			<div className="max-w-[750px] md:text-left text-center">
+			<div className="max-w-[750px] md:text-left text-center md:w-1/2">
 				<h3 className="ff-outfit font-bold lg:text-2xl text-[20px] text-[#C29D2B]">
 					WHAT IS
 				</h3>
