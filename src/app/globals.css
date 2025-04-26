@@ -67,7 +67,9 @@ body {
 .text-secondary {
 	color: #c29d2b !important;
 }
-
+.text-dark-fade {
+	color: #132e4c80 !important;
+}
 #banner {
 	width: auto;
 	background-repeat: no-repeat;
@@ -79,4 +81,9 @@ body {
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+}
+.hero-section {
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	background-size: cover !important;
 }

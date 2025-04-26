@@ -10,7 +10,7 @@ function OurProducts() {
 				<h3 className="ff-outfit xl:text-[24px] lg:text-[22px] md:text-[20px] sm:text-[18px] text-[16px] text-[#C29D2B] font-bold md:mb-4 mb-2">
 					OUR PRODUCTS
 				</h3>
-				<h2 className="ff-poppins xl:text-5xl lg:text-4xl text-3xl text-[#132E4C] font-semibold text-center">
+				<h2 className="ff-poppins xl:text-5xl lg:text-4xl text-3xl text-dark font-semibold text-center">
 					Take a Look of Our
 					<span className="block text-[#2565AA] relative">
 						Greatest Product
@@ -22,7 +22,7 @@ function OurProducts() {
 					</span>
 				</h2>
 				<p
-					className="ff-poppins text-[#132e4c80] lg:text-[20px] md:text-[18px] text-[16px] font-normal md:t-6 mt-4 text-center"
+					className="ff-poppins text-dark-fade lg:text-[20px] md:text-[18px] text-[16px] font-normal md:t-6 mt-4 text-center"
 					style={{
 						maxWidth: "341px",
 					}}
@@ -47,7 +47,7 @@ function OurProducts() {
 								className="mb-6 rounded-2xl"
 							/>
 							<div className="flex flex-col gap-4">
-								<p className="ff-outfit font-semibold sm:text-[20px] text-[18px] text-[#132E4C]">
+								<p className="ff-outfit font-semibold sm:text-[20px] text-[18px] text-dark">
 									Mini Terminal Box 2
 								</p>
 								<p className="ff-poppins text-[16px] text-[#425466]">

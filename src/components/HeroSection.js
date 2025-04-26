@@ -9,10 +9,10 @@ const HeroSection = () => {
 		<div className="flex items-center md:flex-row flex-col-reverse md:gap-0 gap-[10px] md:justify-between md:text-start text-center">
 			{/* left section | We Help You Connect */}
 			<div className="ff-poppins ">
-				<h1 className="font-bold xl:text-[64px] lg:text-[48px] sm:text-[40px] text-[32px] text-[#132E4C] mb-1">
+				<h1 className="font-bold xl:text-[64px] lg:text-[48px] sm:text-[40px] text-[32px] text-dark mb-1">
 					We Help You Connect
 				</h1>
-				<p className="font-light xl:text-[28px] lg:text-[24px] sm:text-[20px] text-[16px] text-[#132E4C] mb-3">
+				<p className="font-light xl:text-[28px] lg:text-[24px] sm:text-[20px] text-[16px] text-dark mb-3">
 					Networking, Data Communication and Wiring Specialist
 				</p>
 				<p

@@ -17,7 +17,7 @@ const AboutUs = () => {
 					Sumber Berkat Komputindo
 				</h2>
 				<Image src={line} alt="line" className="w-auto" />
-				<p className="mt-6 text-[#132e4c80] lg:text-[20px] md:text-[18px] text-[16px] md:text-left text-justify">
+				<p className="mt-6 text-dark-fade lg:text-[20px] md:text-[18px] text-[16px] md:text-left text-justify">
 					Etiam at iaculis massa. Etiam eu enim varius, congue ante id,
 					venenatis velit. Aenean vel ipsum posuere, malesuada mauris eget,
 					condimentum neque. Vestibulum mattis rutrum ante vitae ornare. Nam id
