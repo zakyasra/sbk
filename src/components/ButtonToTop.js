@@ -27,7 +27,7 @@ const ButtonToTop = () => {
 		<>
 			<button
 				onClick={scrollToTop}
-				className={`fixed bottom-5 right-5 text-2xl text-white rounded-full transition-opacity duration-300 ${
+				className={`cursor-pointer fixed bottom-5 right-5 text-2xl text-white rounded-full transition-opacity duration-300 ${
 					isVisible ? "opacity-100" : "opacity-0"
 				}`}
 				style={{
