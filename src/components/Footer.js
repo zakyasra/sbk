@@ -18,15 +18,18 @@ const Footer = () => {
 	};
 	const [isHovered, setIsHovered] = useState(false);
 	return (
-		<>
+		<footer
+			className="bg-white"
+			style={{
+				position: "absolute",
+				zIndex: 9999,
+			}}
+		>
 			<div
 				className="bg-[#FAFAFA] xl:px-[74px] lg:px-14 md:px-12 px-6 md:pt-16 pt-10 md:pb-6 flex lg:flex-row flex-col md:items-start w-full ff-poppins lg:gap-0 gap-6"
 				style={{
 					borderBottom: "1px solid #DFDFDF",
-					position: "absolute",
-					zIndex: 9999,
 				}}
-				lg
 			>
 				<div className="flex md:flex-row flex-col lg:justify-content-between lg:gap-0 gap-12 w-full ">
 					{/* logo */}
@@ -92,7 +95,7 @@ const Footer = () => {
 				{" "}
 				Copyright ©{new Date().getFullYear()} Sumber Berkat Komputindo
 			</p>
-		</>
+		</footer>
 	);
 };
 

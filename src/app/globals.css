@@ -58,3 +58,25 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+.text-dark {
+	color: #132e4c !important;
+}
+.text-regular {
+	color: #2565aa !important;
+}
+.text-secondary {
+	color: #c29d2b !important;
+}
+
+#banner {
+	width: auto;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: auto;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}

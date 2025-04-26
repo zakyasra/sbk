@@ -3,12 +3,12 @@
 import { usePathname } from "next/navigation";
 import React from "react";
 import Image from "next/image";
-import logo from "../app/nav-logo.png";
+import logo from "../app/logo.svg";
 import underline from "@/assets/navbar/nav-underline.svg";
 import "../styles/navbar.scss";
 import Link from "next/link";
-
-const Navbar = () => {
+import { forwardRef } from "react";
+const Navbar = forwardRef(function Navbar(props, ref) {
 	const pathname = usePathname();
 	const navList = [
 		{
@@ -42,25 +42,13 @@ const Navbar = () => {
 	];
 	return (
 		<nav
+			id="navbar"
 			className="lg:px-[70] px-[48] lg:py-[20] py-[16] flex flex-row items-center overflow-hidden"
 			style={{ boxShadow: "0px 2px 12px 0px rgba(112, 109, 109, 0.22)" }}
+			ref={ref}
 		>
-			<div className="flex items-center gap-3 lg:mr-24 mr-16">
-				<Image src={logo} alt="Logo Inacomp" />
-				{/* <div
-					className="flex flex-col"
-					style={{
-						minWidth: "400px",
-					}}
-				>
-					<p className="text-[20px] font-bold text-radial">
-						PT. Sumber Berkat Komputindo
-					</p>
-					<p className="text-[14px] font-normal text-[#C29D2B]">
-						Networking, Data Communication & Wiring Specialist
-					</p>
-				</div> */}
-			</div>
+			<Image src={logo} alt="Logo Inacomp" className="lg:mr-24 mr-16" />
+
 			<div className="main-items">
 				<ul className="flex items-center gap-4 font-normal">
 					{navList?.map((d, i) => (
@@ -97,6 +85,6 @@ const Navbar = () => {
 			</div>
 		</nav>
 	);
-};
+});
 
 export default Navbar;
