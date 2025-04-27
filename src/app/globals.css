@@ -87,3 +87,48 @@ body {
 	background-position: center !important;
 	background-size: cover !important;
 }
+.responsive-margin-hero {
+	margin-top: -20px;
+}
+
+.input-width {
+	max-width: 609px;
+	width: 609px;
+	color: #132e4c;
+	font-weight: 600;
+	font-size: 18px;
+	&::placeholder {
+		color: #abb7c2;
+		font-size: 18px;
+		font-family: Poppins, sans-serif;
+	}
+	&:focus {
+		border-color: #2565aa !important;
+		outline: #2565aa !important;
+	}
+}
+@media screen and (max-width: 1440px) {
+	.input-width {
+		width: 80vw;
+	}
+}
+@media screen and (max-width: 992px) {
+	.responsive-margin-hero {
+		margin-top: -10px;
+	}
+	.input-width {
+		font-size: 16px;
+		&::placeholder {
+			font-size: 16px;
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.input-width {
+		font-size: 14px;
+		&::placeholder {
+			font-size: 13px;
+		}
+	}
+}

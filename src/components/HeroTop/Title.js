@@ -12,10 +12,9 @@ const Title = ({ subTitle, titleBlue, title }) => {
 			<h2 className="flex flex-col w-auto sumber ff-poppins font-semibold xxl:text-[52px] xl:text-[48px] lg:text-[40px] md:text-[32px] text-[24px] xl:mb-16 lg:mb-12 md:mb-9 mb-6">
 				<span className="text-dark text-center">{title}</span>
 				<span
-					className="inline-block w-fit mx-auto border-b-violet-50  text-[#2565AA]"
+					className="responsive-margin-hero inline-block w-fit mx-auto border-b-violet-50  text-[#2565AA]"
 					style={{
 						borderBottom: "10px solid #2565AA",
-						marginTop: "-25px",
 					}}
 				>
 					{titleBlue}
