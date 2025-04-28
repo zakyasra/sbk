@@ -147,6 +147,10 @@ body {
 	}
 }
 @media screen and (max-width: 576px) {
+	.main-logo {
+		width: 300px;
+	}
+
 	.input-width {
 		font-size: 14px;
 		&::placeholder {
@@ -157,5 +161,10 @@ body {
 		&::placeholder {
 			font-size: 12px;
 		}
+	}
+}
+@media screen and (max-width: 420px) {
+	.main-logo {
+		width: 250px !important;
 	}
 }

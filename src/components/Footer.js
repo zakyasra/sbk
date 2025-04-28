@@ -23,7 +23,7 @@ const Footer = () => {
 			className="bg-white w-full"
 			style={{
 				position: "absolute",
-				zIndex: 9999,
+				// zIndex: 9999,
 			}}
 		>
 			<div
