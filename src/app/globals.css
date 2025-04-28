@@ -107,6 +107,22 @@ body {
 		outline: #2565aa !important;
 	}
 }
+
+.input-contact {
+	padding: 8px 20px;
+	border: 1px solid #c5e0ff;
+	width: 100%;
+	&:hover,
+	&:focus {
+		outline: #2565aa;
+		border-color: #2565aa;
+	}
+	&::placeholder {
+		color: rgba(0, 0, 0, 0.5);
+		font-size: 16px;
+	}
+}
+
 @media screen and (max-width: 1440px) {
 	.input-width {
 		width: 80vw;
@@ -123,12 +139,23 @@ body {
 		}
 	}
 }
-
+@media screen and (max-width: 768px) {
+	.input-contact {
+		&::placeholder {
+			font-size: 14px;
+		}
+	}
+}
 @media screen and (max-width: 576px) {
 	.input-width {
 		font-size: 14px;
 		&::placeholder {
 			font-size: 13px;
+		}
+	}
+	.input-contact {
+		&::placeholder {
+			font-size: 12px;
 		}
 	}
 }

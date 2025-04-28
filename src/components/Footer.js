@@ -9,6 +9,7 @@ import arrowWhite from "@/assets/footer/arrow-white.svg";
 import arrowHover from "@/assets/footer/arrow-hover.svg";
 import "../styles/footer.scss";
 import { useState } from "react";
+import IconSocialMedia from "./IconSocialMedia";
 const Footer = () => {
 	const scrollToTop = () => {
 		window.scrollTo({
@@ -44,12 +45,7 @@ const Footer = () => {
 							suscipit turpis enim cursus vulputate amet. Lobortis mi platea
 							aliquam senectus tempus mauris neque.
 						</p>
-						<div className="flex items-center gap-4">
-							<Image src={logoWa} alt="Icon Whatsapp" />
-							<Image src={logoIg} alt="Icon Instagram" />
-							<Image src={logoFb} alt="Icon Facebook" />
-							<Image src={logoLinkedin} alt="Icon LinkedIn" />
-						</div>
+						<IconSocialMedia footer />
 					</div>
 					{/* Our Navbar */}
 					<div className="lg:mx-auto flex md:flex-row md:items-start lg:gap-14 gap-10">
