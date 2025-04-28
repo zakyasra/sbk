@@ -1,4 +1,14 @@
-const HeroBanner = ({ position, title, title2 = "", content, image }) => {
+import Image from "next/image";
+import iconSearch from "@/assets/search-icon.svg";
+
+const HeroBanner = ({
+	position,
+	title,
+	search,
+	title2 = "",
+	content,
+	image,
+}) => {
 	return (
 		<div>
 			<div
@@ -37,6 +47,30 @@ const HeroBanner = ({ position, title, title2 = "", content, image }) => {
 								))} */}
 						</h1>
 					</div>
+					{search && (
+						<div className="relative overflow-hidden rounded-[10px] mb-6">
+							<input
+								type="text"
+								className="input-width ps-5 py-4 pe-24 rounded-[10px] bg-white"
+								style={{
+									border: "1px solid #ECECEC",
+								}}
+								placeholder="Search product name ... "
+							/>
+							<div
+								className="absolute top-1/2 -translate-y-1/2"
+								style={{ right: 0 }}
+							>
+								{/* <FaSearch className="w-[24px] h-[24px] text-white" /> */}
+								<Image
+									src={iconSearch}
+									alt="icon seearch"
+									// className="w-[56px] h-auto"
+								/>
+							</div>
+						</div>
+					)}
+
 					<p className="ff-outfit font-normal lg:text-[22px] md:text-[18px] text-[16px]">
 						{content}
 					</p>
