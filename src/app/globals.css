@@ -140,6 +140,9 @@ body {
 	}
 }
 @media screen and (max-width: 768px) {
+	.main-logo {
+		width: 400px !important;
+	}
 	.input-contact {
 		&::placeholder {
 			font-size: 14px;
@@ -148,7 +151,7 @@ body {
 }
 @media screen and (max-width: 576px) {
 	.main-logo {
-		width: 300px;
+		width: 300px !important;
 	}
 
 	.input-width {

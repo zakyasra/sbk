@@ -6,7 +6,7 @@ const AboutUs = () => {
 		<div className="flex items-center md:flex-row flex-col justify-between md:gap-12 mt-24 ff-poppins md:mb-20 mb-14">
 			{/* left section */}
 			<div className="md:w-1/2">
-				<Image src={aboutImage} alt="icon about" className="w-auto" />
+				<Image src={aboutImage} alt="icon about" className="w-auto mx-auto" />
 			</div>
 			{/* rightsection */}
 			<div className="max-w-[750px] md:text-left text-center md:w-1/2">
@@ -23,7 +23,14 @@ const AboutUs = () => {
 					condimentum neque. Vestibulum mattis rutrum ante vitae ornare. Nam id
 					nulla nec dui eleifend ornare ut a augue. Interdum et malesuada fames
 				</p>
-				<button className="lg:mt-9 md:mt-7 mt-4 cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 p-3 rounded-[10px] text-white font-bold lg:text-[18px] md:text-[16px] text-[14px] hero-blue bg-[#2565AA]">
+				<button
+					className="lg:mt-9 md:mt-7 mt-4 cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 p-3 rounded-[10px] font-bold lg:text-[18px] md:text-[16px] text-[14px]flex w-fit text-white hover:text-[#2565AA] bg-[#2565AA] hover:bg-white"
+					style={{
+						transition: ".4s all",
+						border: "1px solid #2565AA",
+					}}
+				>
+					{/* className="" */}
 					SEE OUR SERVICES
 				</button>
 			</div>

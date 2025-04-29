@@ -58,17 +58,18 @@ const Navbar = forwardRef(function Navbar(props, ref) {
 			className={`sticky w-full top-0 z-50 xl:px-[70px] sm:px-12 ps-6 pe-6 lg:py-[20px] py-[16px] flex lg:flex-row flex-row-reverse items-center justify-between  bg-white transition-all duration-300`}
 			style={{
 				boxShadow: "0px 2px 12px 0px rgba(112, 109, 109, 0.22)",
+				zIndex: "99",
 			}}
 		>
 			<Image
 				src={logo}
 				alt="Logo Inacomp"
-				className="lg:m-0 sm:mx-auto ms-6 mr-auto flex sm:w-auto main-logo"
+				className="lg:m-0 sm:mx-auto ms-6 mr-auto main-logo"
 			/>
 
 			{/* Desktop Menu */}
 			<div className="main-items hidden lg:block">
-				<ul className="flex items-center gap-4 font-normal">
+				<ul className="flex items-center xl:gap-4 gap-2.5 font-normal">
 					{navList?.map((d, i) => (
 						<li key={i}>
 							<Link href={d.link}>

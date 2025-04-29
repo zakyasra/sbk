@@ -1,13 +1,9 @@
 import AboutUs from "@/components/AboutUs";
 import HeroSection from "@/components/HeroSection";
-import OurServices from "@/components/OurServices";
 import Testimonials from "@/components/Testimonials";
 import Clients from "@/components/Clients";
 import BannerOurProducts from "@/components/BannerOurProducts";
 import OurProducts from "@/components/OurProducts";
-import BannerContactUs from "@/components/BannerContactUs";
-import ButtonToTop from "@/components/ButtonToTop";
-import WhatsappOverlay from "@/components/WhatsappOverlay";
 import Banner from "@/components/Banner";
 export default function Home() {
 	return (

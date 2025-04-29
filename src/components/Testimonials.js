@@ -6,7 +6,10 @@ const Testimonials = () => {
 	return (
 		<article
 			id="testimonials"
-			className="md:mb-20 mb-12 xl:px-16 lg:px-14 md:px-12 sm:px-9 px-6"
+			className="md:py-20 py-12 xl:px-16 lg:px-14 md:px-12 sm:px-9 px-6"
+			style={{
+				background: "#F9F9F9",
+			}}
 		>
 			<div className="testimonials-container ">
 				<div className="left-section">
