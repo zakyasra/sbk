@@ -18,7 +18,7 @@ const dummyData = Array.from({ length: 100 }, (_, i) => ({
 	desc: "Write an amazing description in this dedicated card section. Each word counts.",
 	link: "#",
 }));
-const dataLimit = dummyData.slice(0, 6);
+const dataLimit = dummyData.slice(0, 4);
 const useDebounce = (value, delay) => {
 	const [debounced, setDebounced] = useState(value);
 	useEffect(() => {

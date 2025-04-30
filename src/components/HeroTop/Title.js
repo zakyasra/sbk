@@ -2,7 +2,7 @@ const Title = ({ subTitle, titleBlue, title }) => {
 	return (
 		<>
 			<h3
-				className="text-center ff-outfit font-bold lg:text-2xl sm:text-[20px] text-[16px] text-[#C29D2B] md:mb-4 mb-2"
+				className="text-center ff-outfit font-bold text-2xl  text-[#C29D2B] md:mb-4 mb-2"
 				style={{
 					letterSpacing: "3px",
 				}}

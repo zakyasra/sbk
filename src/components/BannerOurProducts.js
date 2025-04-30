@@ -36,9 +36,9 @@ function BannerOurProducts() {
 	return (
 		<div
 			id="product"
-			className="flex items-center justify-center lg:flex-row flex-col xl:gap-16 md:gap-12 gap-10 ff-outfit xl:px-16 lg:px-10 sm:px-9 px-[24px]  xl:py-20 lg:py-16 md:py-10 py-12"
+			className="my-20 sm:h-auto h-[100vh] flex items-center justify-center lg:flex-row flex-col xl:gap-16 md:gap-12 gap-10 ff-outfit xl:px-16 lg:px-10 sm:px-9 px-[24px]  xl:py-20 lg:py-16 md:py-10 py-12"
 		>
-			<div className="flex items-center md:flex-row flex-col xl:gap-12 gap-8">
+			<div className="flex items-center sm:flex-row flex-col xl:gap-12 sm:gap-10 gap-14">
 				<div className="flex flex-col md:gap-9 gap-0">
 					<span className="xl:text-[64px] lg:text-[58px] md:text-[50px] text-[48px] text-white font-bold">
 						<Counter end={300} suffix="+" />
@@ -63,9 +63,11 @@ function BannerOurProducts() {
 						PARTNERS
 					</span>
 				</div>
+			</div>
 
+			<div>
 				<div className="flex flex-col lg:items-start items-center">
-					<span className="ff-outfit text-[#C29D2B] md:text-[24px] text-[20px] font-bold md:mb-0 mb-2">
+					<span className="ff-outfit text-[#C29D2B] text-[24px] font-bold md:mb-0 mb-2">
 						OUR PRODUCT
 					</span>
 					<span className="ff-poppins text-[#E0E0E0] md:text-[34px] sm:text-[28px] text-[24px] font-bold md:text-start text-center md:mb-7 mb-4">

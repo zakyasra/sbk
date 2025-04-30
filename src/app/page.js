@@ -5,6 +5,9 @@ import Clients from "@/components/Clients";
 import BannerOurProducts from "@/components/BannerOurProducts";
 import OurProducts from "@/components/OurProducts";
 import Banner from "@/components/Banner";
+import ServiceCarousel from "@/components/ServicesCarousel";
+import OurServices from "@/components/OurServices";
+import ResponsiveCarousel from "@/components/ServicesCarousel";
 export default function Home() {
 	return (
 		<div>
@@ -13,6 +16,7 @@ export default function Home() {
 				<AboutUs />
 				{/* <OurServices /> */}
 			</div>
+			<ResponsiveCarousel />
 			<Testimonials />
 			<Clients />
 			<BannerOurProducts />

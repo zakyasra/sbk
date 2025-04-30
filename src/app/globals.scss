@@ -171,3 +171,28 @@ body {
 		width: 250px !important;
 	}
 }
+/* .card-services {
+} */
+.swiper-pagination-container {
+	margin-top: 48px;
+}
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+	position: relative !important;
+	margin-top: 36px;
+}
+.swiper-pagination-bullet {
+	transition: all 0.3s ease-in-out !important;
+	background-color: #8ca5bf !important;
+	opacity: 1 !important;
+	height: 12px !important;
+	width: 12px !important;
+	&:hover {
+		background-color: #2565aa !important;
+	}
+	&.swiper-pagination-bullet-active {
+		border-radius: 20px;
+		width: 39px !important;
+		height: 12px !important;
+		background-image: linear-gradient(to right, #2565aa, #0590e6) !important;
+	}
+}

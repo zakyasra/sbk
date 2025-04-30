@@ -53,7 +53,7 @@ const HeroSection = () => {
 				</div>
 				<div className="flex items-center md:justify-start justify-center lg:gap-11 md:gap-8 sm:gap-6 gap-3">
 					<button
-						className="cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 p-3 rounded-[10px] font-bold lg:text-[18px] md:text-[16px] text-[14px]flex w-fit text-white hover:text-[#2565AA] bg-[#2565AA] hover:bg-white"
+						className="cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-3.5 py-4 rounded-[10px] font-bold sm:text-[18px] text-[16px] flex w-fit text-white hover:text-[#2565AA] bg-[#2565AA] hover:bg-white"
 						style={{
 							transition: ".4s all",
 							border: "1px solid #2565AA",
@@ -61,7 +61,7 @@ const HeroSection = () => {
 					>
 						EXPLORE MORE
 					</button>
-					<button className="cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 p-3 font-bold text-[18px] text-[#2565AA] border-linear hero-white">
+					<button className="cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-3.5 py-4 font-bold sm:text-[18px] text-[16px] text-[#2565AA] border-linear hero-white">
 						CONTACT US
 					</button>
 				</div>

@@ -115,11 +115,16 @@ const Navbar = forwardRef(function Navbar(props, ref) {
 					</div>
 				</button>
 			</div>
+			{/* Overlay */}
+			{isOpen && (
+				<div className="fixed inset-0 bg-black/30 z-30" onClick={toggleMenu} />
+			)}
 
 			{/* Mobile Menu */}
 			<div
-				className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-40 transform transition-transform duration-500 ease-in-out
-        ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+				className={`fixed top-0 left-0 h-full sm:w-64 w-[50%] bg-white shadow-lg z-40 transform transition-transform duration-500 ease-in-out
+    ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+				onClick={(e) => e.stopPropagation()} // ✅ mencegah overlay menutup jika klik menu
 			>
 				<div className="flex justify-end p-4">
 					<button onClick={toggleMenu}>
@@ -131,7 +136,7 @@ const Navbar = forwardRef(function Navbar(props, ref) {
 						<li key={i}>
 							<Link href={d.link} onClick={toggleMenu}>
 								<span
-									className={`ff-outfit xl:text-[16px] lg:text-[14px] text-[16px] ${
+									className={`ff-outfit sm:text-[20px] text-[18px] ${
 										pathname === d.link
 											? "font-semibold text-[#2565AA] border-b-[4px] border-[#2565AA]"
 											: "text-[#3F3F3F] hover:text-[#2565AA] hover:border-b-[4px] hover:border-[#2565AA]"

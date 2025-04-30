@@ -87,14 +87,14 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 	}, [getItemsPerPage]);
 
 	return (
-		<div className="mb-24 ">
-			<div className="flex flex-col items-center md:mb-12 ">
+		<>
+			<div className="flex flex-col items-center mt-20">
 				{customText ? (
 					<Title title={title} subTitle={subTitle} titleBlue={titleBlue} />
 				) : (
 					<>
 						<h3
-							className="ff-outfit md:text-[24px] sm:text-[20px] text-[16px] text-[#C29D2B] font-bold mb-6"
+							className="ff-outfit text-[24px] text-[#C29D2B] font-bold mb-6"
 							style={{
 								letterSpacing: "5px",
 							}}
@@ -118,7 +118,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 					</>
 				)}
 			</div>
-			<div className="relative  max-w-7xl mx-auto lg:px-20 sm:px-18 px-18  overflow-hidden">
+			<div className="relative  max-w-7xl mx-auto lg:px-20 sm:px-18 px-18 overflow-hidden">
 				{page > 0 && (
 					<button
 						onClick={handlePrev}
@@ -178,7 +178,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 				</div>
 			</div>
 			{/* Pagination Bullets */}
-			<div className="flex justify-center gap-2 mt-6">
+			<div className="flex justify-center gap-2 sm:mt-6 mt-2 mb-20">
 				{Array.from({ length: totalPages }).map((_, i) => (
 					<button
 						key={i}
@@ -188,7 +188,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 					/>
 				))}
 			</div>
-		</div>
+		</>
 	);
 };
 

@@ -10,7 +10,7 @@ const AboutUs = () => {
 			</div>
 			{/* rightsection */}
 			<div className="max-w-[750px] md:text-left text-center md:w-1/2">
-				<h3 className="ff-outfit font-bold lg:text-2xl text-[20px] text-[#C29D2B]">
+				<h3 className="ff-outfit font-bold text-2xl  text-[#C29D2B]">
 					WHAT IS
 				</h3>
 				<h2 className="inline w-auto sumber ff-poppins font-semibold xxl:text-[52px] xl:text-[48px] lg:text-[40px] md:text-[32px] sm:text-[38px] text-[30px] text-[#2565AA] ">
@@ -24,7 +24,7 @@ const AboutUs = () => {
 					nulla nec dui eleifend ornare ut a augue. Interdum et malesuada fames
 				</p>
 				<button
-					className="lg:mt-9 md:mt-7 mt-4 cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 p-3 rounded-[10px] font-bold lg:text-[18px] md:text-[16px] text-[14px]flex w-fit text-white hover:text-[#2565AA] bg-[#2565AA] hover:bg-white"
+					className="lg:mt-9 md:mt-7 mt-8 cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-3.5 py-4 rounded-[10px] font-bold sm:text-[18px] text-[16px] w-fit text-white hover:text-[#2565AA] bg-[#2565AA] hover:bg-white"
 					style={{
 						transition: ".4s all",
 						border: "1px solid #2565AA",
