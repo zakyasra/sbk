@@ -18,7 +18,7 @@ const dummyData = Array.from({ length: 100 }, (_, i) => ({
 	desc: "Write an amazing description in this dedicated card section. Each word counts.",
 	link: "#",
 }));
-
+const dataLimit = dummyData.slice(0, 6);
 const useDebounce = (value, delay) => {
 	const [debounced, setDebounced] = useState(value);
 	useEffect(() => {
@@ -28,7 +28,7 @@ const useDebounce = (value, delay) => {
 	return debounced;
 };
 
-function OurProducts({ search, pagination }) {
+function OurProducts({ search = "", limit, pagination }) {
 	const debouncedSearch = useDebounce(search, 500);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [paginationGroup, setPaginationGroup] = useState(0);
@@ -110,7 +110,7 @@ function OurProducts({ search, pagination }) {
 					transition={{ duration: 0.3 }}
 					className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1  xl:gap-y-12 md:gap-y-8 gap-y-6 xl:gap-x-10 md:gap-x-8 gap-x-6 w-full max-w-[calc(100%-40px)] xl:px-[100px] lg:px-[80px] md:px-[40px] mx-auto"
 				>
-					{displayedData.map((item) => {
+					{(limit ? dataLimit : displayedData).map((item) => {
 						console.log(item);
 						return (
 							<div key={item.id}>

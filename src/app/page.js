@@ -16,7 +16,7 @@ export default function Home() {
 			<Testimonials />
 			<Clients />
 			<BannerOurProducts />
-			<OurProducts />
+			<OurProducts limit />
 			<Banner
 				title={"CONTACT US"}
 				content={"Have Something in Mind?"}

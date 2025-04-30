@@ -11,17 +11,12 @@ function WhatsappOverlay() {
 		setIsVisible(false);
 	};
 	return (
-		<div
-			className="flex gap-2 items-center fixed right-0 bottom-20"
-			style={{
-				zIndex: "99999",
-			}}
-		>
+		<div className="flex gap-2 items-center fixed	z-50 right-0 bottom-20 ">
 			{/* container text */}
 			<div
 				className={`${
 					isVisible
-						? "flex gap-2.5 items-center px-2 py-3 bg-white rounded-[8px]"
+						? "flex gap-2.5 items-center px-2 py-3 bg-white rounded-[8px] shadow-2xs"
 						: "hidden"
 				}`}
 			>

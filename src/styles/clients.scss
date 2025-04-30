@@ -4,9 +4,40 @@
 		border-radius: 12px;
 		border: 1px solid #757d8d;
 		border-left: 13px solid #0590e6 !important;
-		// width: 277px;
-
-		height: 93px;
-		box-sizing: border-box;
+		height: 100px;
+		.client-image {
+			height: 50%;
+		}
+	}
+	@media screen and (max-width: 1200px) {
+		.card {
+			height: 70px;
+		}
+	}
+	@media screen and (max-width: 992px) {
+		.card {
+			height: 80px;
+			.client-image {
+				height: 40%;
+			}
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.card {
+			height: 60px;
+			.client-image {
+				height: 40%;
+			}
+		}
+	}
+	@media screen and (max-width: 576px) {
+		.card {
+			height: 60px;
+			max-width: 200px;
+			margin: 0 auto;
+			.client-image {
+				height: 40%;
+			}
+		}
 	}
 }
