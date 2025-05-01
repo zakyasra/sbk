@@ -18,10 +18,17 @@ const AboutUs = () => {
 				</h2>
 				<Image src={line} alt="line" className="w-auto" />
 				<p className="mt-6 text-dark-fade lg:text-[20px] md:text-[18px] text-[16px] md:text-left text-justify">
-					Etiam at iaculis massa. Etiam eu enim varius, congue ante id,
-					venenatis velit. Aenean vel ipsum posuere, malesuada mauris eget,
-					condimentum neque. Vestibulum mattis rutrum ante vitae ornare. Nam id
-					nulla nec dui eleifend ornare ut a augue. Interdum et malesuada fames
+					PT. Sumber Berkat Komputindo (SBK) is an end-to-end ICT solution
+					provider established in the early 2000s. We specialize in network
+					integration, data communication, and wiring systems for both public
+					and private corporations.
+					<br />
+					<br />
+					With over 5 years of experience in the IT industry, we understand the
+					core of the technology environment, especially networking — a key
+					factor in business success. We are committed to delivering
+					high-quality solutions backed by consulting, support, and management
+					services.
 				</p>
 				<button
 					className="lg:mt-9 md:mt-7 mt-8 cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-3.5 py-4 rounded-[10px] font-bold sm:text-[18px] text-[16px] w-fit text-white hover:text-[#2565AA] bg-[#2565AA] hover:bg-white"

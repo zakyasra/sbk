@@ -21,10 +21,8 @@ export default function page() {
 				title={"Get To Know"}
 				titleBlue={"About Our Clients"}
 				subTitle={"ABOUT CLIENT"}
-				text1={`Lectus erat, consectetur eu sapien eget rhoncus consectetur sem. Proin cursus, dolor a mollis consectetur, risus dolor fermentum massa, a commodo elit dui sit amet risus. Maecenas ornare nisl a tortor ultrices bibendum. Nulla fermentum, metus quis sodales tristique, augue mauris molestie augue, non feugiat ligula neque nec felis.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed nibh dignissim, cursus tellus sit amet, ultrices mauris. Aliquam blandit est in eros elementum, quis vehicula est suscipit.`}
-				text2={`Lorem ipsum dolor sit consectetur adipiscing elit. Nullam lectus erat, consectetur eu sapien eget rhoncus consectetur sem.
-Proin cursus, dolor a mollis consectetur, risus dolor fermentum massa, a commodo elit dui sit amet risus. Maecenas ornare nisl a tortor ultrices bibendum. Nulla fermentum, metus quis sodales tristique, augue mauris molestie augue non feugiat ligula neque nec felis.`}
+				text1={`Being the first in line of IT companies, SBK  has been entrusted by our precious clients to handle their project in IT sector. Our clients are composed by leading companies from various types of industries, such as automotive, banking, education, telecommunications, manufacturing, as well as government institution and non-profit oriented institution.`}
+				text2={`SBK commitment is to develop IT solution that enable the customer to leverage and maximizing their existing technology investments through cost-effective alternatives in altering their IT so it can meet the company's business requirement. We believe that by delivering the best solution and high quality of services, it will enhance our customer's business competitiveness.`}
 			/>
 			<div className="xl:mb-32 md:mb-28 mb-20"></div>
 			<Clients

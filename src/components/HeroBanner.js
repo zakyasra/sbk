@@ -50,39 +50,34 @@ const HeroBanner = ({
 						</h1>
 					</div>
 					{search != undefined && (
-						<div className="relative overflow-hidden rounded-[10px] mb-6">
-							<input
-								type="text"
-								className="input-width ps-5 py-4 pe-24 rounded-[10px] bg-white"
-								style={{
-									border: "1px solid #ECECEC",
-								}}
-								placeholder="Search product name ... "
-								value={search}
-								onChange={(e) => setSearch(e.target.value)}
-							/>
-							{search && (
-								<button
-									onClick={() => setSearch("")}
-									className="cursor-pointer absolute right-22 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-800"
-									aria-label="Clear search"
-									style={{
-										zIndex: "9",
-									}}
-								>
-									<MdClose className="w-[24px] h-[24px]" />
-								</button>
-							)}
-							<div
-								className="absolute top-1/2 -translate-y-1/2"
-								style={{ right: 0 }}
-							>
-								{/* <FaSearch className="w-[24px] h-[24px] text-white" /> */}
-								<Image
-									src={iconSearch}
-									alt="icon seearch"
-									// className="w-[56px] h-auto"
+						<div className="flex justify-center mb-14">
+							<div className="relative overflow-hidden rounded-[10px]">
+								<input
+									type="text"
+									className="input-width ps-5 py-4 pe-24 rounded-[10px] bg-white"
+									placeholder="Search software name ... "
+									value={search}
+									onChange={(e) => setSearch(e.target.value)}
 								/>
+								{search && (
+									<button
+										onClick={() => setSearch("")}
+										className="cursor-pointer absolute right-22 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-800"
+										aria-label="Clear search"
+										style={{
+											zIndex: "9",
+										}}
+									>
+										<MdClose className="w-[24px] h-[24px]" />
+									</button>
+								)}
+								<div
+									className="absolute top-1/2 -translate-y-1/2"
+									style={{ right: 0 }}
+								>
+									{/* <FaSearch className="w-[24px] h-[24px] text-white" /> */}
+									<Image src={iconSearch} alt="icon seearch" />
+								</div>
 							</div>
 						</div>
 					)}

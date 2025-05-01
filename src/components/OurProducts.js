@@ -18,7 +18,6 @@ const dummyData = Array.from({ length: 100 }, (_, i) => ({
 	desc: "Write an amazing description in this dedicated card section. Each word counts.",
 	link: "#",
 }));
-const dataLimit = dummyData.slice(0, 4);
 const useDebounce = (value, delay) => {
 	const [debounced, setDebounced] = useState(value);
 	useEffect(() => {
@@ -34,14 +33,21 @@ function OurProducts({ search = "", limit, pagination }) {
 	const [paginationGroup, setPaginationGroup] = useState(0);
 	const [swipeDirection, setSwipeDirection] = useState("right");
 
+	// const dataLimit = dummyData.slice(0, 4);
 	// Hitung responsif jumlah card per halaman
 	const getItemsPerPage = () => {
-		if (typeof window === "undefined") return 16;
+		if (typeof window === "undefined") return 9;
 		const width = window.innerWidth;
 		// if (width >= 1200) return 9;
-		if (width >= 992) return 9;
-		if (width >= 576) return 3;
-		return 3;
+		if (limit) {
+			if (width >= 992) return 6;
+			if (width >= 576) return 4;
+			return 3;
+		} else {
+			if (width >= 992) return 9;
+			if (width >= 576) return 4;
+			return 3;
+		}
 	};
 
 	const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage());
@@ -108,9 +114,9 @@ function OurProducts({ search = "", limit, pagination }) {
 					animate={{ opacity: 1, x: 0 }}
 					exit={{ opacity: 0, x: swipeDirection === "right" ? -100 : 100 }}
 					transition={{ duration: 0.3 }}
-					className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1  xl:gap-y-12 md:gap-y-8 gap-y-6 xl:gap-x-10 md:gap-x-8 gap-x-6 w-full max-w-[calc(100%-40px)] xl:px-[100px] lg:px-[80px] md:px-[40px] mx-auto"
+					className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-y-12 md:gap-y-8 gap-y-6 xl:gap-x-10 md:gap-x-8 gap-x-6 w-fit max-w-[calc(100%-40px)] xxl:px-[100px]  xl:px-[80px] lg:px-[60px] md:px-[40px] mx-auto"
 				>
-					{(limit ? dataLimit : displayedData).map((item) => {
+					{displayedData.map((item) => {
 						console.log(item);
 						return (
 							<div key={item.id}>
@@ -155,7 +161,7 @@ function OurProducts({ search = "", limit, pagination }) {
 			</AnimatePresence>
 			{/* Pagination */}
 			{pagination && (
-				<div className="flex justify-center items-center mt-8 gap-2">
+				<div className="flex justify-center items-center xxl:mt-16 xl:mt-12 lg:mt-10 mt-8 gap-2">
 					{paginationGroup > 0 && (
 						<button
 							onClick={handlePrevGroup}

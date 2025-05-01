@@ -12,10 +12,10 @@ import HeroBanner from "@/components/HeroBanner";
 import HeroTop from "@/components/HeroTop/page";
 function page() {
 	const listAdvantage = [
-		"You will get interesting features",
-		"You will get the best services from us",
-		"We are very professional and we have nice time efficiency ",
-		"We are trusted by 250+ company project",
+		"Comprehensive & Integrated Solutions",
+		"Backed by Experienced IT Experts",
+		"Cost Efficiency Without Compromising Quality ",
+		"Specialized in Networking & Data Communication",
 	];
 	return (
 		<div className="mb-14">
@@ -29,16 +29,13 @@ function page() {
 					"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis egestas pellentesque libero dolor in diam consequat ut. "
 				}
 			/>
-			<div className="mb-14"></div>
 			{/* about us */}
 			<HeroTop
 				title={"Introduction"}
 				titleBlue={"Sumber Berkat Komputindo"}
 				subTitle={"ABOUT US"}
-				text1={`Lectus erat, consectetur eu sapien eget rhoncus consectetur sem. Proin cursus, dolor a mollis consectetur, risus dolor fermentum massa, a commodo elit dui sit amet risus. Maecenas ornare nisl a tortor ultrices bibendum. Nulla fermentum, metus quis sodales tristique, augue mauris molestie augue, non feugiat ligula neque nec felis.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed nibh dignissim, cursus tellus sit amet, ultrices mauris. Aliquam blandit est in eros elementum, quis vehicula est suscipit.`}
-				text2={`Lorem ipsum dolor sit consectetur adipiscing elit. Nullam lectus erat, consectetur eu sapien eget rhoncus consectetur sem.
-Proin cursus, dolor a mollis consectetur, risus dolor fermentum massa, a commodo elit dui sit amet risus. Maecenas ornare nisl a tortor ultrices bibendum. Nulla fermentum, metus quis sodales tristique, augue mauris molestie augue non feugiat ligula neque nec felis.`}
+				text1={`PT. Sumber Berkat Komputindo (SBK) is an ICT (Information Communication Technology) company established in the early 2000s by experts with deep experience in the IT industry. Since the beginning, we’ve focused on providing total IT solutions, specializing in networking, data communication, and wiring systems.`}
+				text2={`We deliver high-quality, end-to-end system integration services that help public and private corporations implement cost-effective IT solutions. We understand the nuts and bolts of IT environments, especially networking — a critical success factor in today’s business world.`}
 			/>
 			{/* section services */}
 			<Banner
@@ -49,7 +46,7 @@ Proin cursus, dolor a mollis consectetur, risus dolor fermentum massa, a commodo
 				link={"/services"}
 			/>
 			{/* the advantages */}
-			<div className="grid md:grid-cols-2 grid-cols-1 md:gap-12 gap-12 xl:px-28 lg:px-20 md:px-16 sm:px-12 px-[24px]">
+			<div className="grid md:grid-cols-2 grid-cols-1 md:gap-12 gap-12 xl:ps-28 lg:ps-20 pr-12 md:ps-16 sm:ps-12 px-[24px]">
 				{/* left section */}
 				<div className="py-5">
 					<h3 className="ff-outfit lg:text-2xl sm:text-[20px] text-[16px] font-bold text-secondary md:mb-6 sm:mb-3 mb-2">
@@ -63,19 +60,19 @@ Proin cursus, dolor a mollis consectetur, risus dolor fermentum massa, a commodo
 						alt="icon advantage"
 						className="md:h-full w-full h-[300px] object-cover flex md:hidden"
 					/>
-					<p className="ff-poppins font-normal text-[#19182599] mb-9 lg:text-[24px] md:text-[18px] text-[16px] text-justify">
+					<p className="ff-poppins font-normal text-[#19182599] max-w-[600px] mb-9 lg:text-[24px] md:text-[18px] text-[16px] text-justify">
 						{" "}
 						We certainly have several advantages compared to other companies
 					</p>
 					<div className="flex flex-col gap lg:gap-9 md:gap-6 gap-4">
-						{listAdvantage?.map((id) => (
+						{listAdvantage?.map((data) => (
 							<div
 								className="flex items-center lg:gap-6 md:gap-5 gap-4"
-								key={id}
+								key={data}
 							>
 								<Image src={checklist} alt="Icon checklist" />
 								<p className="ff-inter lg:text-[24px] md:text-[18px] text-[16px] text-[#19182599]">
-									You will get interesting features
+									{data}
 								</p>
 							</div>
 						))}
@@ -85,7 +82,7 @@ Proin cursus, dolor a mollis consectetur, risus dolor fermentum massa, a commodo
 				<Image
 					src={advantage}
 					alt="icon advantage"
-					className="h-full w-auto object-cover md:flex hidden"
+					className="h-full w-auto object-cover md:flex hidden mx-auto"
 				/>
 			</div>
 		</div>

@@ -82,7 +82,7 @@ export default function ResponsiveCarousel() {
 			</div>
 
 			{/* Swiper */}
-			<div className="xl:max-w-[620px] lg:max-w-[520px] w-full h-full xl:px-12 lg:ps-12  ">
+			<div className="xl:max-w-[620px] lg:max-w-[520px] mx-auto w-full h-full xl:px-12 lg:ps-12  ">
 				<Swiper
 					key={viewportWidth}
 					modules={[Navigation, Pagination, Grid]}
@@ -115,7 +115,7 @@ export default function ResponsiveCarousel() {
 							},
 						},
 					}}
-					className="max-w-7xl mx-auto relative"
+					className="max-w-7xl relative"
 				>
 					{cards.map((card) => (
 						<SwiperSlide
