@@ -1,14 +1,42 @@
 "use client";
 import "../styles/ourProduct.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Counter = ({ end, suffix = "" }) => {
 	const [count, setCount] = useState(0);
+	const [isVisible, setIsVisible] = useState(false);
+	const counterRef = useRef();
 
 	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					setIsVisible(true);
+					observer.disconnect(); // Hanya aktifkan sekali
+				}
+			},
+			{
+				threshold: 0.5, // Elemen terlihat 50% di viewport
+			}
+		);
+
+		if (counterRef.current) {
+			observer.observe(counterRef.current);
+		}
+
+		return () => {
+			if (counterRef.current) {
+				observer.unobserve(counterRef.current);
+			}
+		};
+	}, []);
+
+	useEffect(() => {
+		if (!isVisible) return;
+
 		let start = 0;
-		const duration = 2000; // Durasi animasi (dalam ms)
-		const incrementTime = 30; // Kecepatan update (semakin kecil semakin halus)
+		const duration = 2000;
+		const incrementTime = 30;
 		const totalIncrements = duration / incrementTime;
 		const incrementValue = end / totalIncrements;
 
@@ -22,10 +50,10 @@ const Counter = ({ end, suffix = "" }) => {
 		}, incrementTime);
 
 		return () => clearInterval(counter);
-	}, [end]);
+	}, [end, isVisible]);
 
 	return (
-		<span>
+		<span ref={counterRef}>
 			{count}
 			{suffix}
 		</span>
@@ -74,7 +102,13 @@ function BannerOurProducts() {
 						See our greatest product
 					</span>
 					<button
-						className="ff-poppins cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 px-8 py-4 rounded-[10px] font-bold md:text-[18px] text-[14px] text-white hover:text-[#2565AA] bg-[#2565AA] hover:bg-white"
+						onClick={() => {
+							const el = document.getElementById("see-products");
+							if (el) {
+								el.scrollIntoView({ behavior: "smooth" });
+							}
+						}}
+						className="ff-poppins cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 px-8 py-4 rounded-[10px] font-bold md:text-[18px] text-[14px] text-white hover:text-[#2565AA] active:text-[#2565AA] bg-[#2565AA] hover:bg-white active:bg-[white]"
 						style={{
 							transition: ".4s all",
 							border: "2px solid #2565AA",

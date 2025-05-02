@@ -53,22 +53,41 @@ const HeroSection = () => {
 				</div>
 				<div className="flex items-center md:justify-start justify-center lg:gap-11 md:gap-8 sm:gap-6 gap-3">
 					<button
-						className="cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-3.5 py-4 rounded-[10px] font-bold sm:text-[18px] text-[16px] flex w-fit text-white hover:text-[#2565AA] bg-[#2565AA] hover:bg-white"
+						className="cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-3.5 py-4 rounded-[10px] font-bold sm:text-[18px] text-[16px] flex w-fit text-white hover:text-[#2565AA] active:text-[#2565AA] bg-[#2565AA] hover:bg-white active:bg-white"
+						style={{
+							transition: ".3s all",
+							border: "1px solid #2565AA",
+						}}
+						onClick={() => {
+							const el = document.getElementById("about-us");
+							if (el) {
+								el.scrollIntoView({ behavior: "smooth" });
+							}
+						}}
+					>
+						EXPLORE MORE
+					</button>
+					{/* <button className="cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-3.5 py-4 font-bold sm:text-[18px] text-[16px] text-[#2565AA] border-linear hero-white">
+						CONTACT US
+					</button> */}
+					<button
+						className="cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-3.5 py-4 rounded-[10px] font-bold sm:text-[18px] text-[16px] bg-white hover:bg-[#2565AA] active:bg-[#2565AA] text-[#2565AA] hover:text-white  active:text-white"
 						style={{
 							transition: ".4s all",
 							border: "1px solid #2565AA",
 						}}
 					>
-						EXPLORE MORE
-					</button>
-					<button className="cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-3.5 py-4 font-bold sm:text-[18px] text-[16px] text-[#2565AA] border-linear hero-white">
 						CONTACT US
 					</button>
 				</div>
 			</div>
 			{/* Right Section | Img */}
 			<div>
-				<Image src={heroImage} alt="hero image" width={500} />
+				<Image
+					src={heroImage}
+					alt="hero image"
+					className="xl:w-[500px] lg:w-[400px] md:w-[300px] w-[250px] max-w-[none]"
+				/>
 			</div>
 		</div>
 	);

@@ -3,6 +3,7 @@ import iconSearch from "@/assets/search-icon.svg";
 import { MdClose } from "react-icons/md";
 
 const HeroBanner = ({
+	linkId = " ",
 	position,
 	title,
 	search,
@@ -14,7 +15,7 @@ const HeroBanner = ({
 	return (
 		<div>
 			<div
-				className={`hero-section w-full  text-white text-left md:py-28 sm:py-20 py-16 xl:px-28 lg:px-24 md:px-20 sm:px-12 px-6`}
+				className={`hero-section w-full text-white text-left md:py-28 sm:py-20 py-16 xl:px-28 lg:px-24 md:px-20 sm:px-12 px-6`}
 				style={{
 					background: `url(${image})`,
 					// height: "90vh",
@@ -88,10 +89,16 @@ const HeroBanner = ({
 					<button
 						className={`${
 							position == "center" && "mx-auto"
-						} w-fit lg:mt-9 md:mt-7 mt-4 cursor-pointer lg:px-9 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-5 py-3 rounded-[10px] sm:font-bold font-semibold lg:text-[18px] md:text-[16px] sm:test-[14px] text-[12px] text-white hover:text-[#2565AA] bg-[#2565AA] hover:bg-white`}
+						} w-fit lg:mt-9 md:mt-7 mt-4 cursor-pointer lg:px-9 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-6 py-3.5 rounded-[10px] sm:font-bold font-semibold lg:text-[18px] md:text-[16px] text-[14px] text-white hover:text-[#2565AA] active:text-[#2565AA] bg-[#2565AA] hover:bg-white active:bg-white`}
 						style={{
-							transition: ".4s all",
+							transition: ".3s all",
 							border: "1px solid #2565AA",
+						}}
+						onClick={() => {
+							const el = document.getElementById(linkId);
+							if (el) {
+								el.scrollIntoView({ behavior: "smooth" });
+							}
 						}}
 					>
 						SEE MORE

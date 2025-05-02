@@ -1,3 +1,5 @@
+"use client";
+
 import AboutUs from "@/components/AboutUs";
 import HeroSection from "@/components/HeroSection";
 import Testimonials from "@/components/Testimonials";

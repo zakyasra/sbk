@@ -60,7 +60,7 @@
 #testimonials .card-main {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: 16px;
 }
 #testimonials .card-name {
 	font-size: 18px;
@@ -112,15 +112,35 @@
 	}
 }
 @media screen and (max-width: 576px) {
-	#testimonials .left-section .title {
-		font-size: 24px;
-	}
-	#testimonials .left-section .sub-title {
-		font-size: 30px;
-	}
-	#testimonials .left-section .desc {
-		font-size: 16px;
-		line-height: 24px;
-		margin-bottom: 24px;
+	#testimonials {
+		.card {
+			padding: 32px 24px;
+		}
+		.left-section {
+			.title {
+				font-size: 24px;
+			}
+			.sub-title {
+				font-size: 30px;
+			}
+			.desc {
+				font-size: 16px;
+				line-height: 24px;
+				margin-bottom: 24px;
+			}
+		}
+		.lef .card-desc p {
+			font-size: 14px;
+		}
+		.card-name {
+			font-size: 16px;
+		}
+		.card-job {
+			font-size: 16px;
+		}
+		.profile-picture {
+			width: 56px;
+			height: 56px;
+		}
 	}
 }

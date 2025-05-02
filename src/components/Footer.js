@@ -23,15 +23,10 @@ const Footer = () => {
 			className="bg-white w-full"
 			style={{
 				position: "absolute",
-				// zIndex: 9999,
+				zIndex: 9999,
 			}}
 		>
-			<div
-				className="bg-[#FAFAFA] xl:px-[74px] lg:px-14 md:px-12 px-6 md:pt-16 pt-10 md:pb-6 flex lg:flex-row flex-col md:items-start ff-poppins lg:gap-0 gap-6"
-				style={{
-					borderBottom: "1px solid #DFDFDF",
-				}}
-			>
+			<div className="bg-[#FAFAFA] xl:px-[74px] lg:px-14 md:px-12 px-6 md:pt-16 pt-10 md:pb-6 flex lg:flex-row flex-col md:items-start ff-poppins lg:gap-0 gap-6">
 				<div className="flex md:flex-row flex-col lg:justify-content-between lg:gap-0 gap-12 w-full ">
 					{/* logo */}
 					<div className="md:w-1/2">
@@ -41,9 +36,8 @@ const Footer = () => {
 							className="mb-6 min-w-full"
 						/>
 						<p className="font-normal text-[14px] text-[#535353] mb-12 text-justify">
-							Lorem ipsum dolor sit amet consectetur. Mi nibh venenatis in
-							suscipit turpis enim cursus vulputate amet. Lobortis mi platea
-							aliquam senectus tempus mauris neque.
+							We provide top-notch services from network installation and data
+							communication to professional and tidy wiring setups.
 						</p>
 						<IconSocialMedia footer />
 					</div>
@@ -73,7 +67,7 @@ const Footer = () => {
 					</div>
 				</div>
 				<button
-					className="w-auto lg:ml-auto lg:mr-0 mr-auto flex items-center cursor-pointer gap-2.5 md:px-9 px-7 md:py-6 py-4 rounded-[10px] ff-poppins md:text-[17px] text-[14px] font-bold text-white hover:text-[#2565AA] active:text-[#2565AA] bg-[#2565AA] hover:bg-white active:bg-white "
+					className="w-auto sm:mx-[0] mx-auto lg:ml-auto lg:mr-0 mr-auto flex items-center cursor-pointer gap-2.5 md:px-9 px-7 md:py-6 py-4 rounded-[10px] ff-poppins md:text-[17px] text-[14px] font-bold text-white hover:text-[#2565AA] active:text-[#2565AA] bg-[#2565AA] hover:bg-white active:bg-white "
 					style={{
 						border: "1px solid #2565AA",
 						transition: ".4s all",
@@ -87,7 +81,12 @@ const Footer = () => {
 				</button>
 			</div>
 
-			<p className="text-center ff-inter text-[14px] text-[#535353] py-7">
+			<p
+				className="text-center ff-inter text-[14px] text-[#535353] py-7 mt-10"
+				style={{
+					borderTop: "1px solid #DFDFDF",
+				}}
+			>
 				{" "}
 				Copyright ©{new Date().getFullYear()} Sumber Berkat Komputindo
 			</p>

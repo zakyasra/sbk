@@ -64,7 +64,7 @@ const Testimonials = () => {
 						<div className="card-main">
 							<Image
 								src={fotoTestimonials}
-								alt="person 1"
+								alt="person 2"
 								className="profile-picture"
 							/>
 							<div className="card-details">
@@ -89,7 +89,7 @@ const Testimonials = () => {
 						<div className="card-main">
 							<Image
 								src={fotoTestimonials}
-								alt="person 1"
+								alt="person 3"
 								className="profile-picture"
 							/>
 							<div className="card-details">

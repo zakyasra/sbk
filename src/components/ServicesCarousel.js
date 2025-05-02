@@ -5,15 +5,89 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/grid";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import {
+	MdChevronLeft,
+	MdChevronRight,
+	MdInstallDesktop,
+	MdSupportAgent,
+} from "react-icons/md";
 import { useEffect, useState } from "react";
 import { SiLibreofficecalc } from "react-icons/si";
+import { FaLightbulb, FaNetworkWired } from "react-icons/fa";
+import { LuCable } from "react-icons/lu";
+import { BsDatabaseFillGear } from "react-icons/bs";
+import { RiChatPrivateFill } from "react-icons/ri";
+import { FcIdea } from "react-icons/fc";
+import { FaBuildingCircleCheck } from "react-icons/fa6";
+// image
+import idea from "@/assets/services/icon-idea.png";
+import trusted from "@/assets/services/trusted.png";
+import Image from "next/image";
 const cards = Array.from({ length: 8 }, (_, i) => ({
 	id: i,
 	title: "Data Specialist",
 	description:
 		"Etiam at iaculis massa. Etiam eu enim varius, congue ante id, venenatis velit. Aenean vel.",
 }));
+
+const listServices = [
+	{
+		icon: (
+			<MdInstallDesktop className="sm:w-[56px] w-[48px] h-auto text-white" />
+		),
+		title: "End-to-End IT Solutions",
+		description:
+			"We deliver complete system integration services from initial planning, hardware/software provisioning, installation, configuration, to long-term maintenance.",
+	},
+	{
+		icon: <FaNetworkWired className="sm:w-[56px] w-[48px] h-auto text-white" />,
+		title: "Specialization in Networking and Data Communication:",
+		description:
+			"We build robust and secure network infrastructures that enable seamless data transfer and real-time communication across your entire organization.",
+	},
+	{
+		icon: <LuCable className="sm:w-[56px] w-[48px] h-auto text-white" />,
+		title: " Structured Cabling and Wiring Systems:",
+		description:
+			"Our experienced technicians design and implement structured cabling systems that support present and future networking requirements with optimal reliability and scalability.",
+	},
+	{
+		icon: <MdSupportAgent className="sm:w-[56px] w-[48px] h-auto text-white" />,
+		title: "Expert Team Support:",
+		description:
+			"Our team is composed of highly skilled professionals with deep expertise in the latest technologies from leading IT vendors. We provide ongoing support to ensure your system runs smoothly and securely.",
+	},
+	{
+		icon: (
+			<BsDatabaseFillGear className="sm:w-[56px] w-[48px] h-auto text-white" />
+		),
+		title: "Innovative Solutions",
+		description:
+			"We provide cutting-edge and tailor-made IT solutions to modernize and streamline your business operations.",
+	},
+	{
+		icon: (
+			<RiChatPrivateFill className="sm:w-[56px] w-[48px] h-auto text-white" />
+		),
+		title: "Public & Private Sector Experience:",
+		description:
+			"Our portfolio includes projects from government institutions and non-profit organizations, reflecting our versatility and commitment to excellence.",
+	},
+	{
+		icon: (
+			<FaBuildingCircleCheck className="sm:w-[56px] w-[48px] h-auto text-white" />
+		),
+		title: " Trusted by Industry Leaders:",
+		description:
+			"We are proud to be trusted by major companies across industries such as automotive, banking, education, telecommunications, and manufacturing.",
+	},
+	{
+		icon: <FaLightbulb className="sm:w-[56px] w-[48px] h-auto text-white" />,
+		title: " Innovative Solutions:",
+		description:
+			"We provide cutting-edge and tailor-made IT solutions to modernize and streamline your business operations.",
+	},
+];
 
 export default function ResponsiveCarousel() {
 	const [viewportWidth, setViewportWidth] = useState(
@@ -31,6 +105,7 @@ export default function ResponsiveCarousel() {
 	return (
 		<div
 			className="w-full bg-[#EAF3FB] flex lg:flex-row flex-col gap-12 xl:px-16 lg:px-14 md:px-12 sm:px-9 px-[24px] xl:pt-20 lg:pt-16 pt-10 mt-12"
+			id="our-services"
 			style={{
 				background: "url(/bg-services.jpg)",
 				backgroundRepeat: "no-repeat",
@@ -44,7 +119,7 @@ export default function ResponsiveCarousel() {
 				<h3 className="mb-4 ff-outfit text-[#C29D2B] text-2xl font-bold">
 					OUR SERVICES
 				</h3>
-				<h2 className="mb-6 ff-poppins lg:text-5xl lg:text-[42px] sm:text-[38px] text-[48px] text-dark font-bold">
+				<h2 className="mb-6 ff-poppins lg:text-5xl lg:text-[42px] sm:text-[38px] text-[32px] text-dark font-bold">
 					Our top{" "}
 					<span
 						className="relative inline-block text-[#2565AA]"
@@ -56,7 +131,7 @@ export default function ResponsiveCarousel() {
 					</span>{" "}
 					for you
 				</h2>
-				<p className="ff-poppins mb-6 text-[20px] text-[#132e4c99]">
+				<p className="ff-poppins mb-6 sm:text-[20px] text-[14px] text-[#132e4c99]">
 					Etiam at iaculis massa. Etiam eu enim varius, congue ante id,
 					venenatis velit. Aenean ve.
 				</p>
@@ -117,29 +192,32 @@ export default function ResponsiveCarousel() {
 					}}
 					className="max-w-7xl relative"
 				>
-					{cards.map((card) => (
+					{listServices.map((data, idx) => (
 						<SwiperSlide
-							key={card.id}
-							className="bg-white rounded-xl shadow p-5 card-services text-left"
+							key={idx}
+							className="bg-white rounded-xl shadow p-5 card-services text-left max-h-[500px] "
 						>
-							<div
-								className="w-fit p-[9px] rounded-[8px] mb-2"
-								style={{
-									backgroundImage:
-										"linear-gradient( to right, #2565AA, #0590E6)",
-								}}
-							>
-								<SiLibreofficecalc className="text-white xl:w-[32px] lg:w-[28px] md:w-[24px]   h-[32px]" />
+							<div className="flex flex-col h-fit flex flex-col justify-between	">
+								<div
+									className="w-fit p-[9px] rounded-[8px] mb-2"
+									style={{
+										backgroundImage:
+											"linear-gradient( to right, #2565AA, #0590E6)",
+									}}
+								>
+									{data.icon}
+								</div>
+								<h3 className="ff-outfit font-bold lg:text-[16px] md:text-[14px] sm:text-[16px] text-[#1D293F] mb-2 text-start">
+									{data.title}
+								</h3>
+								<p className="ff-dm-sans lg:text-[14px] text-[12px] text-[#7C8087] text-justify mt-auto">
+									{data.description}
+								</p>
 							</div>
-							<h3 className="ff-outfit font-bold lg:text-[16px] md:text-[14px] sm:text-[16px] text-[#1D293F] mb-2 text-start">
-								{card.title}
-							</h3>
-							<p className="ff-dm-sans lg:text-[14px] text-[12px] text-[#7C8087] text-justify">
-								{card.description}
-							</p>
 						</SwiperSlide>
 					))}
 				</Swiper>
+
 				{/* Pagination Bullets */}
 				{/* <div className="mt-20 text-7xl text-teal-300 bg-amber-500 w-full h-28">
 					KEREN

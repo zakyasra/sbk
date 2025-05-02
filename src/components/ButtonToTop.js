@@ -1,10 +1,12 @@
 "use client";
 import iconWhatsapp from "@/assets/whatsappButton/whatsapp-over.svg";
+import whatsapp from "@/assets/whatsappButton/whatsapp.png";
 import iconClose from "@/assets/whatsappButton/close.svg";
-
+import { IoLogoWhatsapp } from "react-icons/io";
 import { useEffect, useState } from "react";
 import icon from "@/app/chevron-top.svg";
 import Image from "next/image";
+import { FaChevronUp, FaWhatsapp } from "react-icons/fa";
 const ButtonToTop = () => {
 	const [isVisible, setIsVisible] = useState(false);
 	const [isVisible2, setIsVisible2] = useState(true);
@@ -33,14 +35,16 @@ const ButtonToTop = () => {
 
 	return (
 		<>
-			<div className="fixed right-0 bottom-20 flex flex-col gap-8 items-end">
+			<div
+				className="fixed md:right-[24px] sm:right-[16px] right-[8px] bottom-20 flex flex-col gap-8 items-end"
+				style={{
+					zIndex: "999",
+				}}
+			>
 				<div
-					className={`flex gap-2 items-center ${
+					className={`flex sm:gap-4 gap-2 items-center ${
 						isVisible ? "opacity-100" : "opacity-0"
 					}`}
-					style={{
-						zIndex: "99999",
-					}}
 				>
 					{/* container text */}
 					<div
@@ -50,7 +54,7 @@ const ButtonToTop = () => {
 								: "hidden"
 						}`}
 					>
-						<div className="flex flex-col gap-1 text-[#2565AA] font-semibold text-[14px]">
+						<div className="flex flex-col gap-1 text-[#2565AA] font-semibold sm:text-[14px] text-[12px]">
 							<span>Having a problem? if you have any</span>
 							<span>question please let us know!</span>
 						</div>
@@ -62,24 +66,26 @@ const ButtonToTop = () => {
 						/>
 					</div>
 					<Image
-						src={iconWhatsapp}
+						src={whatsapp}
 						alt="Icon Whatsapp"
-						className="w-auto h-[80px] cursor-pointer"
+						className="lg:w-[50px] md:w-[40px] w-[35px] h-auto cursor-pointer"
 					/>
 				</div>
 				<button
 					onClick={scrollToTop}
-					className={`cursor-pointer text-2xl text-white rounded-full transition-opacity duration-300 mr-4 ${
+					className={`icon-top cursor-pointer p-2 transition-all duration-300  text-2xl text-white rounded-full transition-opacity duration-300 z-[99px] text-white hover:text-[#2565AA] active:text-[#2565AA] bg-[#2565AA] hover:bg-white active:bg-white  ${
 						isVisible ? "opacity-100" : "opacity-0"
 					}`}
 					style={{
-						width: "40px",
-						height: "40px",
-						background: "#2565AA",
-						zIndex: "99",
+						border: "1px solid #2565AA",
+						boxSizing: "border-box",
 					}}
 				>
-					<Image src={icon} alt="icon to top" className="text-white" />
+					<FaChevronUp
+						src={icon}
+						alt="icon to top"
+						className="logo-top text-[inherit] transition-all duration-300 lg:w-[35px] md:w-[25px] w-[20px] h-auto cursor-pointer"
+					/>
 				</button>
 			</div>
 		</>
