@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import iconSearch from "@/assets/search-icon.svg";
 import { MdClose } from "react-icons/md";
@@ -50,7 +51,7 @@ const HeroBanner = ({
 								))} */}
 						</h1>
 					</div>
-					{search != undefined && (
+					{search !== undefined && typeof setSearch === "function" && (
 						<div className="flex justify-center mb-14">
 							<div className="relative overflow-hidden rounded-[10px]">
 								<input
