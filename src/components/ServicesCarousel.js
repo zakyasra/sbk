@@ -12,23 +12,12 @@ import {
 	MdSupportAgent,
 } from "react-icons/md";
 import { useEffect, useState } from "react";
-import { SiLibreofficecalc } from "react-icons/si";
 import { FaLightbulb, FaNetworkWired } from "react-icons/fa";
 import { LuCable } from "react-icons/lu";
 import { BsDatabaseFillGear } from "react-icons/bs";
 import { RiChatPrivateFill } from "react-icons/ri";
-import { FcIdea } from "react-icons/fc";
 import { FaBuildingCircleCheck } from "react-icons/fa6";
 // image
-import idea from "@/assets/services/icon-idea.png";
-import trusted from "@/assets/services/trusted.png";
-import Image from "next/image";
-const cards = Array.from({ length: 8 }, (_, i) => ({
-	id: i,
-	title: "Data Specialist",
-	description:
-		"Etiam at iaculis massa. Etiam eu enim varius, congue ante id, venenatis velit. Aenean vel.",
-}));
 
 const listServices = [
 	{
@@ -171,15 +160,7 @@ export default function ResponsiveCarousel() {
 						0: {
 							slidesPerView: 1.3,
 							grid: {
-								rows: 2,
-								fill: "row",
-							},
-						},
-						430: {
-							slidesPerView: 2,
-							grid: {
-								rows: 2,
-								fill: "row",
+								rows: 1,
 							},
 						},
 						576: {
@@ -195,9 +176,9 @@ export default function ResponsiveCarousel() {
 					{listServices.map((data, idx) => (
 						<SwiperSlide
 							key={idx}
-							className="bg-white rounded-xl shadow p-5 card-services text-left max-h-[500px] "
+							className="bg-white rounded-xl shadow p-5 card-services text-left max-h-[500px]"
 						>
-							<div className="flex flex-col h-fit flex flex-col justify-between	">
+							<div className="flex flex-col justify-between	">
 								<div
 									className="w-fit p-[9px] rounded-[8px] mb-2"
 									style={{
