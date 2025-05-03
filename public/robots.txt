@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://sbk.co.id
+
+# Sitemaps
+Sitemap: https://sbk.co.id/sitemap.xml
