@@ -11,7 +11,7 @@ export default function page() {
 			<HeroBanner
 				title={"Let's See All of Our Clients"}
 				content={
-					"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis egestas pellentesque libero dolor in diam consequat ut. "
+					"Join leading clients in automotive, banking, education, telecommunications, manufacturing, government institutions, and non‑profits who trust our precision‑driven project delivery and proven expertise."
 				}
 				position={"left"}
 				image={"/hero-clients.jpg"}

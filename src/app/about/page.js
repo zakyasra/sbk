@@ -15,22 +15,24 @@ function page() {
 		"Comprehensive & Integrated Solutions",
 		"Backed by Experienced IT Experts",
 		"Cost Efficiency Without Compromising Quality ",
-		"Specialized in Networking & Data Communication",
+		"Specialized in Networking, Data Communication, & Wiring Specialist",
 	];
 	return (
 		<div className="mb-14">
 			{/* hero sections */}
 
 			<HeroBanner
+				linkId="page-about-us"
 				image={"/about-hero.jpg"}
 				position={"left"}
 				title={"Get To Know About Our Company"}
 				content={
-					"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis egestas pellentesque libero dolor in diam consequat ut. "
+					" PT. Sumber Berkat Komputindo has delivered end‑to‑end ICT solutions, specializing in networking, data communication, and wiring systems to empower businesses with reliable and scalable infrastructure."
 				}
 			/>
 			{/* about us */}
 			<HeroTop
+				id="page-about-us"
 				title={"Introduction"}
 				titleBlue={"Sumber Berkat Komputindo"}
 				subTitle={"ABOUT US"}

@@ -20,7 +20,7 @@ function page() {
 			</div>
 			<div className="flex md:flex-row flex-col md:gap-0 gap-12">
 				<div className="md:w-1/2 lg:px-20 md:px-12 sm:px-9 px-6 xl:py-16 lg:py-12 py-6">
-					<h3 className="text-secondary font-bold ff-outfit lg:text-[24px] md:text-[20px] text-[16px] mb-6">
+					<h3 className="text-secondary font-bold ff-outfit lg text-[24px] sm:mb-6 mb-2">
 						CONTACT
 					</h3>
 					<div className="form">
@@ -28,7 +28,7 @@ function page() {
 							Connect With Your Next Great Hire Today!
 						</h2>
 						<form>
-							<div className="grid grid-cols-2 gap-x-6 gap-y-10">
+							<div className="grid sm:grid-cols-2 grid-cols-1 gap-x-6 sm:gap-y-10 gap-y-6">
 								<div>
 									<p className="ff-outfit font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-dark">
 										Company
@@ -83,12 +83,12 @@ function page() {
 									}}
 								></textarea>
 							</div>
-							<div className="flex items-start gap-4">
+							<div className="flex md:items-start items-center gap-4">
 								<input
 									type="checkbox"
 									// name="myCheckbox"
 									id="myCheckbox"
-									className="w-[24px] h-[24px]  accent-[#132e4c] outline-0 cursor-pointer"
+									className="w-min-[16px] h-min-[16px] md:h-[36px] h-[16px]  md:w-[36px] w-[16px]   accent-[#132e4c] outline-0 cursor-pointer"
 								/>
 								<label
 									htmlFor="myCheckbox"
@@ -101,14 +101,14 @@ function page() {
 								</label>
 							</div>
 							<button
-								className="mt-5 ff-poppins flex items-center text-left w-fit gap-4 cursor-pointer  lg:ps-7 md:ps-5 ps-4 lg:pr-12 md:pr-9 pr-6 lg:py-4 md:py-2 sm:py-3.5 py-3 rounded-[10px] font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-white hover:text-[#2565AA] bg-[#2565AA] hover:bg-white"
+								className="mt-5 ff-poppins flex items-center text-left w-fit gap-4 cursor-pointer  lg:ps-7 md:ps-5 ps-4 lg:pr-12 md:pr-9 pr-6 lg:py-4 md:py-2 sm:py-3.5 py-3 rounded-[10px] font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-white hover:text-[#2565AA] active:text-[#2565AA] bg-[#2565AA] hover:bg-white active:bg-white"
 								style={{
 									transition: ".4s all",
 									border: "1px solid #2565AA",
 								}}
 							>
 								GET CONSULTATION
-								<FaArrowRight color="white" className="w-[24px] h-[24px]" />
+								<FaArrowRight className="text-[inherit] w-[24px] h-[24px]" />
 							</button>
 						</form>
 					</div>
@@ -119,7 +119,7 @@ function page() {
 						backgroundImage: "url(/bg-contact.jpg)",
 					}}
 				>
-					<div className="flex flex-col xxl:w-[30%] xl:w-[35%] lg:w-[40%] md:w-[45%] sm:w-[50%] w-[60%]">
+					<div className="flex flex-col xxl:w-[30%] xl:w-[35%] lg:w-[40%] md:w-[55%] sm:w-[60%] w-[80%]">
 						<h3 className="ff-poppins xl:text-[32px] lg:text-[28px] md:text-[24px] text-[20px] font-bold text-dark mb-5">
 							Contact Info
 						</h3>
