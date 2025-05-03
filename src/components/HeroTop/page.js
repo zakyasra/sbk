@@ -1,9 +1,10 @@
 import Title from "./Title";
 
-function HeroTop({ title, subTitle, titleBlue, text1, text2 }) {
+function HeroTop({ title, id, subTitle, titleBlue, text1, text2 }) {
 	return (
 		<div
-			className="xl:px-16 lg:px-14 md:px-12 sm:px-9 px-[24px] h-[100vh] max-h-[768px] py-20"
+			id={id}
+			className="xl:px-16 lg:px-14 md:px-12 sm:px-9 px-[24px]  max-h-[768px] py-20"
 			style={{
 				boxSizing: "border-box",
 			}}

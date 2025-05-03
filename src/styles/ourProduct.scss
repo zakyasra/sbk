@@ -10,3 +10,26 @@
 	justify-content: center;
 	overflow: hidden;
 }
+.page-input {
+	width: 50px;
+	text-align: center;
+	padding: 10px;
+	margin: 0 5px;
+	border-radius: 5px;
+	border: 1px solid #2565aa;
+	color: #2565aa;
+	font-weight: bold;
+}
+.page-input:focus {
+	outline-color: #2565aa;
+}
+.page-number {
+	padding: 10px;
+	border-radius: 5px;
+	margin: 0 5px;
+	font-weight: bold;
+}
+.page-number.active {
+	background-color: #2565aa;
+	color: white;
+}

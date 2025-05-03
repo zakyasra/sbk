@@ -10,6 +10,7 @@ import arrowHover from "@/assets/footer/arrow-hover.svg";
 import "../styles/footer.scss";
 import { useState } from "react";
 import IconSocialMedia from "./IconSocialMedia";
+import { FaArrowUp } from "react-icons/fa";
 const Footer = () => {
 	const scrollToTop = () => {
 		window.scrollTo({
@@ -27,7 +28,7 @@ const Footer = () => {
 			}}
 		>
 			<div className="bg-[#FAFAFA] xl:px-[74px] lg:px-14 md:px-12 px-6 md:pt-16 pt-10 md:pb-6 flex lg:flex-row flex-col md:items-start ff-poppins lg:gap-0 gap-6">
-				<div className="flex md:flex-row flex-col lg:justify-content-between lg:gap-0 gap-12 w-full ">
+				<div className="flex md:flex-row flex-col lg:justify-content-between lg:gap-0 gap-12 w-auto ">
 					{/* logo */}
 					<div className="md:w-1/2">
 						<Image
@@ -42,7 +43,7 @@ const Footer = () => {
 						<IconSocialMedia footer />
 					</div>
 					{/* Our Navbar */}
-					<div className="lg:mx-auto flex md:flex-row md:items-start lg:gap-14 gap-10">
+					<div className="lg:mx-auto flex md:flex-row  md:items-start lg:gap-14 gap-10">
 						<div>
 							<h3 className="text-[#1E1E1E] text-[20px] font-semibold">
 								Our Products
@@ -67,17 +68,15 @@ const Footer = () => {
 					</div>
 				</div>
 				<button
-					className="w-auto sm:mx-[0] mx-auto lg:ml-auto lg:mr-0 mr-auto flex items-center cursor-pointer gap-2.5 md:px-9 px-7 md:py-6 py-4 rounded-[10px] ff-poppins md:text-[17px] text-[14px] font-bold text-white hover:text-[#2565AA] active:text-[#2565AA] bg-[#2565AA] hover:bg-white active:bg-white "
+					className="w-fit md:min-w-[230px] min-w-auto max-w-[none] sm:mx-[0] mx-auto lg:ml-auto lg:mr-0 mr-auto flex items-center cursor-pointer  md:px-9 px-7 md:py-6 py-4 rounded-[10px] ff-poppins md:text-[17px] text-[14px] font-bold text-white hover:text-[#2565AA] active:text-[#2565AA] bg-[#2565AA] hover:bg-white active:bg-white "
 					style={{
 						border: "1px solid #2565AA",
 						transition: ".4s all",
 					}}
 					onClick={scrollToTop}
-					onMouseEnter={() => setIsHovered(true)}
-					onMouseLeave={() => setIsHovered(false)}
 				>
 					<span>BACK TO TOP</span>
-					<Image src={isHovered ? arrowHover : arrowWhite} alt="icon to top" />
+					<FaArrowUp className="w-[24px] h-auto text-inherit ms-2.5" />
 				</button>
 			</div>
 
@@ -88,7 +87,7 @@ const Footer = () => {
 				}}
 			>
 				{" "}
-				Copyright ©{new Date().getFullYear()} Sumber Berkat Komputindo
+				Copyright ©{new Date().getFullYear()} PT Sumber Berkat Komputindo
 			</p>
 		</footer>
 	);

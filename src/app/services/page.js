@@ -13,6 +13,7 @@ import { MdInstallDesktop, MdSupportAgent } from "react-icons/md";
 import { BsDatabaseFillGear } from "react-icons/bs";
 import { LuCable } from "react-icons/lu";
 import { RiChatPrivateFill } from "react-icons/ri";
+import Link from "next/link";
 const page = () => {
 	const listServicesLeft = [
 		{
@@ -69,7 +70,7 @@ const page = () => {
 				position={"center"}
 				image={"/hero-services.jpg"}
 				content={
-					"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis egestas pellentesque libero dolor in diam consequat ut. "
+					"Explore our professional services—from strategic network planning and hardware provisioning to structured cabling installation and 24/7 system support—designed to optimize performance and drive growth. "
 				}
 			/>
 			<div className="flex sm:flex-row flex-col-reverse " id="get-to-know">
@@ -128,15 +129,17 @@ const page = () => {
 						<h4 className="ff-outfit font-bold xl:text-[30px] lg:text-[26px] md:text-[22px] sm:text-[18px] text-[20px]">
 							Get Free Consultation
 						</h4>
-						<div
-							className="lg:px-[22px] md:px-[18px] sm:px-[14px] md:py-[17px] sm:py-[15px] py-[18px] ff-poppins md:text-[14px] sm:text-[12px] text-[16px] text-center font-semibold cursor-pointer transition-all duration-300 text-white hover:text-[#132e4c] active:text-[#132e4c] bg-transparent hover:bg-white active:bg-white"
-							style={{
-								border: "5px solid white",
-								letterSpacing: "2px",
-							}}
-						>
-							ONLINE ESTIMATE FORM
-						</div>
+						<Link href={"/contact"}>
+							<div
+								className="lg:px-[22px] md:px-[18px] sm:px-[14px] md:py-[17px] sm:py-[15px] py-[18px] ff-poppins md:text-[14px] sm:text-[12px] text-[16px] text-center font-semibold cursor-pointer transition-all duration-300 text-white hover:text-[#132e4c] active:text-[#132e4c] bg-transparent hover:bg-white active:bg-white"
+								style={{
+									border: "5px solid white",
+									letterSpacing: "2px",
+								}}
+							>
+								ONLINE ESTIMATE FORM
+							</div>
+						</Link>
 					</div>
 				</div>
 			</div>

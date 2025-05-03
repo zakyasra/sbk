@@ -4,7 +4,7 @@ import iconSearch from "@/assets/search-icon.svg";
 import { MdClose } from "react-icons/md";
 
 const HeroBanner = ({
-	linkId = " ",
+	linkId = "",
 	position,
 	title,
 	search,

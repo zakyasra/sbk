@@ -36,7 +36,7 @@ const dataProducts = [
 		image: techwise,
 		title: "TECHWISE",
 		desc: "IT solutions provider offering consulting, system integration, and support services.",
-		link: "https://www.https://www.techwisetech.com",
+		link: "https://www.techwisetech.com",
 	},
 	{
 		image: cisco,
@@ -131,6 +131,45 @@ const useDebounce = (value, delay) => {
 	}, [value, delay]);
 	return debounced;
 };
+function PageInput({ totalPages, onChange }) {
+	const [inputValue, setInputValue] = useState("");
+	const [isEditing, setIsEditing] = useState(false);
+	const debouncedValue = useDebounce(inputValue, 500);
+
+	useEffect(() => {
+		if (debouncedValue && isEditing) {
+			const pageNum = parseInt(debouncedValue, 10);
+			if (pageNum >= 1 && pageNum <= totalPages) {
+				onChange(pageNum);
+			}
+		}
+	}, [debouncedValue]);
+
+	const handleBlur = () => {
+		setIsEditing(false);
+	};
+
+	return isEditing ? (
+		<input
+			autoFocus
+			type="number"
+			min="1"
+			max={totalPages}
+			value={inputValue}
+			onChange={(e) => setInputValue(e.target.value)}
+			onBlur={handleBlur}
+			onMouseLeave={handleBlur}
+			className="h-[48px] w-[60px] text-center border rounded text-[#2565AA]"
+		/>
+	) : (
+		<button
+			onClick={() => setIsEditing(true)}
+			className="h-[48px] px-3 flex items-center justify-center rounded border font-semibold text-[#2565AA] bg-white"
+		>
+			...
+		</button>
+	);
+}
 
 function OurProducts({ search = "", limit, pagination }) {
 	const debouncedSearch = useDebounce(search, 500);
@@ -181,8 +220,14 @@ function OurProducts({ search = "", limit, pagination }) {
 	);
 
 	const maxPaginationShown = 5;
-	const startPage = paginationGroup * maxPaginationShown + 1;
-	const endPage = Math.min(startPage + maxPaginationShown - 1, totalPages);
+	let startPage = Math.max(1, currentPage - Math.floor(maxPaginationShown / 2));
+	let endPage = startPage + maxPaginationShown - 1;
+
+	if (endPage > totalPages) {
+		endPage = totalPages;
+		startPage = Math.max(1, endPage - maxPaginationShown + 1);
+	}
+
 	const pageNumbers = Array.from(
 		{ length: endPage - startPage + 1 },
 		(_, i) => startPage + i
@@ -207,7 +252,7 @@ function OurProducts({ search = "", limit, pagination }) {
 
 	return (
 		<div
-			className="xl:px-16 lg:px-12 sm:px-9 px-[24px] xl:py-20 lg:py-16 md:py-10 py-[16px]"
+			className="xl:px-16 lg:px-12 sm:px-9 px-[24px] xl:pb-20 xl:pt-28 lg:pb-16 lg:pt-10 md:pt-12 pb-10 pt-20"
 			id="see-products"
 		>
 			<Title
@@ -227,7 +272,7 @@ function OurProducts({ search = "", limit, pagination }) {
 					{displayedData.map((item, idx) => (
 						<div
 							key={idx}
-							className="card flex flex-col justify-between px-2 pt-2 pb-4 rounded-2xl sm:mx-0 mx-auto h-full"
+							className="card flex flex-col sm:h-auto max-h-[400px] justify-between px-2 pt-2 pb-4 rounded-2xl sm:mx-0 mx-auto h-full"
 							style={{
 								maxWidth: "350px",
 								height: "100%",
@@ -248,16 +293,16 @@ function OurProducts({ search = "", limit, pagination }) {
 									<Image
 										src={noImage}
 										alt="Card Products"
-										className="object-contain w-full h-full"
+										className="object-contain h-fit w-auto"
 									/>
 								</div>
 							)}
 
-							<div className="flex flex-col justify-between h-full gap-4 max-h-[200px]">
-								<p className="ff-outfit font-semibold sm:text-[20px] text-[18px] text-dark">
+							<div className="flex flex-col justify-between h-auto gap-4">
+								<p className="ff-outfit font-semibold sm:text-[20px] text-[16px] text-dark">
 									{item.title}
 								</p>
-								<p className="ff-poppins text-[16px] text-[#425466]">
+								<p className="ff-poppins sm:text-[16px] text-[12px] text-[#425466]">
 									{item.desc}
 								</p>
 								<a
@@ -280,35 +325,83 @@ function OurProducts({ search = "", limit, pagination }) {
 			{/* Pagination */}
 			{pagination && (
 				<div className="flex justify-center items-center xxl:mt-16 xl:mt-12 lg:mt-10 mt-8 gap-2">
-					{paginationGroup > 0 && (
+					{/* Icon kiri */}
+					{currentPage > 1 && (
 						<button
-							onClick={handlePrevGroup}
-							className="h-[64px] w-[64px] flex items-center justify-center p-[20px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
+							onClick={() => handlePageChange(currentPage - 1)}
+							className="flex items-center justify-center lg:p-[12px] sm:p-[12px] p-[8px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
 						>
-							<FaChevronLeft className="w-[24px] h-[24px] " />
+							<FaChevronLeft className="text-[inherit] lg:w-[18px] md:w-[16px] sm:w-[14px] w-[16px] h-auto" />
 						</button>
 					)}
 
-					{pageNumbers.map((num) => (
+					{/* Halaman 1 */}
+					<button
+						onClick={() => handlePageChange(1)}
+						className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
+							currentPage === 1
+								? "bg-[#2565AA] text-white"
+								: "bg-white text-[#2565AA]"
+						}`}
+					>
+						1
+					</button>
+
+					{/* Halaman 2 (jika ada) */}
+					{totalPages > 1 && (
 						<button
-							key={num}
-							onClick={() => handlePageChange(num)}
-							className={`h-[64px] w-[64px] flex items-center justify-center cursor-pointer p-[20px] rounded border ff-inter font-extrabold text-[18px] hover:bg-[#2565AA] hover:text-[#FFF] transition-all duration-300 ${
-								num === currentPage
+							onClick={() => handlePageChange(2)}
+							className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
+								currentPage === 2
 									? "bg-[#2565AA] text-white"
 									: "bg-white text-[#2565AA]"
 							}`}
 						>
-							{num}
+							2
 						</button>
-					))}
+					)}
 
-					{(paginationGroup + 1) * maxPaginationShown < totalPages && (
+					{/* Input halaman manual */}
+					{totalPages > 3 && (
+						<input
+							type="number"
+							min={1}
+							max={totalPages}
+							placeholder="..."
+							onKeyDown={(e) => {
+								if (e.key === "Enter") {
+									const value = parseInt(e.target.value, 10);
+									if (!isNaN(value) && value >= 1 && value <= totalPages) {
+										handlePageChange(value);
+									}
+									e.target.value = ""; // reset input setelah enter
+								}
+							}}
+							className="flex text-center items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ff-inter  text-[#2565AA] placeholder-[#2565AA] focus:outline-[#2565AA]"
+						/>
+					)}
+
+					{/* Halaman terakhir */}
+					{totalPages > 3 && (
 						<button
-							onClick={handleNextGroup}
-							className="h-[64px] w-[64px] flex items-center justify-center p-[20px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
+							onClick={() => handlePageChange(totalPages)}
+							className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
+								currentPage === totalPages
+									? "bg-[#2565AA] text-white"
+									: "bg-white text-[#2565AA]"
+							}`}
 						>
-							<FaChevronRight className="w-[24px] h-[24px] " />
+							{totalPages}
+						</button>
+					)}
+
+					{/* Icon kanan */}
+					{currentPage < totalPages && (
+						<button
+							onClick={() => handlePageChange(currentPage + 1)}
+							className="flex items-center justify-center lg:p-[12px] sm:p-[12px] p-[8px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
+						>
+							<FaChevronRight className="text-[inherit] lg:w-[18px] md:w-[16px] sm:w-[14px] w-[16px] h-auto" />
 						</button>
 					)}
 				</div>

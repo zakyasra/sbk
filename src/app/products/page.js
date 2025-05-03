@@ -11,6 +11,7 @@ function page() {
 	return (
 		<div>
 			<HeroBanner
+				linkId="see-products"
 				search={search}
 				setSearch={setSearch}
 				title={"Explore Our"}
@@ -18,7 +19,7 @@ function page() {
 				position={"center"}
 				image={"/hero-product.jpg"}
 				content={
-					"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis egestas pellentesque libero dolor in diam consequat ut. "
+					"Browse our portfolio of industry‑leading network and wiring products, including high‑performance fiber patch cords, media converters, structured cabling kits, and branded solutions from Cisco, APC, and Techwise."
 				}
 			/>
 			<OurProducts search={search} pagination={true} />

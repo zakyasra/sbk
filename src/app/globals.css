@@ -97,30 +97,34 @@ body {
 	color: #132e4c;
 	font-weight: 600;
 	font-size: 18px;
-	&::placeholder {
-		color: #abb7c2;
-		font-size: 18px;
-		font-family: Poppins, sans-serif;
-	}
-	&:focus {
-		border-color: #2565aa !important;
-		outline: #2565aa !important;
-	}
+}
+.input-width::placeholder {
+	color: #abb7c2;
+	font-size: 18px;
+	font-family: Poppins, sans-serif;
+}
+.input-width:focus {
+	border-color: #2565aa !important;
+	outline: #2565aa !important;
 }
 
 .input-contact {
 	padding: 8px 20px;
 	border: 1px solid #c5e0ff;
 	width: 100%;
-	&:hover,
-	&:focus {
-		outline: #2565aa;
-		border-color: #2565aa;
-	}
-	&::placeholder {
-		color: rgba(0, 0, 0, 0.5);
-		font-size: 16px;
-	}
+}
+.input-contact:focus {
+	outline: none;
+	border: 2px solid #2565aa;
+}
+.input-width:hover .input-width:focus {
+	outline: #2565aa;
+	border-color: #2565aa;
+}
+.input-width::placeholder,
+.input-width::placeholder {
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 16px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -134,19 +138,17 @@ body {
 	}
 	.input-width {
 		font-size: 16px;
-		&::placeholder {
-			font-size: 16px;
-		}
+	}
+	.input-width::placeholder {
+		font-size: 16px;
 	}
 }
 @media screen and (max-width: 768px) {
 	.main-logo {
 		width: 400px !important;
 	}
-	.input-contact {
-		&::placeholder {
-			font-size: 14px;
-		}
+	.input-contact::placeholder {
+		font-size: 14px;
 	}
 }
 @media screen and (max-width: 576px) {
@@ -156,14 +158,13 @@ body {
 
 	.input-width {
 		font-size: 14px;
-		&::placeholder {
-			font-size: 13px;
-		}
 	}
-	.input-contact {
-		&::placeholder {
-			font-size: 12px;
-		}
+	.input-width::placeholder {
+		font-size: 13px;
+	}
+
+	.input-contact::placeholder {
+		font-size: 12px;
 	}
 }
 @media screen and (max-width: 420px) {
@@ -186,13 +187,13 @@ body {
 	opacity: 1 !important;
 	height: 12px !important;
 	width: 12px !important;
-	&:hover {
-		background-color: #2565aa !important;
-	}
-	&.swiper-pagination-bullet-active {
-		border-radius: 20px;
-		width: 39px !important;
-		height: 12px !important;
-		background-image: linear-gradient(to right, #2565aa, #0590e6) !important;
-	}
+}
+.swiper-pagination-bullet:hover {
+	background-color: #2565aa !important;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+	border-radius: 20px;
+	width: 39px !important;
+	height: 12px !important;
+	background-image: linear-gradient(to right, #2565aa, #0590e6) !important;
 }
