@@ -131,45 +131,6 @@ const useDebounce = (value, delay) => {
 	}, [value, delay]);
 	return debounced;
 };
-function PageInput({ totalPages, onChange }) {
-	const [inputValue, setInputValue] = useState("");
-	const [isEditing, setIsEditing] = useState(false);
-	const debouncedValue = useDebounce(inputValue, 500);
-
-	useEffect(() => {
-		if (debouncedValue && isEditing) {
-			const pageNum = parseInt(debouncedValue, 10);
-			if (pageNum >= 1 && pageNum <= totalPages) {
-				onChange(pageNum);
-			}
-		}
-	}, [debouncedValue]);
-
-	const handleBlur = () => {
-		setIsEditing(false);
-	};
-
-	return isEditing ? (
-		<input
-			autoFocus
-			type="number"
-			min="1"
-			max={totalPages}
-			value={inputValue}
-			onChange={(e) => setInputValue(e.target.value)}
-			onBlur={handleBlur}
-			onMouseLeave={handleBlur}
-			className="h-[48px] w-[60px] text-center border rounded text-[#2565AA]"
-		/>
-	) : (
-		<button
-			onClick={() => setIsEditing(true)}
-			className="h-[48px] px-3 flex items-center justify-center rounded border font-semibold text-[#2565AA] bg-white"
-		>
-			...
-		</button>
-	);
-}
 
 function OurProducts({ search = "", limit, pagination }) {
 	const debouncedSearch = useDebounce(search, 500);
@@ -228,31 +189,14 @@ function OurProducts({ search = "", limit, pagination }) {
 		startPage = Math.max(1, endPage - maxPaginationShown + 1);
 	}
 
-	const pageNumbers = Array.from(
-		{ length: endPage - startPage + 1 },
-		(_, i) => startPage + i
-	);
-
 	const handlePageChange = (page) => {
 		setSwipeDirection(page > currentPage ? "right" : "left");
 		setCurrentPage(page);
 	};
 
-	const handleNextGroup = () => {
-		if ((paginationGroup + 1) * maxPaginationShown < totalPages) {
-			setPaginationGroup(paginationGroup + 1);
-		}
-	};
-
-	const handlePrevGroup = () => {
-		if (paginationGroup > 0) {
-			setPaginationGroup(paginationGroup - 1);
-		}
-	};
-
 	return (
 		<div
-			className="xl:px-16 lg:px-12 sm:px-9 px-[24px] xl:pb-20 xl:pt-28 lg:pb-16 lg:pt-10 md:pt-12 pb-10 pt-20"
+			className="content-container xl:px-16 lg:px-12 sm:px-9 px-[24px] xl:pb-20 xl:pt-28 lg:pb-16 lg:pt-10 md:pt-12 pb-10 pt-20"
 			id="see-products"
 		>
 			<Title
@@ -377,7 +321,14 @@ function OurProducts({ search = "", limit, pagination }) {
 									e.target.value = ""; // reset input setelah enter
 								}
 							}}
-							className="flex text-center items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ff-inter  text-[#2565AA] placeholder-[#2565AA] focus:outline-[#2565AA]"
+							onBlur={(e) => {
+								const value = parseInt(e.target.value, 10);
+								if (!isNaN(value) && value >= 1 && value <= totalPages) {
+									handlePageChange(value);
+								}
+								e.target.value = ""; //
+							}}
+							className="input-pagination flex text-center items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ff-inter  text-[#2565AA] placeholder-[#2565AA] focus:outline-[#2565AA]"
 						/>
 					)}
 

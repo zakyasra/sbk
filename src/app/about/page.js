@@ -48,7 +48,7 @@ function page() {
 				link={"/services"}
 			/>
 			{/* the advantages */}
-			<div className="grid md:grid-cols-2 grid-cols-1 md:gap-12 gap-12 xl:ps-28 lg:ps-20 pr-12 md:ps-16 sm:ps-12 px-[24px]">
+			<div className="content-container grid md:grid-cols-2 grid-cols-1 md:gap-12 gap-12 xl:ps-28 lg:ps-20 pr-12 md:ps-16 sm:ps-12 px-[24px]">
 				{/* left section */}
 				<div className="py-5">
 					<h3 className="ff-outfit lg:text-2xl sm:text-[20px] text-[16px] font-bold text-secondary md:mb-6 sm:mb-3 mb-2">

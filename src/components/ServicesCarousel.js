@@ -93,8 +93,7 @@ export default function ResponsiveCarousel() {
 
 	return (
 		<div
-			className="w-full bg-[#EAF3FB] flex lg:flex-row flex-col gap-12 xl:px-16 lg:px-14 md:px-12 sm:px-9 px-[24px] xl:pt-20 lg:pt-16 pt-10 mt-12"
-			id="our-services"
+			className="bg-[#EAF3FB]"
 			style={{
 				background: "url(/bg-services.jpg)",
 				backgroundRepeat: "no-repeat",
@@ -103,114 +102,119 @@ export default function ResponsiveCarousel() {
 				// overflow: " hidden",
 			}}
 		>
-			{/* Title & Controls */}
-			<div className="lg:max-w-[444px] w-full">
-				<h3 className="mb-4 ff-outfit text-[#C29D2B] text-2xl font-bold">
-					OUR SERVICES
-				</h3>
-				<h2 className="mb-6 ff-poppins lg:text-5xl lg:text-[42px] sm:text-[38px] text-[32px] text-dark font-bold">
-					Our top{" "}
-					<span
-						className="relative inline-block text-[#2565AA]"
-						style={{
-							borderBottom: "10px solid #2565AA",
-						}}
-					>
-						Services
-					</span>{" "}
-					for you
-				</h2>
-				<p className="ff-poppins mb-6 sm:text-[20px] text-[14px] text-[#132e4c99]">
-					Etiam at iaculis massa. Etiam eu enim varius, congue ante id,
-					venenatis velit. Aenean ve.
-				</p>
-				{/* Prev / Next Buttons */}
-				<div className="flex md:justify-start gap-4 items-center">
-					<div
-						className="cursor-pointer swiper-button-prev-custom rounded-[50%] bg-white hover:bg-[#2565AA] active:bg-[#2565AA] text-[#2565AA] hover:text-white active:text-white duration-300 transition-all"
-						style={{
-							border: "2px solid #2565AA",
-						}}
-					>
-						<MdChevronLeft className="xl:w-[48px] md:w-[40px] w-[32px] h-auto" />
-					</div>
-					<div
-						className="cursor-pointer swiper-button-next-custom rounded-[50%] bg-white hover:bg-[#2565AA] active:bg-[#2565AA] text-[#2565AA] hover:text-white active:text-white duration-300 transition-all"
-						style={{
-							border: "2px solid #2565AA",
-						}}
-					>
-						<MdChevronRight className="xl:w-[48px] md:w-[40px] w-[32px] h-auto" />
+			<div
+				className="w-full content-container flex lg:flex-row flex-col gap-12 xl:px-16 lg:px-14 md:px-12 sm:px-9 px-[24px] xl:pt-20 lg:pt-16 pt-10 mt-12"
+				id="our-services"
+			>
+				{/* Title & Controls */}
+				<div className="lg:max-w-[444px] w-full">
+					<h3 className="mb-4 ff-outfit text-[#C29D2B] text-2xl font-bold">
+						OUR SERVICES
+					</h3>
+					<h2 className="mb-6 ff-poppins lg:text-5xl lg:text-[42px] sm:text-[38px] text-[32px] text-dark font-bold">
+						Our top{" "}
+						<span
+							className="relative inline-block text-[#2565AA]"
+							style={{
+								borderBottom: "10px solid #2565AA",
+							}}
+						>
+							Services
+						</span>{" "}
+						for you
+					</h2>
+					<p className="ff-poppins mb-6 sm:text-[20px] text-[14px] text-[#132e4c99]">
+						Etiam at iaculis massa. Etiam eu enim varius, congue ante id,
+						venenatis velit. Aenean ve.
+					</p>
+					{/* Prev / Next Buttons */}
+					<div className="flex md:justify-start gap-4 items-center">
+						<div
+							className="cursor-pointer swiper-button-prev-custom rounded-[50%] bg-white hover:bg-[#2565AA] active:bg-[#2565AA] text-[#2565AA] hover:text-white active:text-white duration-300 transition-all"
+							style={{
+								border: "2px solid #2565AA",
+							}}
+						>
+							<MdChevronLeft className="xl:w-[48px] md:w-[40px] w-[32px] h-auto" />
+						</div>
+						<div
+							className="cursor-pointer swiper-button-next-custom rounded-[50%] bg-white hover:bg-[#2565AA] active:bg-[#2565AA] text-[#2565AA] hover:text-white active:text-white duration-300 transition-all"
+							style={{
+								border: "2px solid #2565AA",
+							}}
+						>
+							<MdChevronRight className="xl:w-[48px] md:w-[40px] w-[32px] h-auto" />
+						</div>
 					</div>
 				</div>
-			</div>
 
-			{/* Swiper */}
-			<div className="xl:max-w-[620px] lg:max-w-[520px] mx-auto w-full h-full xl:px-12 lg:ps-12  ">
-				<Swiper
-					key={viewportWidth}
-					modules={[Navigation, Pagination, Grid]}
-					navigation={{
-						nextEl: ".swiper-button-next-custom",
-						prevEl: ".swiper-button-prev-custom",
-					}}
-					pagination={{ clickable: true }}
-					spaceBetween={20}
-					breakpoints={{
-						0: {
-							slidesPerView: 1.3,
-							grid: {
-								rows: 1,
+				{/* Swiper */}
+				<div className="xl:max-w-[620px] lg:max-w-[520px] mx-auto w-full h-full xl:px-12 lg:ps-12  ">
+					<Swiper
+						key={viewportWidth}
+						modules={[Navigation, Pagination, Grid]}
+						navigation={{
+							nextEl: ".swiper-button-next-custom",
+							prevEl: ".swiper-button-prev-custom",
+						}}
+						pagination={{ clickable: true }}
+						spaceBetween={20}
+						breakpoints={{
+							0: {
+								slidesPerView: 1.3,
+								grid: {
+									rows: 1,
+								},
 							},
-						},
-						576: {
-							slidesPerView: 2,
-							grid: {
-								rows: 2,
-								fill: "row",
+							576: {
+								slidesPerView: 2,
+								grid: {
+									rows: 2,
+									fill: "row",
+								},
 							},
-						},
-					}}
-					className="max-w-7xl relative"
-				>
-					{listServices.map((data, idx) => (
-						<SwiperSlide
-							key={idx}
-							className="bg-white rounded-xl shadow p-5 card-services text-left max-h-[500px]"
-						>
-							<div className="flex flex-col justify-between	">
-								<div
-									className="w-fit p-[9px] rounded-[8px] mb-2"
-									style={{
-										backgroundImage:
-											"linear-gradient( to right, #2565AA, #0590E6)",
-									}}
-								>
-									{data.icon}
+						}}
+						className="max-w-7xl relative"
+					>
+						{listServices.map((data, idx) => (
+							<SwiperSlide
+								key={idx}
+								className="bg-white rounded-xl shadow p-5 card-services text-left max-h-[500px]"
+							>
+								<div className="flex flex-col justify-between	">
+									<div
+										className="w-fit p-[9px] rounded-[8px] mb-2"
+										style={{
+											backgroundImage:
+												"linear-gradient( to right, #2565AA, #0590E6)",
+										}}
+									>
+										{data.icon}
+									</div>
+									<h3 className="ff-outfit font-bold lg:text-[16px] md:text-[14px] sm:text-[16px] text-[#1D293F] mb-2 text-start">
+										{data.title}
+									</h3>
+									<p className="ff-dm-sans lg:text-[14px] text-[12px] text-[#7C8087] text-justify mt-auto">
+										{data.description}
+									</p>
 								</div>
-								<h3 className="ff-outfit font-bold lg:text-[16px] md:text-[14px] sm:text-[16px] text-[#1D293F] mb-2 text-start">
-									{data.title}
-								</h3>
-								<p className="ff-dm-sans lg:text-[14px] text-[12px] text-[#7C8087] text-justify mt-auto">
-									{data.description}
-								</p>
-							</div>
-						</SwiperSlide>
-					))}
-				</Swiper>
+							</SwiperSlide>
+						))}
+					</Swiper>
 
-				{/* Pagination Bullets */}
-				{/* <div className="mt-20 text-7xl text-teal-300 bg-amber-500 w-full h-28">
+					{/* Pagination Bullets */}
+					{/* <div className="mt-20 text-7xl text-teal-300 bg-amber-500 w-full h-28">
 					KEREN
 				</div> */}
-				<div className="swiper-pagination-container justify-center">
-					<div
-						id="swiper-pagination"
-						className="swiper-pagination "
-						style={{
-							position: "relative !important",
-						}}
-					></div>
+					<div className="swiper-pagination-container justify-center">
+						<div
+							id="swiper-pagination"
+							className="swiper-pagination "
+							style={{
+								position: "relative !important",
+							}}
+						></div>
+					</div>
 				</div>
 			</div>
 		</div>

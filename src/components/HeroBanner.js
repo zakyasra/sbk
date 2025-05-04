@@ -14,13 +14,17 @@ const HeroBanner = ({
 	image,
 }) => {
 	return (
-		<div>
+		<div
+			style={{
+				background: `url(${image})`,
+				backgroundRepeat: "no-repeat",
+				backgroundPosition: " center",
+				backgroundSize: " cover",
+				// height: "90vh",
+			}}
+		>
 			<div
-				className={`hero-section w-full text-white text-left md:py-28 sm:py-20 py-16 xl:px-28 lg:px-24 md:px-20 sm:px-12 px-6`}
-				style={{
-					background: `url(${image})`,
-					// height: "90vh",
-				}}
+				className={`content-container w-full text-white text-left md:py-28 sm:py-20 py-16 xl:px-28 lg:px-24 md:px-20 sm:px-12 px-6`}
 			>
 				<div
 					className={`${

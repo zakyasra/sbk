@@ -6,7 +6,7 @@ const Testimonials = () => {
 	return (
 		<article
 			id="testimonials"
-			className="md:py-20 py-12 xl:px-16 lg:px-14 md:px-12 sm:px-9 px-6 py-20"
+			className="md:py-20 xl:px-16 lg:px-14 md:px-12 sm:px-9 px-6 py-20"
 			style={{
 				background: "#F9F9F9",
 			}}
