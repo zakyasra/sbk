@@ -7,7 +7,7 @@ import WhatsappOverlay from "@/components/WhatsappOverlay";
 
 export default function page() {
 	return (
-		<div className="mb-14">
+		<div className="mb-14 overflow-hidden">
 			<HeroBanner
 				linkId="clients-target"
 				title={"Let's See All of Our Clients"}

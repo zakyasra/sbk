@@ -1,14 +1,39 @@
+"use client";
+
 import aboutImage from "@/assets/aboutSection/about-image.svg";
 import line from "@/assets/aboutSection/line.svg";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 const AboutUs = () => {
+	const [show, setShow] = useState(false);
+
+	useEffect(() => {
+		// Trigger animasi 300ms setelah mount
+		const timer = setTimeout(() => {
+			setShow(true);
+		}, 300);
+
+		return () => clearTimeout(timer);
+	}, []);
+
+	const toLeft = show
+		? "opacity-100 sm:translate-x-0 translate-y-0"
+		: "opacity-0 sm:translate-x-10 translate-y-10";
+
+	const toRight = show
+		? "opacity-100 sm:translate-x-0 translate-y-0"
+		: "opacity-0 sm:-translate-x-10 -translate-y-10";
 	return (
 		<div
-			className="flex items-center md:flex-row flex-col justify-between md:gap-12 lg:pt-24 pt-10 lg:mt-0 mt-10 ff-poppins md:mb-20 mb-14"
+			className="overflow-hidden flex items-center md:flex-row flex-col justify-between md:gap-12 lg:pt-24 pt-10 lg:mt-0 mt-10 ff-poppins md:mb-20 mb-14"
 			id="about-us"
 		>
 			{/* left section */}
-			<div className="md:w-1/2">
+			<div
+				className={` md:w-1/2`}
+				data-aos="fade-right"
+				data-aos-anchor-placement="top-center"
+			>
 				<Image
 					src={aboutImage}
 					alt="icon about"
@@ -16,7 +41,11 @@ const AboutUs = () => {
 				/>
 			</div>
 			{/* rightsection */}
-			<div className="max-w-[750px] md:text-left text-center md:w-1/2">
+			<div
+				className={` max-w-[750px] md:text-left text-center md:w-1/2`}
+				data-aos="fade-left"
+				data-aos-anchor-placement="center-bottom"
+			>
 				<h3 className="ff-outfit font-bold text-2xl  text-[#C29D2B]">
 					WHAT IS
 				</h3>

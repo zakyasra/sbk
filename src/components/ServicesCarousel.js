@@ -103,11 +103,11 @@ export default function ResponsiveCarousel() {
 			}}
 		>
 			<div
-				className="w-full content-container flex lg:flex-row flex-col gap-12 xl:px-16 lg:px-14 md:px-12 sm:px-9 px-[24px] xl:pt-20 lg:pt-16 pt-10 mt-12"
+				className="w-full content-container flex lg:flex-row flex-col gap-12 xl:px-16 lg:px-14 md:px-12 sm:px-9 ps-[24px] pr-4 xl:pt-20 lg:pt-16 pt-10 mt-12"
 				id="our-services"
 			>
 				{/* Title & Controls */}
-				<div className="lg:max-w-[444px] w-full">
+				<div className="lg:max-w-[444px] w-full" data-aos="fade-bottom">
 					<h3 className="mb-4 ff-outfit text-[#C29D2B] text-2xl font-bold">
 						OUR SERVICES
 					</h3>
@@ -149,7 +149,12 @@ export default function ResponsiveCarousel() {
 				</div>
 
 				{/* Swiper */}
-				<div className="xl:max-w-[620px] lg:max-w-[520px] mx-auto w-full h-full xl:px-12 lg:ps-12  ">
+				<div
+					className="xl:max-w-[620px] lg:max-w-[520px] mx-auto w-full h-full xl:px-12 lg:ps-12"
+					data-aos="flip-up"
+					data-aos-offset="240"
+					daa-aos-duration="400"
+				>
 					<Swiper
 						key={viewportWidth}
 						modules={[Navigation, Pagination, Grid]}

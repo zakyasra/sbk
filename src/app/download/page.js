@@ -269,14 +269,20 @@ function page() {
 	return (
 		<>
 			<div
-				className={` ff-poppins xl:text-[64px] lg:text-[56px] md:text-[48px] sm:text-[36px] text-[32px] font-bold text-center hero-section w-full  text-white md:py-20 sm:py-16 py-14 xl:px-28 lg:px-24 md:px-20 sm:px-12 px-6`}
+				className="hero-section"
 				style={{
 					background: `url(/hero-download.jpg)`,
-					// height: "90vh",
 				}}
 			>
-				<p>Download</p>
-				<p className="responsive-margin-hero">Center</p>
+				<div
+					className={` ff-poppins xl:text-[64px] lg:text-[56px] md:text-[48px] sm:text-[36px] text-[32px] font-bold text-center hero-section w-full  text-white md:py-20 sm:py-16 py-14 xl:px-28 lg:px-24 md:px-20 sm:px-12 px-6`}
+					data-aos="fade-down"
+					data-aos-duration="400"
+					data-aos-offset="50"
+				>
+					<p>Download</p>
+					<p className="responsive-margin-hero">Center</p>
+				</div>
 			</div>
 			<div className="content-container">
 				<div className="text-center lg:mt-20 md:mt-16 sm:mt-14 mt-12">
@@ -287,7 +293,11 @@ function page() {
 					/>
 				</div>
 				<div className="flex justify-center mb-14">
-					<div className="relative overflow-hidden rounded-[10px]">
+					<div
+						className="relative overflow-hidden rounded-[10px]"
+						data-aos="zoom-in"
+						data-aos-duration="700"
+					>
 						<input
 							type="text"
 							className="input-width ps-5 py-4 pe-24 rounded-[10px] bg-white"
@@ -323,188 +333,157 @@ function page() {
 						</div>
 					</div>
 				</div>
-				{/* Card grid */}
-				<AnimatePresence mode="wait">
-					<motion.div
-						key={currentPage}
-						initial={{ opacity: 0, x: swipeDirection === "right" ? 100 : -100 }}
-						animate={{ opacity: 1, x: 0 }}
-						exit={{ opacity: 0, x: swipeDirection === "right" ? -100 : 100 }}
-						transition={{ duration: 0.3 }}
-						className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 xl:px-16 lg:px-14 md:px-12 sm:px-10 px-9"
-					>
-						{displayedData.map((data) => (
-							<div
-								key={data.id}
-								className="card-download ps-6 pr-4 py-4"
-								style={{
-									border: "1px solid #7A7A9D",
-									borderRadius: "16px",
-								}}
-							>
-								<div>
-									<div className="flex items-start justify-between gap-2">
-										<div className="ff-inter">
-											<p className="text-[#7A7A9D] sm:text-[12px] text-[10px] font-semibold mb-1">
-												Jenis Software
-											</p>
-											<p className="text-[#27272E] lg:text-[20px] md:text-[18px] sm:text-[16px] font-semibold mb-2.5">
-												{data.title}
-											</p>
-										</div>
-										<a key={data.id} href={data.link} download>
-											<div className="cursor-pointer duration-300 transition-all rounded-[50%] bg-[#2565AA] hover:bg-[#184b83] active:bg-[#184b83] text-white p-2.5">
-												<MdDownload
-													style={{
-														width: "26px",
-														height: "26px",
-														color: "white",
-													}}
-												/>
-											</div>
-										</a>
-									</div>
-									<div className="flex sm:items-center items-start sm:flex-row flex-col gap-2.5">
-										<div className="size bg-[#DEFFEE] text-[#66CB9F] font-bold text-[10px] rounded-[6px] px-2 py-1 ">
-											{data.size}
-										</div>
-									</div>
-								</div>
-							</div>
-						))}
-					</motion.div>
-				</AnimatePresence>
-
-				{/* <div className="mt-16 grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-4 gap-y-6 px-16">
-				{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]?.map((data) => (
-					<div
-						key={data}
-						className="card-download ps-6 pr-4 py-4"
-						style={{
-							border: "1px solid #7A7A9D",
-							borderRadius: "16px",
-						}}
-					>
-						<div>
-							<div className="flex items-start justify-between gap-2">
-								<div className="ff-inter">
-									<p className="text-[#7A7A9D] sm:text-[12px] text-[10px] font-semibold mb-1">
-										Jenis Software
-									</p>
-									<p className="text-[#27272E] lg:text-[20px] md:text-[18px] sm:text-[16px] font-semibold mb-2.5">
-										Visual Pen Fault
-									</p>
-								</div>
-								<div className="rounded-[50%] bg-[#2565AA] p-2.5">
-									<MdDownload
-										style={{
-											width: "26px",
-											height: "26px",
-											color: "white",
-										}}
-									/>
-								</div>
-							</div>
-							<div className="flex sm:items-center items-start sm:flex-row flex-col gap-2.5">
-								<div className="size bg-[#DEFFEE] text-[#66CB9F] font-bold text-[10px] rounded-[6px] px-2 py-1 ">
-									10 MB
-								</div>
-								<p className="text-[#7A7A9D] font-medium text-[10px]">
-									Downloaded by 100+
-								</p>
-							</div>
-						</div>
-					</div>
-				))}
-			</div> */}
-				{/* Pagination */}
-				<div className="flex justify-center items-center xxl:mt-16 xl:mt-12 lg:mt-10 mt-8 gap-2">
-					{/* Icon kiri */}
-					{currentPage > 1 && (
-						<button
-							onClick={() => handlePageChange(currentPage - 1)}
-							className="flex items-center justify-center lg:p-[12px] sm:p-[12px] p-[8px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
+				<div>
+					{/* Card grid */}
+					<AnimatePresence mode="wait">
+						<motion.div
+							key={currentPage}
+							initial={{
+								opacity: 0,
+								x: swipeDirection === "right" ? 100 : -100,
+							}}
+							animate={{ opacity: 1, x: 0 }}
+							exit={{ opacity: 0, x: swipeDirection === "right" ? -100 : 100 }}
+							transition={{ duration: 0.3 }}
+							className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 xl:px-16 lg:px-14 md:px-12 sm:px-10 px-9"
 						>
-							<FaChevronLeft className="text-[inherit] lg:w-[18px] md:w-[16px] sm:w-[14px] w-[16px] h-auto" />
-						</button>
-					)}
+							{displayedData.map((data) => {
+								let timer = 100;
+								timer = timer + 100;
+								return (
+									<div
+										key={data.id}
+										className="card-download ps-6 pr-4 py-4"
+										style={{
+											border: "1px solid #7A7A9D",
+											borderRadius: "16px",
+										}}
+										data-aos="fade-down"
+										data-aos-duration={timer}
+									>
+										<div>
+											<div className="flex items-start justify-between gap-2">
+												<div className="ff-inter">
+													<p className="text-[#7A7A9D] sm:text-[12px] text-[10px] font-semibold mb-1">
+														Jenis Software
+													</p>
+													<p className="text-[#27272E] lg:text-[20px] md:text-[18px] sm:text-[16px] font-semibold mb-2.5">
+														{data.title}
+													</p>
+												</div>
+												<a key={data.id} href={data.link} download>
+													<div className="cursor-pointer duration-300 transition-all rounded-[50%] bg-[#2565AA] hover:bg-[#184b83] active:bg-[#184b83] text-white p-2.5">
+														<MdDownload
+															style={{
+																width: "26px",
+																height: "26px",
+																color: "white",
+															}}
+														/>
+													</div>
+												</a>
+											</div>
+											<div className="flex sm:items-center items-start sm:flex-row flex-col gap-2.5">
+												<div className="size bg-[#DEFFEE] text-[#66CB9F] font-bold text-[10px] rounded-[6px] px-2 py-1 ">
+													{data.size}
+												</div>
+											</div>
+										</div>
+									</div>
+								);
+							})}
+						</motion.div>
+					</AnimatePresence>
 
-					{/* Halaman 1 */}
-					<button
-						onClick={() => handlePageChange(1)}
-						className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
-							currentPage === 1
-								? "bg-[#2565AA] text-white"
-								: "bg-white text-[#2565AA]"
-						}`}
-					>
-						1
-					</button>
+					{/* Pagination */}
+					<div className="flex justify-center items-center xxl:mt-16 xl:mt-12 lg:mt-10 mt-8 gap-2">
+						{/* Icon kiri */}
+						{currentPage > 1 && (
+							<button
+								onClick={() => handlePageChange(currentPage - 1)}
+								className="flex items-center justify-center lg:p-[12px] sm:p-[12px] p-[8px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
+							>
+								<FaChevronLeft className="text-[inherit] lg:w-[18px] md:w-[16px] sm:w-[14px] w-[16px] h-auto" />
+							</button>
+						)}
 
-					{/* Halaman 2 (jika ada) */}
-					{totalPages > 1 && (
+						{/* Halaman 1 */}
 						<button
-							onClick={() => handlePageChange(2)}
+							onClick={() => handlePageChange(1)}
 							className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
-								currentPage === 2
+								currentPage === 1
 									? "bg-[#2565AA] text-white"
 									: "bg-white text-[#2565AA]"
 							}`}
 						>
-							2
+							1
 						</button>
-					)}
 
-					{/* Input halaman manual */}
-					{totalPages > 3 && (
-						<input
-							type="number"
-							min={1}
-							max={totalPages}
-							placeholder="..."
-							onKeyDown={(e) => {
-								if (e.key === "Enter") {
+						{/* Halaman 2 (jika ada) */}
+						{totalPages > 1 && (
+							<button
+								onClick={() => handlePageChange(2)}
+								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
+									currentPage === 2
+										? "bg-[#2565AA] text-white"
+										: "bg-white text-[#2565AA]"
+								}`}
+							>
+								2
+							</button>
+						)}
+
+						{/* Input halaman manual */}
+						{totalPages > 3 && (
+							<input
+								type="number"
+								min={1}
+								max={totalPages}
+								placeholder="..."
+								onKeyDown={(e) => {
+									if (e.key === "Enter") {
+										const value = parseInt(e.target.value, 10);
+										if (!isNaN(value) && value >= 1 && value <= totalPages) {
+											handlePageChange(value);
+										}
+										e.target.value = ""; // reset input setelah enter
+									}
+								}}
+								onBlur={(e) => {
 									const value = parseInt(e.target.value, 10);
 									if (!isNaN(value) && value >= 1 && value <= totalPages) {
 										handlePageChange(value);
 									}
-									e.target.value = ""; // reset input setelah enter
-								}
-							}}
-							onBlur={(e) => {
-								const value = parseInt(e.target.value, 10);
-								if (!isNaN(value) && value >= 1 && value <= totalPages) {
-									handlePageChange(value);
-								}
-								e.target.value = ""; //
-							}}
-							className="input-pagination flex text-center items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ff-inter  text-[#2565AA] placeholder-[#2565AA] focus:outline-[#2565AA]"
-						/>
-					)}
+									e.target.value = ""; //
+								}}
+								className="input-pagination flex text-center items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ff-inter  text-[#2565AA] placeholder-[#2565AA] focus:outline-[#2565AA]"
+							/>
+						)}
 
-					{/* Halaman terakhir */}
-					{totalPages > 3 && (
-						<button
-							onClick={() => handlePageChange(totalPages)}
-							className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
-								currentPage === totalPages
-									? "bg-[#2565AA] text-white"
-									: "bg-white text-[#2565AA]"
-							}`}
-						>
-							{totalPages}
-						</button>
-					)}
+						{/* Halaman terakhir */}
+						{totalPages > 3 && (
+							<button
+								onClick={() => handlePageChange(totalPages)}
+								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
+									currentPage === totalPages
+										? "bg-[#2565AA] text-white"
+										: "bg-white text-[#2565AA]"
+								}`}
+							>
+								{totalPages}
+							</button>
+						)}
 
-					{/* Icon kanan */}
-					{currentPage < totalPages && (
-						<button
-							onClick={() => handlePageChange(currentPage + 1)}
-							className="flex items-center justify-center lg:p-[12px] sm:p-[12px] p-[8px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
-						>
-							<FaChevronRight className="text-[inherit] lg:w-[18px] md:w-[16px] sm:w-[14px] w-[16px] h-auto" />
-						</button>
-					)}
+						{/* Icon kanan */}
+						{currentPage < totalPages && (
+							<button
+								onClick={() => handlePageChange(currentPage + 1)}
+								className="flex items-center justify-center lg:p-[12px] sm:p-[12px] p-[8px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
+							>
+								<FaChevronRight className="text-[inherit] lg:w-[18px] md:w-[16px] sm:w-[14px] w-[16px] h-auto" />
+							</button>
+						)}
+					</div>
 				</div>
 			</div>
 		</>

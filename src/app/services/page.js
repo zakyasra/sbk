@@ -62,7 +62,7 @@ const page = () => {
 		},
 	];
 	return (
-		<div>
+		<div className="overflow-hidden">
 			<HeroBanner
 				linkId="get-to-know"
 				title={"Introduction"}
@@ -82,19 +82,29 @@ const page = () => {
 					id="get-to-know"
 				>
 					{/* <div className="sm:w-1/3 bg-[#BEC6CF] xl:px-11 lg:px-9 md:px-7 px-6 xl:py-20 lg:py-16 md:py-12 py-6 flex flex-col gap-8"> */}
-					<div className="sm:w-1/3 bg-[#BEC6CF] xl:px-11 lg:px-9 md:px-7 px-6 xl:py-20 lg:py-16 md:py-12 py-6 flex flex-col gap-8">
+					<div className="sm:w-1/3 bg-[#BEC6CF] overflow-hidden xl:px-11 lg:px-9 md:px-7 px-6 xl:py-20 lg:py-16 md:py-12 py-6 flex flex-col gap-8">
 						{listServicesLeft.map((data) => (
 							<div className="flex items-start gap-4" key={data.title}>
 								<Image
 									src={iconServices}
 									alt="Icon List"
 									className="h-auto xl:w-[44px] lg:w-[36px] md:w-[28px] w-[24px]"
+									data-aos="fade-right"
+									data-aos-duration="400"
 								/>
 								<div>
-									<h4 className="ff-outfit font-medium xl:text-[20px] text-[18px] text-dark mb-4">
+									<h4
+										className="ff-outfit font-medium xl:text-[20px] text-[18px] text-dark mb-4"
+										data-aos="zoom-in-down"
+										data-aos-duration="900"
+									>
 										{data.title}
 									</h4>
-									<p className="ff-poppins font-normal xl:text-[17px] text-[14px] text-dark-fade">
+									<p
+										className="ff-poppins font-normal xl:text-[17px] text-[14px] text-dark-fade"
+										data-aos="zoom-in-down"
+										data-aos-duration="1300"
+									>
 										{data.teks}
 									</p>
 								</div>
@@ -104,7 +114,10 @@ const page = () => {
 					{/* <div className="sm:w-2/3 flex flex-col items-center justify-between md:mt-16 pt-10"> */}
 					<div className="sm:w-2/3 flex flex-col items-center justify-between md:mt-16 pt-10">
 						<div className="max-w-[80%] xl:pt-24 lg:pt-16 md:pt-12 sm:pt-9 pt-6 xl:pb-32 lg:pb-24 md:pb-20 sm:pb-16 pb-12">
-							<div className=" mb-12 ff-poppins font-bold text-[#2A2A2A] mx-auto bg-white xxl:text-[40px] xl:text-[36px] lg:text-[32px] text-[28px]">
+							<div
+								className=" mb-12 ff-poppins font-bold text-[#2A2A2A] mx-auto bg-white xxl:text-[40px] xl:text-[36px] lg:text-[32px] text-[28px]"
+								data-aos="fade-down"
+							>
 								Get To Know Our{" "}
 								<span
 									className="text-regular"
@@ -116,7 +129,7 @@ const page = () => {
 								</span>
 							</div>
 							<div className="mt-6 mx-auto grid sm:grid-cols-2 grid-cols-1 sm:grid-rows-1 grid-rows-2 xl:gap-14 lg:gap-12 md:gap-8 gap-6 lg:text-[20px] md:text-[18px] text-[16px] text-justify">
-								<p className="ff-poppins text-dark-fade">
+								<p className="ff-poppins text-dark-fade" data-aos="fade-right">
 									If you are looking for a reliable and solid system integrator,
 									we are the answer. PT. Sumber Berkat Komputindo (SBK) offers a
 									comprehensive range of IT solutions designed to meet your
@@ -124,7 +137,7 @@ const page = () => {
 									optimal performance, efficiency, and growth for your
 									organization.{" "}
 								</p>
-								<p className="ff-poppins text-dark-fade">
+								<p className="ff-poppins text-dark-fade" data-aos="fade-left">
 									Lectus erat, consectetur eu sapien eget rhoncus consectetur
 									sem. Proin cursus, dolor a mollis consectetur, risus dolor
 									fermentum massa, a commodo elit dui sit amet risus. Maecenas
@@ -135,7 +148,11 @@ const page = () => {
 							</div>
 						</div>
 						<div className="bg-[#2565AA] w-full py-9 ps-9 pr-14 sm:flex flex-row hidden md:items-center md:justify-between md:gap-2 sm:gap-6 gap-4 text-white">
-							<h4 className="ff-outfit font-bold xl:text-[30px] lg:text-[26px] md:text-[22px] sm:text-[18px] text-[20px]">
+							<h4
+								className="ff-outfit font-bold xl:text-[30px] lg:text-[26px] md:text-[22px] sm:text-[18px] text-[20px]"
+								data-aos="zoom-in"
+								data-aos-offset="top-bottom"
+							>
 								Get Free Consultation
 							</h4>
 							<Link href={"/contact"}>
@@ -145,6 +162,8 @@ const page = () => {
 										border: "5px solid white",
 										letterSpacing: "2px",
 									}}
+									data-aos="zoom-in"
+									data-aos-offset="top-bottom"
 								>
 									ONLINE ESTIMATE FORM
 								</div>
@@ -164,22 +183,35 @@ const page = () => {
 							className="flex items-center gap-3.5 sm:max-w-none max-w-[400px] sm:mx-0 mx-auto"
 							key={id}
 						>
-							{/* <Image
-							src={data.icon}
-							alt="Icon Computer"
-							className="sm:h-[64px] h-[48px]  w-auto"
-						/> */}
-							<div>{data.icon}</div>
+							<div data-aos="fade-right" data-aos-duration="400">
+								{data.icon}
+							</div>
 							<div>
-								<b className="ff-outfit text-[16px] mb-1">{data.name}</b>
-								<p className="ff-poppins text-[15px]">{data.teks}</p>
+								<b
+									className="ff-outfit text-[16px] mb-1"
+									data-aos="zoom-in-down"
+									data-aos-duration="900"
+								>
+									{data.name}
+								</b>
+								<p
+									className="ff-poppins text-[15px]"
+									data-aos="zoom-in-down"
+									data-aos-duration="1000"
+								>
+									{data.teks}
+								</p>
 							</div>
 						</div>
 					))}
 				</div>
 			</div>
 			<div className="bg-[#2565AA] w-full py-9 ps-9 pr-14 sm:hidden flex md:flex-row flex-col md:items-center md:justify-between md:gap-2 sm:gap-6 gap-4 text-white">
-				<h4 className="ff-outfit font-bold xl:text-[30px] lg:text-[26px] md:text-[22px] sm:text-[18px] text-[20px]">
+				<h4
+					className="ff-outfit font-bold xl:text-[30px] lg:text-[26px] md:text-[22px] sm:text-[18px] text-[20px]"
+					data-aos="zoom-in"
+					data-aos-offset="top-bottom"
+				>
 					Get Free Consultation
 				</h4>
 				<div
@@ -188,6 +220,8 @@ const page = () => {
 						border: "5px solid white",
 						letterSpacing: "2px",
 					}}
+					data-aos="zoom-in"
+					data-aos-offset="top-bottom"
 				>
 					ONLINE ESTIMATE FORM
 				</div>

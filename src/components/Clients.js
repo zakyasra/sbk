@@ -486,7 +486,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 
 	return (
 		<>
-			<div className="flex flex-col items-center mt-20">
+			<div className="flex flex-col items-center mt-20" data-aos="zoom-in-up">
 				{customText ? (
 					<Title title={title} subTitle={subTitle} titleBlue={titleBlue} />
 				) : (
@@ -514,87 +514,89 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 					</>
 				)}
 			</div>
-			<div className="relative max-w-7xl mx-auto lg:px-24 md:px-20 sm:px-18 px-18 overflow-hidden">
-				{page > 0 && (
-					<button
-						onClick={handlePrev}
-						className="cursor-pointer absolute xl:left-0 left-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#2565AA] active:bg-[#2565AA] text-[#2565AA] hover:text-white active:text-white duration-300 transition-all rounded-[50%]"
-						style={{
-							border: "3px solid #2565AA",
-						}}
-					>
-						<MdChevronLeft className="xl:w-[48px] w-[36px] h-auto text-inherit" />
-					</button>
-				)}
-				{page < totalPages - 1 && (
-					<button
-						onClick={handleNext}
-						className="cursor-pointer absolute xl:right-0 right-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#2565AA] active:bg-[#2565AA] text-[#2565AA] hover:text-white active:text-white duration-300 transition-all rounded-[50%]"
-						style={{
-							border: "3px solid #2565AA",
-						}}
-					>
-						<MdChevronRight className="xl:w-[48px] w-[36px] h-auto text-inherit" />
-					</button>
-				)}
-				{/* Card */}
-				<div className="relative mb-12 pt-10 -z-10">
-					<AnimatePresence mode="wait">
-						<motion.div
-							key={page}
-							initial={{
-								x: swipeDirection === "right" ? -100 : 100,
-								opacity: 0,
+			<div data-aos="zoom-in-up">
+				<div className="relative max-w-7xl mx-auto lg:px-24 md:px-20 sm:px-18 px-18 overflow-hidden">
+					{page > 0 && (
+						<button
+							onClick={handlePrev}
+							className="cursor-pointer absolute xl:left-0 left-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#2565AA] active:bg-[#2565AA] text-[#2565AA] hover:text-white active:text-white duration-300 transition-all rounded-[50%]"
+							style={{
+								border: "3px solid #2565AA",
 							}}
-							animate={{ x: 0, opacity: 1 }}
-							exit={{
-								x: swipeDirection === "right" ? 100 : -100,
-								opacity: 0,
-							}}
-							transition={{ duration: 0.4 }}
-							className={
-								"card-container grid " +
-								"grid-cols-1 sm:grid-cols-3 lg:grid-cols-4"
-							}
 						>
-							{paginatedLogos.map((data, i) => (
-								<div
-									key={data.id}
-									className={`card w-full h-full ${
-										data.status == "white" ? "bg-[#2565AA]" : "bg-white"
-									}  rounded-xl shadow flex items-center justify-center`}
-								>
-									{data.status == "noImage" ? (
-										<p className="xl:text-[16px] font-semibold text-dark text-center ">
-											{data.name}
-										</p>
-									) : (
-										<Image
-											alt={data.name}
-											src={data.image}
-											className={` ${
-												data.customSize
-													? data.customSize
-													: "max-w-[80%] max-h-[80%]"
-											} object-contain`}
-										/>
-									)}
-								</div>
-							))}
-						</motion.div>
-					</AnimatePresence>
+							<MdChevronLeft className="xl:w-[48px] w-[36px] h-auto text-inherit" />
+						</button>
+					)}
+					{page < totalPages - 1 && (
+						<button
+							onClick={handleNext}
+							className="cursor-pointer absolute xl:right-0 right-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-[#2565AA] active:bg-[#2565AA] text-[#2565AA] hover:text-white active:text-white duration-300 transition-all rounded-[50%]"
+							style={{
+								border: "3px solid #2565AA",
+							}}
+						>
+							<MdChevronRight className="xl:w-[48px] w-[36px] h-auto text-inherit" />
+						</button>
+					)}
+					{/* Card */}
+					<div className="relative mb-12 pt-10 -z-10">
+						<AnimatePresence mode="wait">
+							<motion.div
+								key={page}
+								initial={{
+									x: swipeDirection === "right" ? -100 : 100,
+									opacity: 0,
+								}}
+								animate={{ x: 0, opacity: 1 }}
+								exit={{
+									x: swipeDirection === "right" ? 100 : -100,
+									opacity: 0,
+								}}
+								transition={{ duration: 0.4 }}
+								className={
+									"card-container grid " +
+									"grid-cols-1 sm:grid-cols-3 lg:grid-cols-4"
+								}
+							>
+								{paginatedLogos.map((data, i) => (
+									<div
+										key={data.id}
+										className={`card w-full h-full ${
+											data.status == "white" ? "bg-[#2565AA]" : "bg-white"
+										}  rounded-xl shadow flex items-center justify-center`}
+									>
+										{data.status == "noImage" ? (
+											<p className="xl:text-[16px] font-semibold text-dark text-center ">
+												{data.name}
+											</p>
+										) : (
+											<Image
+												alt={data.name}
+												src={data.image}
+												className={` ${
+													data.customSize
+														? data.customSize
+														: "max-w-[80%] max-h-[80%]"
+												} object-contain`}
+											/>
+										)}
+									</div>
+								))}
+							</motion.div>
+						</AnimatePresence>
+					</div>
 				</div>
-			</div>
-			{/* Pagination Bullets */}
-			<div className="flex justify-center gap-2 sm:mt-6 mt-2 mb-20">
-				{Array.from({ length: totalPages }).map((_, i) => (
-					<button
-						key={i}
-						onClick={() => setPage(i)}
-						className={`cursor-pointer hover:bg-[#2565AA] active:bg-[#2565AA] rounded-full transition-all duration-300 ease-in-out
+				{/* Pagination Bullets */}
+				<div className="flex justify-center gap-2 sm:mt-6 mt-2 mb-20">
+					{Array.from({ length: totalPages }).map((_, i) => (
+						<button
+							key={i}
+							onClick={() => setPage(i)}
+							className={`cursor-pointer hover:bg-[#2565AA] active:bg-[#2565AA] rounded-full transition-all duration-300 ease-in-out
         ${page === i ? " bg-[#2565AA] px-3 h-3" : "bg-[#8CA5BF] w-3 h-3"}`}
-					/>
-				))}
+						/>
+					))}
+				</div>
 			</div>
 		</>
 	);

@@ -13,13 +13,19 @@ const Testimonials = () => {
 		>
 			<div className="testimonials-container ">
 				<div className="left-section">
-					<div className="title">TESTIMONIALS</div>
-					<div className="sub-title">Hear what our clients say</div>
-					<div className="desc">
-						Here are some testimonials from our best clients
+					<div
+						data-aos="fade-bottom"
+						data-aos-offset="150"
+						data-aos-duration="1000"
+					>
+						<div className="title">TESTIMONIALS</div>
+						<div className="sub-title">Hear what our clients say</div>
+						<div className="desc">
+							Here are some testimonials from our best clients
+						</div>
 					</div>
 					{/* <!-- card 1--> */}
-					<div className="card">
+					<div className="card" data-aos="zoom-out-up" data-aos-offset="100">
 						<div className="card-desc">
 							<p>
 								Working with Eventure Creations was a fantastic experience.
@@ -49,7 +55,7 @@ const Testimonials = () => {
 				</div>
 				<div className="right-section">
 					{/* <!-- card 2--> */}
-					<div className="card">
+					<div className="card" data-aos="zoom-out-up" data-aos-offset="100">
 						<div className="card-desc">
 							<p>
 								Their team went above and beyond to ensure everything ran
@@ -74,7 +80,7 @@ const Testimonials = () => {
 						</div>
 					</div>
 					{/* <!-- card 3--> */}
-					<div className="card">
+					<div className="card" data-aos="zoom-out-up" data-aos-offset="10">
 						<div className="card-desc">
 							<p>
 								The event was flawless, and their team made everything

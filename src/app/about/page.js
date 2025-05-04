@@ -18,7 +18,7 @@ function page() {
 		"Specialized in Networking, Data Communication, & Wiring Specialist",
 	];
 	return (
-		<div className="mb-14">
+		<div className="mb-14 overflow-hidden">
 			{/* hero sections */}
 
 			<HeroBanner
@@ -51,10 +51,18 @@ function page() {
 			<div className="content-container grid md:grid-cols-2 grid-cols-1 md:gap-12 gap-12 xl:ps-28 lg:ps-20 pr-12 md:ps-16 sm:ps-12 px-[24px]">
 				{/* left section */}
 				<div className="py-5">
-					<h3 className="ff-outfit lg:text-2xl sm:text-[20px] text-[16px] font-bold text-secondary md:mb-6 sm:mb-3 mb-2">
+					<h3
+						className="ff-outfit lg:text-2xl sm:text-[20px] text-[16px] font-bold text-secondary md:mb-6 sm:mb-3 mb-2"
+						data-aos="fade-down"
+						data-duration="1200"
+					>
 						THE ADVANTAGE
 					</h3>
-					<h2 className="ff-poppins xxl:text-[48px] xl:text-[40px] lg:text-[36px] md:text-[32px] text-[28px] font-semibold text-[#0C1920] md:mb-6 sm:mb-3 mb-2">
+					<h2
+						className="ff-poppins xxl:text-[48px] xl:text-[40px] lg:text-[36px] md:text-[32px] text-[28px] font-semibold text-[#0C1920] md:mb-6 sm:mb-3 mb-2"
+						data-aos="fade-down"
+						data-duration="800"
+					>
 						Why Should We ?
 					</h2>
 					<Image
@@ -62,22 +70,32 @@ function page() {
 						alt="icon advantage"
 						className="md:h-full w-full h-[300px] object-cover flex md:hidden"
 					/>
-					<p className="ff-poppins font-normal text-[#19182599] max-w-[600px] mb-9 lg:text-[24px] md:text-[18px] text-[16px] text-justify">
+					<p
+						className="ff-poppins font-normal text-[#19182599] max-w-[600px] mb-9 lg:text-[24px] md:text-[18px] text-[16px] text-justify"
+						data-aos="fade-down"
+						data-duration="400"
+					>
 						{" "}
 						We certainly have several advantages compared to other companies
 					</p>
 					<div className="flex flex-col gap lg:gap-9 md:gap-6 gap-4">
-						{listAdvantage?.map((data) => (
-							<div
-								className="flex items-center lg:gap-6 md:gap-5 gap-4"
-								key={data}
-							>
-								<Image src={checklist} alt="Icon checklist" />
-								<p className="ff-inter lg:text-[24px] md:text-[18px] text-[16px] text-[#19182599]">
-									{data}
-								</p>
-							</div>
-						))}
+						{listAdvantage?.map((data) => {
+							let timer = 0;
+							timer = timer + 300;
+							return (
+								<div
+									className="flex items-center lg:gap-6 md:gap-5 gap-4"
+									key={data}
+									data-aos="fade-up"
+									data-aos-duration={timer}
+								>
+									<Image src={checklist} alt="Icon checklist" />
+									<p className="ff-inter lg:text-[24px] md:text-[18px] text-[16px] text-[#19182599]">
+										{data}
+									</p>
+								</div>
+							);
+						})}
 					</div>
 				</div>
 				{/* right section */}
