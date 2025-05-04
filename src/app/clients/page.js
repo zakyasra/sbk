@@ -9,6 +9,7 @@ export default function page() {
 	return (
 		<div className="mb-14">
 			<HeroBanner
+				linkId="clients-target"
 				title={"Let's See All of Our Clients"}
 				content={
 					"Join leading clients in automotive, banking, education, telecommunications, manufacturing, government institutions, and non‑profits who trust our precision‑driven project delivery and proven expertise."
@@ -18,6 +19,7 @@ export default function page() {
 			/>
 			<div className="mb-14"></div>
 			<HeroTop
+				id={"clients-target"}
 				title={"Get To Know"}
 				titleBlue={"About Our Clients"}
 				subTitle={"ABOUT CLIENT"}

@@ -61,11 +61,9 @@ const Navbar = forwardRef(function Navbar(props, ref) {
 				zIndex: "99",
 			}}
 		>
-			<Image
-				src={logo}
-				alt="Logo Inacomp"
-				className="lg:m-0 sm:mx-auto ms-6 mr-auto main-logo"
-			/>
+			<Link href={"/"} className="lg:m-0 sm:mx-auto ms-6 mr-auto">
+				<Image src={logo} alt="Logo SBK" className=" main-logo" />
+			</Link>
 
 			{/* Desktop Menu */}
 			<div className="main-items hidden lg:block">
@@ -74,7 +72,7 @@ const Navbar = forwardRef(function Navbar(props, ref) {
 						<li key={i}>
 							<Link href={d.link}>
 								<span
-									className={`ff-outfit xl:text-[16px] lg:text-[14px] text-[16px] ${
+									className={`ff-outfit xl:text-[20px] lg:text-[14px] text-[16px] ${
 										pathname === d.link
 											? "font-semibold text-[#2565AA] border-b-[4px] border-[#2565AA]"
 											: "text-[#3F3F3F] hover:text-[#2565AA] hover:border-b-[4px] hover:border-[#2565AA]"

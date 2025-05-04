@@ -3,6 +3,7 @@ import React from "react";
 import iconMedal from "@/assets/heroSection/medal.svg";
 import heroImage from "@/assets/heroSection/hero-image.png";
 import "../styles/heroSection.scss";
+import Link from "next/link";
 
 const HeroSection = () => {
 	return (
@@ -70,15 +71,17 @@ const HeroSection = () => {
 					{/* <button className="cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-3.5 py-4 font-bold sm:text-[18px] text-[16px] text-[#2565AA] border-linear hero-white">
 						CONTACT US
 					</button> */}
-					<button
-						className="cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-3.5 py-4 rounded-[10px] font-bold sm:text-[18px] text-[16px] bg-white hover:bg-[#2565AA] active:bg-[#2565AA] text-[#2565AA] hover:text-white  active:text-white"
-						style={{
-							transition: ".4s all",
-							border: "1px solid #2565AA",
-						}}
-					>
-						CONTACT US
-					</button>
+					<Link href={"/contact"}>
+						<button
+							className="cursor-pointer lg:px-9 lg:py-5 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-3.5 py-4 rounded-[10px] font-bold sm:text-[18px] text-[16px] bg-white hover:bg-[#2565AA] active:bg-[#2565AA] text-[#2565AA] hover:text-white  active:text-white"
+							style={{
+								transition: ".4s all",
+								border: "1px solid #2565AA",
+							}}
+						>
+							CONTACT US
+						</button>
+					</Link>
 				</div>
 			</div>
 			{/* Right Section | Img */}
