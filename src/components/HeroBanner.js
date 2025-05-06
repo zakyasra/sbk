@@ -14,13 +14,17 @@ const HeroBanner = ({
 	image,
 }) => {
 	return (
-		<div>
+		<div
+			style={{
+				background: `url(${image})`,
+				backgroundRepeat: "no-repeat",
+				backgroundPosition: " center",
+				backgroundSize: " cover",
+				// height: "90vh",
+			}}
+		>
 			<div
-				className={`hero-section w-full text-white text-left md:py-28 sm:py-20 py-16 xl:px-28 lg:px-24 md:px-20 sm:px-12 px-6`}
-				style={{
-					background: `url(${image})`,
-					// height: "90vh",
-				}}
+				className={`content-container w-full text-white text-left md:py-28 sm:py-20 py-16 xl:px-28 lg:px-24 md:px-20 sm:px-12 px-6`}
 			>
 				<div
 					className={`${
@@ -43,6 +47,8 @@ const HeroBanner = ({
 									position === "left" ? "10px solid #2565AA" : undefined,
 								paddingLeft: position === "left" ? "16px" : undefined,
 							}}
+							data-aos={position === "left" ? "fade-right" : "fade-up"}
+							data-aos-duration="500"
 						>
 							<span>{title}</span>
 							<span>{title2}</span>
@@ -52,7 +58,11 @@ const HeroBanner = ({
 						</h1>
 					</div>
 					{search !== undefined && typeof setSearch === "function" && (
-						<div className="flex justify-center mb-14">
+						<div
+							className="flex justify-center mb-14"
+							data-aos={position === "left" ? "fade-right" : "fade-up"}
+							data-aos-duration="900"
+						>
 							<div className="relative overflow-hidden rounded-[10px]">
 								<input
 									type="text"
@@ -84,26 +94,31 @@ const HeroBanner = ({
 						</div>
 					)}
 
-					<p className="ff-outfit font-normal lg:text-[22px] md:text-[18px] text-[16px]">
-						{content}
-					</p>
-					<button
-						className={`${
-							position == "center" && "mx-auto"
-						} w-fit lg:mt-9 md:mt-7 mt-4 cursor-pointer lg:px-9 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-6 py-3.5 rounded-[10px] sm:font-bold font-semibold lg:text-[18px] md:text-[16px] text-[14px] text-white hover:text-[#2565AA] active:text-[#2565AA] bg-[#2565AA] hover:bg-white active:bg-white`}
-						style={{
-							transition: ".3s all",
-							border: "1px solid #2565AA",
-						}}
-						onClick={() => {
-							const el = document.getElementById(linkId);
-							if (el) {
-								el.scrollIntoView({ behavior: "smooth" });
-							}
-						}}
+					<div
+						data-aos={position === "left" ? "fade-right" : "fade-up"}
+						data-aos-duration="1300"
 					>
-						SEE MORE
-					</button>
+						<p className="ff-outfit font-normal lg:text-[22px] md:text-[18px] text-[16px]">
+							{content}
+						</p>
+						<button
+							className={`${
+								position == "center" && "mx-auto"
+							} w-fit lg:mt-9 md:mt-7 mt-4 cursor-pointer lg:px-9 md:px-7 md:py-4 sm:px-5 sm:py-3.5 px-6 py-3.5 rounded-[10px] sm:font-bold font-semibold lg:text-[18px] md:text-[16px] text-[14px] text-white hover:text-[#2565AA] active:text-[#2565AA] bg-[#2565AA] hover:bg-white active:bg-white`}
+							style={{
+								transition: ".3s all",
+								border: "1px solid #2565AA",
+							}}
+							onClick={() => {
+								const el = document.getElementById(linkId);
+								if (el) {
+									el.scrollIntoView({ behavior: "smooth" });
+								}
+							}}
+						>
+							SEE MORE
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

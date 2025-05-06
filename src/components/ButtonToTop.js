@@ -54,7 +54,7 @@ const ButtonToTop = () => {
 								: "hidden"
 						}`}
 					>
-						<div className="flex flex-col gap-1 text-[#2565AA] font-semibold sm:text-[14px] text-[12px]">
+						<div className="uw-text-button flex flex-col gap-1 text-[#2565AA] font-semibold sm:text-[14px] text-[12px]">
 							<span>Having a problem? if you have any</span>
 							<span>question please let us know!</span>
 						</div>

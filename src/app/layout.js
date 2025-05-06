@@ -4,8 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Providers from "@/components/ProgressBarProvider";
+import AosWrapper from "@/components/AosWrapper";
 import ButtonToTop from "@/components/ButtonToTop";
-import WhatsappOverlay from "@/components/WhatsappOverlay";
 const geistSans = Geist({
 	variable: "--font-geist-sans",
 	subsets: ["latin"],
@@ -87,7 +87,9 @@ export default function RootLayout({ children }) {
 			>
 				<ButtonToTop />
 				<Navbar />
-				<Providers>{children}</Providers>
+				<Providers>
+					<AosWrapper>{children}</AosWrapper>
+				</Providers>
 				<Footer />
 			</body>
 		</html>

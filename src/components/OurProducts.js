@@ -131,45 +131,6 @@ const useDebounce = (value, delay) => {
 	}, [value, delay]);
 	return debounced;
 };
-function PageInput({ totalPages, onChange }) {
-	const [inputValue, setInputValue] = useState("");
-	const [isEditing, setIsEditing] = useState(false);
-	const debouncedValue = useDebounce(inputValue, 500);
-
-	useEffect(() => {
-		if (debouncedValue && isEditing) {
-			const pageNum = parseInt(debouncedValue, 10);
-			if (pageNum >= 1 && pageNum <= totalPages) {
-				onChange(pageNum);
-			}
-		}
-	}, [debouncedValue]);
-
-	const handleBlur = () => {
-		setIsEditing(false);
-	};
-
-	return isEditing ? (
-		<input
-			autoFocus
-			type="number"
-			min="1"
-			max={totalPages}
-			value={inputValue}
-			onChange={(e) => setInputValue(e.target.value)}
-			onBlur={handleBlur}
-			onMouseLeave={handleBlur}
-			className="h-[48px] w-[60px] text-center border rounded text-[#2565AA]"
-		/>
-	) : (
-		<button
-			onClick={() => setIsEditing(true)}
-			className="h-[48px] px-3 flex items-center justify-center rounded border font-semibold text-[#2565AA] bg-white"
-		>
-			...
-		</button>
-	);
-}
 
 function OurProducts({ search = "", limit, pagination }) {
 	const debouncedSearch = useDebounce(search, 500);
@@ -228,31 +189,14 @@ function OurProducts({ search = "", limit, pagination }) {
 		startPage = Math.max(1, endPage - maxPaginationShown + 1);
 	}
 
-	const pageNumbers = Array.from(
-		{ length: endPage - startPage + 1 },
-		(_, i) => startPage + i
-	);
-
 	const handlePageChange = (page) => {
 		setSwipeDirection(page > currentPage ? "right" : "left");
 		setCurrentPage(page);
 	};
 
-	const handleNextGroup = () => {
-		if ((paginationGroup + 1) * maxPaginationShown < totalPages) {
-			setPaginationGroup(paginationGroup + 1);
-		}
-	};
-
-	const handlePrevGroup = () => {
-		if (paginationGroup > 0) {
-			setPaginationGroup(paginationGroup - 1);
-		}
-	};
-
 	return (
 		<div
-			className="xl:px-16 lg:px-12 sm:px-9 px-[24px] xl:pb-20 xl:pt-28 lg:pb-16 lg:pt-10 md:pt-12 pb-10 pt-20"
+			className="content-container xl:px-16 lg:px-12 sm:px-9 px-[24px] xl:pb-20 xl:pt-28 lg:pb-16 lg:pt-10 md:pt-12 pb-10 pt-20"
 			id="see-products"
 		>
 			<Title
@@ -260,152 +204,161 @@ function OurProducts({ search = "", limit, pagination }) {
 				title={"See more about "}
 				titleBlue={"Our Product"}
 			/>
-			<AnimatePresence mode="wait">
-				<motion.div
-					key={currentPage}
-					initial={{ opacity: 0, x: swipeDirection === "right" ? 100 : -100 }}
-					animate={{ opacity: 1, x: 0 }}
-					exit={{ opacity: 0, x: swipeDirection === "right" ? -100 : 100 }}
-					transition={{ duration: 0.3 }}
-					className="h-fit grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-y-12 md:gap-y-8 gap-y-6 xl:gap-x-10 md:gap-x-8 gap-x-6 w-fit max-w-[calc(100%-40px)] xxl:px-[100px]  xl:px-[80px] lg:px-[60px] md:px-[40px] mx-auto"
-				>
-					{displayedData.map((item, idx) => (
-						<div
-							key={idx}
-							className="card flex flex-col sm:h-auto max-h-[400px] justify-between px-2 pt-2 pb-4 rounded-2xl sm:mx-0 mx-auto h-full"
-							style={{
-								maxWidth: "350px",
-								height: "100%",
-								border: "1px solid #E7E7E7",
-								boxShadow: "0 3px 8px -1px #3232470d",
-							}}
-						>
-							{item.image ? (
-								<div className="w-full aspect-[4/3] overflow-hidden rounded-2xl mb-6">
-									<Image
-										src={item.image}
-										alt="Card Products"
-										className="object-contain w-full h-full"
-									/>
-								</div>
-							) : (
-								<div className="w-full aspect-[4/3] overflow-hidden rounded-2xl mb-6">
-									<Image
-										src={noImage}
-										alt="Card Products"
-										className="object-contain h-fit w-auto"
-									/>
-								</div>
-							)}
-
-							<div className="flex flex-col justify-between h-auto gap-4">
-								<p className="ff-outfit font-semibold sm:text-[20px] text-[16px] text-dark">
-									{item.title}
-								</p>
-								<p className="ff-poppins sm:text-[16px] text-[12px] text-[#425466]">
-									{item.desc}
-								</p>
-								<a
-									href={item.link}
-									target="_blank"
-									className="flex w-fit cursor-pointer lg:px-5 lg:py-3 md:px-4 md:py-2 px-8 sm:py-3.5 py-3 rounded-[10px] font-semibold text-[12px] text-white hover:text-[#2565AA] bg-[#2565AA] hover:bg-white"
-									rel={"noopener noreferrer"}
-									style={{
-										transition: ".4s all",
-										border: "1px solid #2565AA",
-									}}
-								>
-									SEE MORE
-								</a>
-							</div>
-						</div>
-					))}
-				</motion.div>
-			</AnimatePresence>
-			{/* Pagination */}
-			{pagination && (
-				<div className="flex justify-center items-center xxl:mt-16 xl:mt-12 lg:mt-10 mt-8 gap-2">
-					{/* Icon kiri */}
-					{currentPage > 1 && (
-						<button
-							onClick={() => handlePageChange(currentPage - 1)}
-							className="flex items-center justify-center lg:p-[12px] sm:p-[12px] p-[8px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
-						>
-							<FaChevronLeft className="text-[inherit] lg:w-[18px] md:w-[16px] sm:w-[14px] w-[16px] h-auto" />
-						</button>
-					)}
-
-					{/* Halaman 1 */}
-					<button
-						onClick={() => handlePageChange(1)}
-						className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
-							currentPage === 1
-								? "bg-[#2565AA] text-white"
-								: "bg-white text-[#2565AA]"
-						}`}
+			<div data-aos="zoom-in-up">
+				<AnimatePresence mode="wait">
+					<motion.div
+						key={currentPage}
+						initial={{ opacity: 0, x: swipeDirection === "right" ? 100 : -100 }}
+						animate={{ opacity: 1, x: 0 }}
+						exit={{ opacity: 0, x: swipeDirection === "right" ? -100 : 100 }}
+						transition={{ duration: 0.3 }}
+						className="h-fit grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-y-12 md:gap-y-8 gap-y-6 xl:gap-x-10 md:gap-x-8 gap-x-6 w-fit max-w-[calc(100%-40px)] xxl:px-[100px]  xl:px-[80px] lg:px-[60px] md:px-[40px] mx-auto"
 					>
-						1
-					</button>
+						{displayedData.map((item, idx) => (
+							<div
+								key={idx}
+								className="card flex flex-col sm:h-auto max-h-[400px] justify-between px-2 pt-2 pb-4 rounded-2xl sm:mx-0 mx-auto h-full"
+								style={{
+									maxWidth: "350px",
+									height: "100%",
+									border: "1px solid #E7E7E7",
+									boxShadow: "0 3px 8px -1px #3232470d",
+								}}
+							>
+								{item.image ? (
+									<div className="w-full aspect-[4/3] overflow-hidden rounded-2xl mb-6">
+										<Image
+											src={item.image}
+											alt="Card Products"
+											className="object-contain w-full h-full"
+										/>
+									</div>
+								) : (
+									<div className="w-full aspect-[4/3] overflow-hidden rounded-2xl mb-6">
+										<Image
+											src={noImage}
+											alt="Card Products"
+											className="object-contain h-fit w-auto"
+										/>
+									</div>
+								)}
 
-					{/* Halaman 2 (jika ada) */}
-					{totalPages > 1 && (
+								<div className="flex flex-col justify-between h-auto gap-4">
+									<p className="ff-outfit font-semibold sm:text-[20px] text-[16px] text-dark">
+										{item.title}
+									</p>
+									<p className="ff-poppins sm:text-[16px] text-[12px] text-[#425466]">
+										{item.desc}
+									</p>
+									<a
+										href={item.link}
+										target="_blank"
+										className="flex w-fit cursor-pointer lg:px-5 lg:py-3 md:px-4 md:py-2 px-8 sm:py-3.5 py-3 rounded-[10px] font-semibold text-[12px] text-white hover:text-[#2565AA] bg-[#2565AA] hover:bg-white"
+										rel={"noopener noreferrer"}
+										style={{
+											transition: ".4s all",
+											border: "1px solid #2565AA",
+										}}
+									>
+										SEE MORE
+									</a>
+								</div>
+							</div>
+						))}
+					</motion.div>
+				</AnimatePresence>
+				{/* Pagination */}
+				{pagination && (
+					<div className="flex justify-center items-center xxl:mt-16 xl:mt-12 lg:mt-10 mt-8 gap-2">
+						{/* Icon kiri */}
+						{currentPage > 1 && (
+							<button
+								onClick={() => handlePageChange(currentPage - 1)}
+								className="flex items-center justify-center lg:p-[12px] sm:p-[12px] p-[8px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
+							>
+								<FaChevronLeft className="text-[inherit] lg:w-[18px] md:w-[16px] sm:w-[14px] w-[16px] h-auto" />
+							</button>
+						)}
+
+						{/* Halaman 1 */}
 						<button
-							onClick={() => handlePageChange(2)}
+							onClick={() => handlePageChange(1)}
 							className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
-								currentPage === 2
+								currentPage === 1
 									? "bg-[#2565AA] text-white"
 									: "bg-white text-[#2565AA]"
 							}`}
 						>
-							2
+							1
 						</button>
-					)}
 
-					{/* Input halaman manual */}
-					{totalPages > 3 && (
-						<input
-							type="number"
-							min={1}
-							max={totalPages}
-							placeholder="..."
-							onKeyDown={(e) => {
-								if (e.key === "Enter") {
+						{/* Halaman 2 (jika ada) */}
+						{totalPages > 1 && (
+							<button
+								onClick={() => handlePageChange(2)}
+								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
+									currentPage === 2
+										? "bg-[#2565AA] text-white"
+										: "bg-white text-[#2565AA]"
+								}`}
+							>
+								2
+							</button>
+						)}
+
+						{/* Input halaman manual */}
+						{totalPages > 3 && (
+							<input
+								type="number"
+								min={1}
+								max={totalPages}
+								placeholder="..."
+								onKeyDown={(e) => {
+									if (e.key === "Enter") {
+										const value = parseInt(e.target.value, 10);
+										if (!isNaN(value) && value >= 1 && value <= totalPages) {
+											handlePageChange(value);
+										}
+										e.target.value = ""; // reset input setelah enter
+									}
+								}}
+								onBlur={(e) => {
 									const value = parseInt(e.target.value, 10);
 									if (!isNaN(value) && value >= 1 && value <= totalPages) {
 										handlePageChange(value);
 									}
-									e.target.value = ""; // reset input setelah enter
-								}
-							}}
-							className="flex text-center items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ff-inter  text-[#2565AA] placeholder-[#2565AA] focus:outline-[#2565AA]"
-						/>
-					)}
+									e.target.value = ""; //
+								}}
+								className="input-pagination flex text-center items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ff-inter  text-[#2565AA] placeholder-[#2565AA] focus:outline-[#2565AA]"
+							/>
+						)}
 
-					{/* Halaman terakhir */}
-					{totalPages > 3 && (
-						<button
-							onClick={() => handlePageChange(totalPages)}
-							className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
-								currentPage === totalPages
-									? "bg-[#2565AA] text-white"
-									: "bg-white text-[#2565AA]"
-							}`}
-						>
-							{totalPages}
-						</button>
-					)}
+						{/* Halaman terakhir */}
+						{totalPages > 3 && (
+							<button
+								onClick={() => handlePageChange(totalPages)}
+								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
+									currentPage === totalPages
+										? "bg-[#2565AA] text-white"
+										: "bg-white text-[#2565AA]"
+								}`}
+							>
+								{totalPages}
+							</button>
+						)}
 
-					{/* Icon kanan */}
-					{currentPage < totalPages && (
-						<button
-							onClick={() => handlePageChange(currentPage + 1)}
-							className="flex items-center justify-center lg:p-[12px] sm:p-[12px] p-[8px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
-						>
-							<FaChevronRight className="text-[inherit] lg:w-[18px] md:w-[16px] sm:w-[14px] w-[16px] h-auto" />
-						</button>
-					)}
-				</div>
-			)}
+						{/* Icon kanan */}
+						{currentPage < totalPages && (
+							<button
+								onClick={() => handlePageChange(currentPage + 1)}
+								className="flex items-center justify-center lg:p-[12px] sm:p-[12px] p-[8px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
+							>
+								<FaChevronRight className="text-[inherit] lg:w-[18px] md:w-[16px] sm:w-[14px] w-[16px] h-auto" />
+							</button>
+						)}
+					</div>
+				)}
+			</div>
 		</div>
 	);
 }

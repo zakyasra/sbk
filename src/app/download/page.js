@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-// import image from "@/assets/hero-download.jpg";
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
@@ -10,12 +9,6 @@ import iconSearch from "@/assets/search-icon.svg";
 import Title from "@/components/HeroTop/Title";
 import Image from "next/image";
 
-// const dummyData = Array.from({ length: 100 }, (_, i) => ({
-// 	id: i + 1,
-// 	name: `Visual Pen Fault ${i + 1}`,
-// 	size: "10 MB",
-// 	downloads: "100+",
-// }));
 const listDownload = [
 	{
 		"id": 1,
@@ -261,217 +254,239 @@ function page() {
 	);
 
 	const maxPaginationShown = 5;
-	const startPage = paginationGroup * maxPaginationShown + 1;
-	const endPage = Math.min(startPage + maxPaginationShown - 1, totalPages);
-	const pageNumbers = Array.from(
-		{ length: endPage - startPage + 1 },
-		(_, i) => startPage + i
-	);
+	let startPage = Math.max(1, currentPage - Math.floor(maxPaginationShown / 2));
+	let endPage = startPage + maxPaginationShown - 1;
+
+	if (endPage > totalPages) {
+		endPage = totalPages;
+		startPage = Math.max(1, endPage - maxPaginationShown + 1);
+	}
 
 	const handlePageChange = (page) => {
 		setSwipeDirection(page > currentPage ? "right" : "left");
 		setCurrentPage(page);
 	};
-
-	const handleNextGroup = () => {
-		if ((paginationGroup + 1) * maxPaginationShown < totalPages) {
-			setPaginationGroup(paginationGroup + 1);
-		}
-	};
-
-	const handlePrevGroup = () => {
-		if (paginationGroup > 0) {
-			setPaginationGroup(paginationGroup - 1);
-		}
-	};
 	return (
-		<div>
+		<>
 			<div
-				className={`ff-poppins xl:text-[64px] lg:text-[56px] md:text-[48px] sm:text-[36px] text-[32px] font-bold text-center hero-section w-full  text-white md:py-20 sm:py-16 py-14 xl:px-28 lg:px-24 md:px-20 sm:px-12 px-6`}
+				className="hero-section"
 				style={{
 					background: `url(/hero-download.jpg)`,
-					// height: "90vh",
 				}}
 			>
-				<p>Download</p>
-				<p className="responsive-margin-hero">Center</p>
+				<div
+					className={` ff-poppins xl:text-[64px] lg:text-[56px] md:text-[48px] sm:text-[36px] text-[32px] font-bold text-center hero-section w-full  text-white md:py-20 sm:py-16 py-14 xl:px-28 lg:px-24 md:px-20 sm:px-12 px-6`}
+					data-aos="fade-down"
+					data-aos-duration="400"
+					data-aos-offset="50"
+				>
+					<p>Download</p>
+					<p className="responsive-margin-hero">Center</p>
+				</div>
 			</div>
-			<div className="text-center lg:mt-20 md:mt-16 sm:mt-14 mt-12">
-				<Title
-					subTitle={"DOWNLOAD"}
-					title={"Explore Our"}
-					titleBlue={"Available Software"}
-				/>
-			</div>
-			<div className="flex justify-center mb-14">
-				<div className="relative overflow-hidden rounded-[10px]">
-					<input
-						type="text"
-						className="input-width ps-5 py-4 pe-24 rounded-[10px] bg-white"
-						style={{
-							border: "1px solid #ECECEC",
-						}}
-						placeholder="Search software name ... "
-						value={search}
-						onChange={(e) => setSearch(e.target.value)}
+			<div className="content-container">
+				<div className="text-center lg:mt-20 md:mt-16 sm:mt-14 mt-12">
+					<Title
+						subTitle={"DOWNLOAD"}
+						title={"Explore Our"}
+						titleBlue={"Available Software"}
 					/>
-					{search && (
-						<button
-							onClick={() => setSearch("")}
-							className="cursor-pointer absolute right-22 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-800"
-							aria-label="Clear search"
-							style={{
-								zIndex: "9",
-							}}
-						>
-							<MdClose className="w-[24px] h-[24px]" />
-						</button>
-					)}
+				</div>
+				<div className="flex justify-center mb-14">
 					<div
-						className="absolute top-1/2 -translate-y-1/2"
-						style={{ right: 0 }}
+						className="relative overflow-hidden rounded-[10px]"
+						data-aos="zoom-in"
+						data-aos-duration="700"
 					>
-						{/* <FaSearch className="w-[24px] h-[24px] text-white" /> */}
-						<Image
-							src={iconSearch}
-							alt="icon seearch"
-							// className="w-[56px] h-auto"
+						<input
+							type="text"
+							className="input-width ps-5 py-4 pe-24 rounded-[10px] bg-white"
+							style={{
+								border: "1px solid #ECECEC",
+							}}
+							placeholder="Search software name ... "
+							value={search}
+							onChange={(e) => setSearch(e.target.value)}
 						/>
+						{search && (
+							<button
+								onClick={() => setSearch("")}
+								className="cursor-pointer absolute right-22 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-800"
+								aria-label="Clear search"
+								style={{
+									zIndex: "9",
+								}}
+							>
+								<MdClose className="w-[24px] h-[24px]" />
+							</button>
+						)}
+						<div
+							className="absolute top-1/2 -translate-y-1/2"
+							style={{ right: 0 }}
+						>
+							{/* <FaSearch className="w-[24px] h-[24px] text-white" /> */}
+							<Image
+								src={iconSearch}
+								alt="icon seearch"
+								// className="w-[56px] h-auto"
+							/>
+						</div>
+					</div>
+				</div>
+				<div>
+					{/* Card grid */}
+					<AnimatePresence mode="wait">
+						<motion.div
+							key={currentPage}
+							initial={{
+								opacity: 0,
+								x: swipeDirection === "right" ? 100 : -100,
+							}}
+							animate={{ opacity: 1, x: 0 }}
+							exit={{ opacity: 0, x: swipeDirection === "right" ? -100 : 100 }}
+							transition={{ duration: 0.3 }}
+							className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 xl:px-16 lg:px-14 md:px-12 sm:px-10 px-9"
+						>
+							{displayedData.map((data) => {
+								let timer = 100;
+								timer = timer + 100;
+								return (
+									<div
+										key={data.id}
+										className="card-download ps-6 pr-4 py-4"
+										style={{
+											border: "1px solid #7A7A9D",
+											borderRadius: "16px",
+										}}
+										data-aos="fade-down"
+										data-aos-duration={timer}
+									>
+										<div>
+											<div className="flex items-start justify-between gap-2">
+												<div className="ff-inter">
+													<p className="text-[#7A7A9D] sm:text-[12px] text-[10px] font-semibold mb-1">
+														Jenis Software
+													</p>
+													<p className="text-[#27272E] lg:text-[20px] md:text-[18px] sm:text-[16px] font-semibold mb-2.5">
+														{data.title}
+													</p>
+												</div>
+												<a key={data.id} href={data.link} download>
+													<div className="cursor-pointer duration-300 transition-all rounded-[50%] bg-[#2565AA] hover:bg-[#184b83] active:bg-[#184b83] text-white p-2.5">
+														<MdDownload
+															style={{
+																width: "26px",
+																height: "26px",
+																color: "white",
+															}}
+														/>
+													</div>
+												</a>
+											</div>
+											<div className="flex sm:items-center items-start sm:flex-row flex-col gap-2.5">
+												<div className="size bg-[#DEFFEE] text-[#66CB9F] font-bold text-[10px] rounded-[6px] px-2 py-1 ">
+													{data.size}
+												</div>
+											</div>
+										</div>
+									</div>
+								);
+							})}
+						</motion.div>
+					</AnimatePresence>
+
+					{/* Pagination */}
+					<div className="flex justify-center items-center xxl:mt-16 xl:mt-12 lg:mt-10 mt-8 gap-2">
+						{/* Icon kiri */}
+						{currentPage > 1 && (
+							<button
+								onClick={() => handlePageChange(currentPage - 1)}
+								className="flex items-center justify-center lg:p-[12px] sm:p-[12px] p-[8px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
+							>
+								<FaChevronLeft className="text-[inherit] lg:w-[18px] md:w-[16px] sm:w-[14px] w-[16px] h-auto" />
+							</button>
+						)}
+
+						{/* Halaman 1 */}
+						<button
+							onClick={() => handlePageChange(1)}
+							className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
+								currentPage === 1
+									? "bg-[#2565AA] text-white"
+									: "bg-white text-[#2565AA]"
+							}`}
+						>
+							1
+						</button>
+
+						{/* Halaman 2 (jika ada) */}
+						{totalPages > 1 && (
+							<button
+								onClick={() => handlePageChange(2)}
+								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
+									currentPage === 2
+										? "bg-[#2565AA] text-white"
+										: "bg-white text-[#2565AA]"
+								}`}
+							>
+								2
+							</button>
+						)}
+
+						{/* Input halaman manual */}
+						{totalPages > 3 && (
+							<input
+								type="number"
+								min={1}
+								max={totalPages}
+								placeholder="..."
+								onKeyDown={(e) => {
+									if (e.key === "Enter") {
+										const value = parseInt(e.target.value, 10);
+										if (!isNaN(value) && value >= 1 && value <= totalPages) {
+											handlePageChange(value);
+										}
+										e.target.value = ""; // reset input setelah enter
+									}
+								}}
+								onBlur={(e) => {
+									const value = parseInt(e.target.value, 10);
+									if (!isNaN(value) && value >= 1 && value <= totalPages) {
+										handlePageChange(value);
+									}
+									e.target.value = ""; //
+								}}
+								className="input-pagination flex text-center items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ff-inter  text-[#2565AA] placeholder-[#2565AA] focus:outline-[#2565AA]"
+							/>
+						)}
+
+						{/* Halaman terakhir */}
+						{totalPages > 3 && (
+							<button
+								onClick={() => handlePageChange(totalPages)}
+								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
+									currentPage === totalPages
+										? "bg-[#2565AA] text-white"
+										: "bg-white text-[#2565AA]"
+								}`}
+							>
+								{totalPages}
+							</button>
+						)}
+
+						{/* Icon kanan */}
+						{currentPage < totalPages && (
+							<button
+								onClick={() => handlePageChange(currentPage + 1)}
+								className="flex items-center justify-center lg:p-[12px] sm:p-[12px] p-[8px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
+							>
+								<FaChevronRight className="text-[inherit] lg:w-[18px] md:w-[16px] sm:w-[14px] w-[16px] h-auto" />
+							</button>
+						)}
 					</div>
 				</div>
 			</div>
-			{/* Card grid */}
-			<AnimatePresence mode="wait">
-				<motion.div
-					key={currentPage}
-					initial={{ opacity: 0, x: swipeDirection === "right" ? 100 : -100 }}
-					animate={{ opacity: 1, x: 0 }}
-					exit={{ opacity: 0, x: swipeDirection === "right" ? -100 : 100 }}
-					transition={{ duration: 0.3 }}
-					className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 xl:px-16 lg:px-14 md:px-12 sm:px-10 px-9"
-				>
-					{displayedData.map((data) => (
-						<div
-							key={data.id}
-							className="card-download ps-6 pr-4 py-4"
-							style={{
-								border: "1px solid #7A7A9D",
-								borderRadius: "16px",
-							}}
-						>
-							<div>
-								<div className="flex items-start justify-between gap-2">
-									<div className="ff-inter">
-										<p className="text-[#7A7A9D] sm:text-[12px] text-[10px] font-semibold mb-1">
-											Jenis Software
-										</p>
-										<p className="text-[#27272E] lg:text-[20px] md:text-[18px] sm:text-[16px] font-semibold mb-2.5">
-											{data.title}
-										</p>
-									</div>
-									<a h key={data.id} href={data.link} download>
-										<div className="cursor-pointer duration-300 transition-all rounded-[50%] bg-[#2565AA] hover:bg-[#184b83] active:bg-[#184b83] text-white p-2.5">
-											<MdDownload
-												style={{
-													width: "26px",
-													height: "26px",
-													color: "white",
-												}}
-											/>
-										</div>
-									</a>
-								</div>
-								<div className="flex sm:items-center items-start sm:flex-row flex-col gap-2.5">
-									<div className="size bg-[#DEFFEE] text-[#66CB9F] font-bold text-[10px] rounded-[6px] px-2 py-1 ">
-										{data.size}
-									</div>
-									<p className="text-[#7A7A9D] font-medium text-[10px]">
-										Downloaded by {data.count}
-									</p>
-								</div>
-							</div>
-						</div>
-					))}
-				</motion.div>
-			</AnimatePresence>
-
-			{/* <div className="mt-16 grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-4 gap-y-6 px-16">
-				{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]?.map((data) => (
-					<div
-						key={data}
-						className="card-download ps-6 pr-4 py-4"
-						style={{
-							border: "1px solid #7A7A9D",
-							borderRadius: "16px",
-						}}
-					>
-						<div>
-							<div className="flex items-start justify-between gap-2">
-								<div className="ff-inter">
-									<p className="text-[#7A7A9D] sm:text-[12px] text-[10px] font-semibold mb-1">
-										Jenis Software
-									</p>
-									<p className="text-[#27272E] lg:text-[20px] md:text-[18px] sm:text-[16px] font-semibold mb-2.5">
-										Visual Pen Fault
-									</p>
-								</div>
-								<div className="rounded-[50%] bg-[#2565AA] p-2.5">
-									<MdDownload
-										style={{
-											width: "26px",
-											height: "26px",
-											color: "white",
-										}}
-									/>
-								</div>
-							</div>
-							<div className="flex sm:items-center items-start sm:flex-row flex-col gap-2.5">
-								<div className="size bg-[#DEFFEE] text-[#66CB9F] font-bold text-[10px] rounded-[6px] px-2 py-1 ">
-									10 MB
-								</div>
-								<p className="text-[#7A7A9D] font-medium text-[10px]">
-									Downloaded by 100+
-								</p>
-							</div>
-						</div>
-					</div>
-				))}
-			</div> */}
-			{/* Pagination */}
-			<div className="flex justify-center items-center mt-8 gap-2">
-				{paginationGroup > 0 && (
-					<button
-						onClick={handlePrevGroup}
-						className="h-[64px] w-[64px] flex items-center justify-center p-[20px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
-					>
-						<FaChevronLeft className="w-[24px] h-[24px] " />
-					</button>
-				)}
-
-				{pageNumbers.map((num) => (
-					<button
-						key={num}
-						onClick={() => handlePageChange(num)}
-						className={`h-[64px] w-[64px] flex items-center justify-center cursor-pointer p-[20px] rounded border ff-inter font-extrabold text-[18px] hover:bg-[#2565AA] hover:text-[#FFF] transition-all duration-300 ${
-							num === currentPage
-								? "bg-[#2565AA] text-white"
-								: "bg-white text-[#2565AA]"
-						}`}
-					>
-						{num}
-					</button>
-				))}
-
-				{(paginationGroup + 1) * maxPaginationShown < totalPages && (
-					<button
-						onClick={handleNextGroup}
-						className="h-[64px] w-[64px] flex items-center justify-center p-[20px] bg-[#2565AA] text-white rounded-[6px] hover:bg-[#fff] hover:text-[#2565AA] hover:border transition-all duration-300 cursor-pointer"
-					>
-						<FaChevronRight className="w-[24px] h-[24px] " />
-					</button>
-				)}
-			</div>
-		</div>
+		</>
 	);
 }
 
