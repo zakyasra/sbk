@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import logo from "../app/logo.svg";
+import logo from "../assets/navbar/logo-sbk-new-footer.jpg";
 import logoWa from "@/assets/footer/whatsapp.svg";
 import logoIg from "@/assets/footer/instagram.svg";
 import logoFb from "@/assets/footer/facebook.svg";

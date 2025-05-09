@@ -8,7 +8,7 @@
 }
 body {
 	background: white !important;
-	overflow-x: hidden;
+	overflow-x: hidden !important;
 }
 
 .ff-outfit {

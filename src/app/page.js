@@ -20,7 +20,6 @@ export default function Home() {
 			</div>
 			<ResponsiveCarousel />
 			<div className="content-container">
-				<Testimonials />
 				<Clients />
 			</div>
 			<BannerOurProducts />

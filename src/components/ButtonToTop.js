@@ -65,15 +65,21 @@ const ButtonToTop = () => {
 							className="cursor-pointer h-auto w-[20px]"
 						/>
 					</div>
-					<Image
-						src={whatsapp}
-						alt="Icon Whatsapp"
-						className="lg:w-[50px] md:w-[40px] w-[35px] h-auto cursor-pointer"
-					/>
+					<a
+						href="https://wa.me/6281513008267?text=Halo%20*PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Image
+							alt="Icon Whatsapp"
+							src={whatsapp}
+							className="lg:w-[50px] md:w-[40px] w-[35px] h-auto cursor-pointer"
+						/>
+					</a>
 				</div>
 				<button
 					onClick={scrollToTop}
-					className={`icon-top cursor-pointer p-2 transition-all duration-300  text-2xl text-white rounded-full transition-opacity duration-300 z-[99px] text-white hover:text-[#2565AA] active:text-[#2565AA] bg-[#2565AA] hover:bg-white active:bg-white  ${
+					className={`icon-top cursor-pointer p-2  text-2xl rounded-full transition-opacity duration-300 z-[99px] text-white hover:text-[#2565AA] active:text-[#2565AA] bg-[#2565AA] hover:bg-white active:bg-white  ${
 						isVisible ? "opacity-100" : "opacity-0"
 					}`}
 					style={{
