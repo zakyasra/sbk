@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 // import line from "@/assets/clients/line.svg";
 import lia from "@/assets/clientPerusahaan/YAYASAN-LIA.png";
-import kodeco from "@/assets/clientPerusahaan/KODECO.jpg";
+import kodeco from "@/assets/clientPerusahaan/logo-kodeco.png";
 import comtech from "@/assets/clientPerusahaan/COMTECH.jpg";
 import jayaNetwork from "@/assets/clientPerusahaan/jaya-network.png";
 import metalogix from "@/assets/clientPerusahaan/METALOGIX-INFOLINK-PERSANA.png";
@@ -442,7 +442,6 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			name: "Indonet99",
 			image: noImage,
 			status: "noImage",
-			status: "",
 			link: "https://indonet99.com/",
 		},
 		{

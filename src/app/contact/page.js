@@ -55,7 +55,9 @@ function page() {
 				className={`ff-poppins xl:text-[64px] lg:text-[56px] md:text-[48px] sm:text-[36px] text-[32px] font-bold text-center hero-section w-full  text-white md:py-20 sm:py-16 py-14 xl:px-28 lg:px-24 md:px-20 sm:px-12 px-6`}
 				style={{
 					background: `url(/hero-download.jpg)`,
-					// height: "90vh",
+					backgroundRepeat: "no-repeat",
+					backgroundPosition: " center",
+					backgroundSize: "cover",
 				}}
 			>
 				<p>Contact Us</p>
@@ -73,7 +75,7 @@ function page() {
 							<form onSubmit={handleSubmit}>
 								<div className="grid sm:grid-cols-2 grid-cols-1 gap-x-6 sm:gap-y-10 gap-y-6">
 									<div>
-										<p className="ff-outfit font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-dark">
+										<p className="ff-outfit font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-dark mb-2">
 											Company
 										</p>
 										<input
@@ -84,7 +86,7 @@ function page() {
 										/>
 									</div>
 									<div>
-										<p className="ff-outfit font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-dark">
+										<p className="ff-outfit font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-dark sm:mb-2 mb-1">
 											Name
 										</p>
 										<input
@@ -95,7 +97,7 @@ function page() {
 										/>
 									</div>
 									<div>
-										<p className="ff-outfit font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-dark">
+										<p className="ff-outfit font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-dark mb-2">
 											Phone Number
 										</p>
 										<input
@@ -106,7 +108,7 @@ function page() {
 										/>
 									</div>
 									<div>
-										<p className="ff-outfit font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-dark">
+										<p className="ff-outfit font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-dark mb-2">
 											Email
 										</p>
 										<input
@@ -118,7 +120,7 @@ function page() {
 									</div>
 								</div>
 								<div className="my-12">
-									<p className="ff-outfit font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-dark">
+									<p className="ff-outfit font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-dark mb-2">
 										Project Detail
 									</p>
 									<textarea
@@ -165,6 +167,9 @@ function page() {
 						className="md:w-1/2 object-cover flex items-center justify-center py-12"
 						style={{
 							backgroundImage: "url(/bg-contact.jpg)",
+							backgroundRepeat: "no-repeat",
+							backgroundPosition: "center",
+							backgroundSize: "cover",
 						}}
 					>
 						<div className="flex flex-col xxl:w-[30%] xl:w-[35%] lg:w-[40%] md:w-[55%] sm:w-[60%] w-[80%]">

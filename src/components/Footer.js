@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import logo from "../assets/navbar/logo-sbk-new-footer.jpg";
+import logo from "../assets/navbar/logo-sbk.png";
 import logoWa from "@/assets/footer/whatsapp.svg";
 import logoIg from "@/assets/footer/instagram.svg";
 import logoFb from "@/assets/footer/facebook.svg";
@@ -22,13 +22,13 @@ const Footer = () => {
 	const [isHovered, setIsHovered] = useState(false);
 	return (
 		<footer
-			className="bg-white w-full"
+			className="bg-[#FAFAFA] w-full xl:mt-28 lg:mt-24 mt-16"
 			style={{
 				position: "absolute",
 				zIndex: 9999,
 			}}
 		>
-			<div className="bg-[#FAFAFA] xl:px-[74px] lg:px-14 md:px-12 px-6 md:pt-16 pt-10 md:pb-6 flex lg:flex-row flex-col md:items-start ff-poppins lg:gap-0 gap-6">
+			<div className="bg-[#FAFAFA] xl:px-[74px] lg:px-14 md:px-12 px-6 pt-10 md:pb-6 flex lg:flex-row flex-col md:items-start ff-poppins lg:gap-0 gap-6">
 				<div className="flex sm:flex-row flex-col lg:justify-content-between lg:gap-0 gap-12 w-auto ">
 					{/* logo */}
 					<div className="md:w-1/2">
@@ -135,7 +135,7 @@ const Footer = () => {
 			</div>
 
 			<p
-				className="text-center ff-inter text-[14px] text-[#535353] py-7 mt-10"
+				className="bg-[#FAFAFA] text-center ff-inter text-[14px] text-[#535353] py-7 mt-10"
 				style={{
 					borderTop: "1px solid #DFDFDF",
 				}}

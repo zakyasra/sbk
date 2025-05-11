@@ -115,7 +115,7 @@ const page = () => {
 					<div className="sm:w-2/3 flex flex-col items-center justify-between md:mt-16 pt-10">
 						<div className="max-w-[80%] xl:pt-24 lg:pt-16 md:pt-12 sm:pt-9 pt-6 xl:pb-32 lg:pb-24 md:pb-20 sm:pb-16 pb-12">
 							<div
-								className=" mb-12 ff-poppins font-bold text-[#2A2A2A] mx-auto bg-white xxl:text-[40px] xl:text-[36px] lg:text-[32px] text-[28px]"
+								className=" mb-12 ff-poppins font-bold text-[#2A2A2A] mx-auto xxl:text-[40px] xl:text-[36px] lg:text-[32px] text-[28px]"
 								data-aos="fade-down"
 							>
 								Get To Know Our{" "}
