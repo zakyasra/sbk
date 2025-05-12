@@ -180,15 +180,15 @@ function page() {
 								Our Office
 							</h4>
 							<p className="ff-poppins lg:text-[16px] md:text-[14px] text-[12px] font-normal -text-dark mb-12 text-justify">
-								Jl. Sekolah No.7, RT.2/RW.8, Petojo Utara, Kecamatan Gambir,
-								Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10130
+								Apt. Istana Harmoni Lantai 1 #2Q Jl. Suropranoto No 2 Jakarta
+								10130
 							</p>
 							<h4 className="ff-outift lg:text-[18px] md:text-[16px] text-[14px] font-bold text-dark mb-1">
 								Open Office Hours
 							</h4>
 							<div className="ff-poppins lg:text-[16px] md:text-[14px] text-[12px] font-normal -text-dark mb-12">
-								<p>M-F: 9am – 6pm S-S:</p>
-								<p>10am – 4pm</p>
+								<p>M-F : 9am – 6pm </p>
+								<p>S-S : 10am – 4pm</p>
 							</div>
 							<h4 className="ff-outift lg:text-[18px] md:text-[16px] text-[14px] font-bold text-dark mb-1">
 								Get in Touch

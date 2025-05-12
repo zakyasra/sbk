@@ -14,17 +14,22 @@ import Image from "next/image";
 function IconSocialMedia({ footer }) {
 	return (
 		<div className="flex items-center gap-4">
-			<div
+			<a
+				href="https://wa.me/6281513008267?text=Halo%20*PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "
+				target="_blank"
+				rel="noopener noreferrer"
 				className={`lg:w-[40px] ${
-					footer ? "text-[#2565AA]" : "bg-[#2565AA] text-[white]"
+					footer
+						? "text-[#2565AA] hover:text-[#283746] transition-all duration-300"
+						: "bg-[#2565AA]  hover:bg-[#283746] transition-all duration-300text-[white]"
 				} px-2.5 py-2 rounded-[8px]`}
 			>
 				{footer ? (
-					<RiWhatsappFill className="w-[30px] bg-[#fafafa] h-auto" />
+					<RiWhatsappFill className="w-[30px] bg-[#fafafa] h-auto text-[inherit]" />
 				) : (
-					<FaWhatsapp className="w-full h-auto" />
+					<FaWhatsapp className="w-full h-auto 	hover:bg-[#283746] text-white" />
 				)}
-			</div>
+			</a>
 			<div
 				className={`lg:w-[40px]${
 					footer ? "bg-white text-[#2565AA]" : " bg-[#2565AA] text-white"
