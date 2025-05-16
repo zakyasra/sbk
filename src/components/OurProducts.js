@@ -65,7 +65,7 @@ const dataProducts = [
 	},
 	{
 		image: "",
-		title: "AMP",
+		title: "Commscope",
 		desc: "Australian firm offering wealth management and financial services.",
 		link: "https://www.commscope.com",
 	},
@@ -90,7 +90,8 @@ const dataProducts = [
 	},
 	{
 		image: "",
-		title: "ALLIED TELESYN",
+		title: "ALLIED TELESY",
+		// Allied telesy
 		desc: "Japanese company offering network infrastructure and telecom products",
 		link: "https://www.alliedtelesis.com",
 	},
