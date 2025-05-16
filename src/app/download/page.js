@@ -415,7 +415,7 @@ function page() {
 					<Title
 						subTitle={"DOWNLOAD"}
 						title={"Explore Our"}
-						titleBlue={"Available Software"}
+						titleBlue={"Available Hardware"}
 					/>
 				</div>
 				<div className="flex justify-center mb-14">
@@ -430,7 +430,7 @@ function page() {
 							style={{
 								border: "1px solid #ECECEC",
 							}}
-							placeholder="Search software name ... "
+							placeholder="Search hardware name ... "
 							value={search}
 							onChange={(e) => setSearch(e.target.value)}
 						/>
@@ -556,7 +556,7 @@ function page() {
 													<div className="flex items-start justify-between gap-2">
 														<div className="ff-inter">
 															<p className="text-[#7A7A9D] sm:text-[12px] text-[10px] font-semibold mb-1">
-																Jenis Software
+																Jenis hardware
 															</p>
 															<p className="text-[#27272E] lg:text-[20px] md:text-[18px] sm:text-[16px] font-semibold mb-2.5">
 																{data.title}

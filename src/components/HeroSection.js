@@ -72,7 +72,7 @@ const HeroSection = () => {
 							}}
 						>
 							{" "}
-							14 Years Experience with over 1000+ Clients
+							20+ Years Experience with over 1000+ Clients
 						</span>
 						<Image
 							src={iconMedal}

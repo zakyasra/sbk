@@ -124,8 +124,11 @@ export default function ResponsiveCarousel() {
 						for you
 					</h2>
 					<p className="ff-poppins mb-6 sm:text-[20px] text-[14px] text-[#132e4c99]">
-						Etiam at iaculis massa. Etiam eu enim varius, congue ante id,
-						venenatis velit. Aenean ve.
+						We offer premium and reliable services that cover everything from
+						comprehensive network installation and seamless data communication
+						to meticulously organized and professional cable management
+						solutions, ensuring optimal performance and a clean, efficient
+						workspace for your business.
 					</p>
 					{/* Prev / Next Buttons */}
 					<div className="flex md:justify-start gap-4 items-center">

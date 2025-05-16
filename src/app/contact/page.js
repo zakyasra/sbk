@@ -15,6 +15,21 @@ function page() {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const [isChecked, setIsChecked] = useState(false);
 
+	const handleCopy = (email) => {
+		navigator.clipboard
+			.writeText(email)
+			.then(() => {
+				toast.success(`${email} berhasil disalin ke clipboard!`, {
+					position: "top-right",
+					autoClose: 2000,
+				});
+			})
+			.catch(() => {
+				toast.error("Gagal menyalin email.");
+			});
+	};
+
+	const emails = ["Bendy@sbk.co.id", "Michael@sbk.co.id", "sales@sbk.co.id"];
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
@@ -172,7 +187,7 @@ function page() {
 							backgroundSize: "cover",
 						}}
 					>
-						<div className="flex flex-col xxl:w-[30%] xl:w-[35%] lg:w-[40%] md:w-[55%] sm:w-[60%] w-[80%]">
+						<div className="flex flex-col xxl:w-[35%] xl:w-[40%] lg:w-[45%] sm:w-[60%] w-[80%]">
 							<h3 className="ff-poppins xl:text-[32px] lg:text-[28px] md:text-[24px] text-[20px] font-bold text-dark mb-5">
 								Contact Info
 							</h3>
@@ -187,23 +202,49 @@ function page() {
 								Open Office Hours
 							</h4>
 							<div className="ff-poppins lg:text-[16px] md:text-[14px] text-[12px] font-normal -text-dark mb-12">
-								<p>M-F : 9am – 6pm </p>
-								<p>S-S : 10am – 4pm</p>
+								<p>Monday to Friday: 08.00 - 16.00</p>
 							</div>
 							<h4 className="ff-outift lg:text-[18px] md:text-[16px] text-[14px] font-bold text-dark mb-1">
 								Get in Touch
 							</h4>
 							<div className="ff-poppins lg:text-[16px] md:text-[14px] text-[12px] font-normal -text-dark mb-12">
-								<a href="mailto:sales@sbk.co.id?subject=pertanyaan&body=Halo%20sales@sbk.co.id%20saya%20ingin%20bertanya...">
-									<p>sales@sbk.co.id</p>
-								</a>
-								<a
-									href="https://wa.me/6281513008267?text=Halo%20*PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<p>(+62) 815 - 130 - 08267</p>
-								</a>
+								<div className="flex flex-col gap-2 mb-4">
+									{emails.map((email) => (
+										<a
+											key={email}
+											href={`mailto:${email}?subject=pertanyaan&body=Halo%20${email}%20saya%20ingin%20bertanya...`}
+											onClick={(e) => {
+												e.preventDefault(); // Mencegah pembukaan email client
+												handleCopy(email);
+											}}
+											className="hover:text-[#2565AA] active:text-[#2565AA] text-black duration-300 transition-colors cursor-pointer"
+										>
+											{email}
+										</a>
+									))}
+								</div>
+
+								<ToastContainer />
+								<div className="flex flex-col gap-2">
+									<p>Telp +6221 63866484 (Hunting)</p>
+									<p>Fax +6211 63851410</p>
+									<a
+										className="hover:text-[#2565AA] active:text-[#2565AA] text-black duration-300 transition-colors "
+										href="https://wa.me/+6281513008267?text=Halo%20*Pak%Bendy	,%20PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										+62 815 1300 8267 (Bendy)
+									</a>
+									<a
+										className="hover:text-[#2565AA] active:text-[#2565AA] text-black duration-300 transition-colors "
+										href="https://wa.me/+628551212127?text=Halo%20*Pak%Michael	,%20PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										+62 855 1212 127 (Michael)
+									</a>
+								</div>
 							</div>
 							<IconSocialMedia />
 						</div>

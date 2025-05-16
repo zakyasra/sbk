@@ -67,7 +67,7 @@ const HeroBanner = ({
 								<input
 									type="text"
 									className="input-width ps-5 py-4 pe-24 rounded-[10px] bg-white"
-									placeholder="Search software name ... "
+									placeholder="Search hardware name ... "
 									value={search}
 									onChange={(e) => setSearch(e.target.value)}
 								/>
