@@ -61,7 +61,7 @@ function page() {
 			`Halo sales@sbk.co.id,\n\nSaya ingin bertanya mengenai proyek:\n\nCompany: ${company}\nName: ${name}\nPhone Number: ${number}\nEmail: ${email}\nProject Detail: ${project}`
 		);
 
-		window.location.href = `mailto:sankurniawana28@gmail.com?subject=${subject}&body=${body}`;
+		window.location.href = `mailto:sales@sbk.co.id?subject=${subject}&body=${body}`;
 	};
 
 	return (
@@ -227,7 +227,7 @@ function page() {
 								<ToastContainer />
 								<div className="flex flex-col gap-2">
 									<p>Telp +6221 63866484 (Hunting)</p>
-									<p>Fax +6211 63851410</p>
+									<p>Fax +6221 63851410</p>
 									<a
 										className="hover:text-[#2565AA] active:text-[#2565AA] text-black duration-300 transition-colors "
 										href="https://wa.me/+6281513008267?text=Halo%20*Pak%Bendy	,%20PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "

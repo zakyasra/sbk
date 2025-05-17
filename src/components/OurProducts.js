@@ -22,10 +22,9 @@ import phoenix from "@/assets/products/phoenix.ico";
 import aerech from "@/assets/products/aerech.webp";
 import tarluz from "@/assets/products/tarluz.png";
 import noImage from "@/assets/products/no-image.png";
-import linksys from "@/assets/products/linksys.svg";
-import planet from "@/assets/products/planet.svg";
-import sunde from "@/assets/products/sunde.png";
-import techwise from "@/assets/products/techwise.jpg";
+import AlliedTelesis from "@/assets/products/alliedtelesis.png";
+import CommScope from "@/assets/products/commscope.svg";
+
 const dataProducts = [
 	{
 		image: cisco,
@@ -64,8 +63,8 @@ const dataProducts = [
 		link: "https://www.apc.com",
 	},
 	{
-		image: "",
-		title: "Commscope",
+		image: CommScope,
+		title: "CommScope",
 		desc: "Australian firm offering wealth management and financial services.",
 		link: "https://www.commscope.com",
 	},
@@ -89,8 +88,8 @@ const dataProducts = [
 		link: "https://www.atoptechnology.com",
 	},
 	{
-		image: "",
-		title: "ALLIED TELESY",
+		image: AlliedTelesis,
+		title: "ALLIED TELESIS",
 		// Allied telesy
 		desc: "Japanese company offering network infrastructure and telecom products",
 		link: "https://www.alliedtelesis.com",
@@ -268,11 +267,10 @@ function OurProducts({ search = "", limit, pagination }) {
 						{/* Halaman 1 */}
 						<button
 							onClick={() => handlePageChange(1)}
-							className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
-								currentPage === 1
-									? "bg-[#2565AA] text-white"
-									: "bg-white text-[#2565AA]"
-							}`}
+							className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${currentPage === 1
+								? "bg-[#2565AA] text-white"
+								: "bg-white text-[#2565AA]"
+								}`}
 						>
 							1
 						</button>
@@ -281,11 +279,10 @@ function OurProducts({ search = "", limit, pagination }) {
 						{totalPages > 1 && (
 							<button
 								onClick={() => handlePageChange(2)}
-								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
-									currentPage === 2
-										? "bg-[#2565AA] text-white"
-										: "bg-white text-[#2565AA]"
-								}`}
+								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${currentPage === 2
+									? "bg-[#2565AA] text-white"
+									: "bg-white text-[#2565AA]"
+									}`}
 							>
 								2
 							</button>
@@ -322,11 +319,10 @@ function OurProducts({ search = "", limit, pagination }) {
 						{totalPages > 3 && (
 							<button
 								onClick={() => handlePageChange(totalPages)}
-								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
-									currentPage === totalPages
-										? "bg-[#2565AA] text-white"
-										: "bg-white text-[#2565AA]"
-								}`}
+								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${currentPage === totalPages
+									? "bg-[#2565AA] text-white"
+									: "bg-white text-[#2565AA]"
+									}`}
 							>
 								{totalPages}
 							</button>
