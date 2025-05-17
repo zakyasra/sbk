@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
+import { useParams } from "next/navigation";
 import { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdClose, MdDownload } from "react-icons/md";
@@ -8,10 +9,6 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import iconSearch from "@/assets/search-icon.svg";
 import Title from "@/components/HeroTop/Title";
 import Image from "next/image";
-import iconOpticlan from "@/assets/products/opticlan.jpg";
-import iconAerech from "@/assets/products/aerech.webp";
-import iconTarluz from "@/assets/products/tarluz.png";
-import Link from "next/link";
 
 const listDownload = {
 	"aerech": [
@@ -286,51 +283,28 @@ const listDownload = {
 	],
 };
 
-const listProduct = [
-	{
-		image: iconOpticlan,
-		title: "Opticlan",
-		desc: "	Indonesian provider of optical networking and IT hardware solutions.",
-	},
-	{
-		image: iconTarluz,
-		title: "Tarluz",
-		desc: "Global supplier of fiber optic cables and telecom solutions based in Shanghai.",
-	},
-	{
-		image: iconAerech,
-		title: "Aerech",
-		desc: "Chinese manufacturer of optical transceivers and network connectivity products.",
-	},
-];
 const useDebounce = (value, delay) => {
 	const [debounced, setDebounced] = useState(value);
 	useEffect(() => {
 		const handler = setTimeout(() => setDebounced(value), delay);
-
-		return () => clearTimeout(value);
+		return () => clearTimeout(handler);
 	}, [value, delay]);
 	return debounced;
 };
 
-const fadeVariants = {
-	hidden: { opacity: 0, y: 30 },
-	visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-	exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
-};
+export default function page() {
+	// Params Settings
+	const params = useParams();
+	const brand = params.brand; // sekarang ini valid
+	const rawData = listDownload[brand.toLowerCase()];
 
-function page() {
+	if (!rawData) return notFound();
+
 	const [search, setSearch] = useState("");
 	const debouncedSearch = useDebounce(search, 500);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [paginationGroup, setPaginationGroup] = useState(0);
 	const [swipeDirection, setSwipeDirection] = useState("right");
-	const [selectedBrand, setSelectedBrand] = useState(null);
-
-	const handleSelect = (brand) => {
-		setSearch("");
-		setSelectedBrand(brand);
-	};
 
 	// Hitung responsif jumlah card per halaman
 	const getItemsPerPage = () => {
@@ -352,23 +326,10 @@ function page() {
 
 	const filteredData = useMemo(() => {
 		const keyword = debouncedSearch.toLowerCase();
+		setCurrentPage(1);
+		return rawData.filter((item) => item.title.toLowerCase().includes(keyword));
+	}, [debouncedSearch]);
 
-		if (selectedBrand !== null) {
-			return listDownload[selectedBrand]
-				?.flat()
-				.filter((item) => item.title.toLowerCase().includes(keyword));
-		} else {
-			return listProduct
-				?.flat()
-				.filter((item) => item.title.toLowerCase().includes(keyword));
-		}
-	}, [debouncedSearch, selectedBrand, listDownload, listProduct]);
-
-	useEffect(() => {
-		setCurrentPage(selectedBrand == null ? 0 : 1);
-	}, [selectedBrand]);
-
-	// Pagination Section
 	const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
 	const displayedData = filteredData.slice(
@@ -389,9 +350,6 @@ function page() {
 		setSwipeDirection(page > currentPage ? "right" : "left");
 		setCurrentPage(page);
 	};
-	console.log(selectedBrand);
-	console.log(filteredData);
-
 	return (
 		<>
 			<div
@@ -459,139 +417,70 @@ function page() {
 						</div>
 					</div>
 				</div>
-				{/* Product List */}
-
-				<AnimatePresence mode="wait">
-					{/* {!selectedBrand ? ( */}
-					<motion.div
-						key="cards"
-						initial="hidden"
-						animate="visible"
-						exit="exit"
-						variants={fadeVariants}
-						className={`flex flex-col justify-center items-center ${
-							selectedBrand == null
-								? "xxl:px-[100px]  xl:px-[80px] lg:px-[60px] md:px-[40px]"
-								: "xl:px-16 lg:px-14 md:px-12 sm:px-10 px-9"
-						}`}
-					>
-						{/* <div className="> */}
-
-						{selectedBrand == null ? (
-							<div className="h-fit grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-y-12 md:gap-y-8 gap-y-6 xl:gap-x-10 md:gap-x-8 gap-x-6 w-fit max-w-[calc(100%-40px)] >">
-								{" "}
-								{filteredData.map((item, timer = 500) => {
-									timer = timer + 500;
-									return (
-										<div
-											key={item.title}
-											className="card flex flex-col sm:h-auto max-h-[400px] justify-between p-3 pb-4 rounded-2xl sm:mx-0 mx-auto h-full"
-											style={{
-												maxWidth: "350px",
-												height: "100%",
-												border: "1px solid #E7E7E7",
-												boxShadow: "0 3px 8px -1px #3232470d",
-											}}
-											data-aos="fade-down"
-											data-aos-duration={timer}
-											data-aos-delay={300}
-											data-aos-offset="bottom"
-											data-aos-once={true}
-										>
-											<div className="w-full overflow-hidden mb-6">
-												<Image
-													src={item.image}
-													alt="Card Products"
-													className="object-contain w-full h-full"
-												/>
-											</div>
-
-											<div className="flex flex-col justify-between h-auto gap-4">
-												<p className="ff-outfit font-semibold md:text-[20px] sm:text-[16px] text-[14px] text-dark">
-													{item.title}
-												</p>
-												<p className="ff-poppins sm:text-[16px] text-[12px] text-[#425466]">
-													{item.desc}
-												</p>
-												<button
-													onClick={() => handleSelect(item.title.toLowerCase())}
-													className="flex w-fit cursor-pointer lg:px-5 lg:py-3 md:px-4 md:py-2 px-8 sm:py-3.5 py-3 rounded-[10px] font-semibold text-[12px] text-white hover:text-[#2565AA] bg-[#2565AA] hover:bg-white"
-													style={{
-														transition: ".4s all",
-														border: "1px solid #2565AA",
-													}}
-												>
-													SEE MORE
-												</button>
-											</div>
-										</div>
-									);
-								})}
-							</div>
-						) : (
-							<>
-								<button
-									onClick={() => handleSelect(null)}
-									className="mr-auto flex gap-2 items-center cursor-pointer mb-6 text-[#2565AA] hover:text-[#082b4f] active:text-[#082b4f] font-semibold px-4 py-2 rounded"
-								>
-									<FaChevronLeft className="w-[24px] h-[auto] text-[inherit]" />
-									Back to Products
-								</button>
-								<div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6">
-									{displayedData.map((data) => {
-										let timer = 100;
-										timer = timer + 100;
-										return (
-											<div
-												key={data.id}
-												className="card-download ps-6 pr-4 py-4"
-												style={{
-													border: "1px solid #7A7A9D",
-													borderRadius: "16px",
-												}}
-												data-aos="fade-down"
-												data-aos-duration={timer}
-											>
-												<div>
-													<div className="flex items-start justify-between gap-2">
-														<div className="ff-inter">
-															<p className="text-[#7A7A9D] sm:text-[12px] text-[10px] font-semibold mb-1">
-																Jenis hardware
-															</p>
-															<p className="text-[#27272E] lg:text-[20px] md:text-[18px] sm:text-[16px] font-semibold mb-2.5">
-																{data.title}
-															</p>
-														</div>
-														<a key={data.id} href={data.link} download>
-															<div className="cursor-pointer duration-300 transition-all rounded-[50%] bg-[#2565AA] hover:bg-[#184b83] active:bg-[#184b83] text-white p-2.5">
-																<MdDownload
-																	style={{
-																		width: "26px",
-																		height: "26px",
-																		color: "white",
-																	}}
-																/>
-															</div>
-														</a>
+				<div>
+					<AnimatePresence mode="wait">
+						<motion.div
+							key={currentPage}
+							initial={{
+								opacity: 0,
+								x: swipeDirection === "right" ? 100 : -100,
+							}}
+							animate={{ opacity: 1, x: 0 }}
+							exit={{ opacity: 0, x: swipeDirection === "right" ? -100 : 100 }}
+							transition={{ duration: 0.3 }}
+							className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 xl:px-16 lg:px-14 md:px-12 sm:px-10 px-9"
+						>
+							{displayedData.map((data) => {
+								let timer = 100;
+								timer = timer + 100;
+								return (
+									<div
+										key={data.id}
+										className="card-download ps-6 pr-4 py-4"
+										style={{
+											border: "1px solid #7A7A9D",
+											borderRadius: "16px",
+										}}
+										data-aos="fade-down"
+										data-aos-duration={timer}
+									>
+										<div>
+											<div className="flex items-start justify-between gap-2">
+												<div className="ff-inter">
+													<p className="text-[#7A7A9D] sm:text-[12px] text-[10px] font-semibold mb-1">
+														Jenis Hardware
+													</p>
+													<p className="text-[#27272E] lg:text-[20px] md:text-[18px] sm:text-[16px] font-semibold mb-2.5">
+														{data.title}
+													</p>
+												</div>
+												<a key={data.id} href={data.link} download>
+													<div className="cursor-pointer duration-300 transition-all rounded-[50%] bg-[#2565AA] hover:bg-[#184b83] active:bg-[#184b83] text-white p-2.5">
+														<MdDownload
+															style={{
+																width: "26px",
+																height: "26px",
+																color: "white",
+															}}
+														/>
 													</div>
-													<div className="flex sm:items-center items-start sm:flex-row flex-col gap-2.5">
-														<div className="size bg-[#DEFFEE] text-[#66CB9F] font-bold text-[10px] rounded-[6px] px-2 py-1 ">
-															{data.size}
-														</div>
-													</div>
+												</a>
+											</div>
+											<div className="flex sm:items-center items-start sm:flex-row flex-col gap-2.5">
+												<div className="size bg-[#DEFFEE] text-[#66CB9F] font-bold text-[10px] rounded-[6px] px-2 py-1 ">
+													{data.size}
 												</div>
 											</div>
-										);
-									})}
-								</div>
-							</>
-						)}
-					</motion.div>
-				</AnimatePresence>
+										</div>
+									</div>
+								);
+							})}
+						</motion.div>
+					</AnimatePresence>
 
-				{/* Pagination */}
-				{currentPage !== 0 && (
+					{/* Pagination */}
 					<div className="flex justify-center items-center xxl:mt-16 xl:mt-12 lg:mt-10 mt-8 gap-2">
+						{/* Icon kiri */}
 						{currentPage > 1 && (
 							<button
 								onClick={() => handlePageChange(currentPage - 1)}
@@ -601,6 +490,7 @@ function page() {
 							</button>
 						)}
 
+						{/* Halaman 1 */}
 						<button
 							onClick={() => handlePageChange(1)}
 							className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
@@ -612,6 +502,7 @@ function page() {
 							1
 						</button>
 
+						{/* Halaman 2 (jika ada) */}
 						{totalPages > 1 && (
 							<button
 								onClick={() => handlePageChange(2)}
@@ -625,6 +516,7 @@ function page() {
 							</button>
 						)}
 
+						{/* Input halaman manual */}
 						{totalPages > 3 && (
 							<input
 								type="number"
@@ -637,7 +529,7 @@ function page() {
 										if (!isNaN(value) && value >= 1 && value <= totalPages) {
 											handlePageChange(value);
 										}
-										e.target.value = "";
+										e.target.value = ""; // reset input setelah enter
 									}
 								}}
 								onBlur={(e) => {
@@ -645,12 +537,13 @@ function page() {
 									if (!isNaN(value) && value >= 1 && value <= totalPages) {
 										handlePageChange(value);
 									}
-									e.target.value = "";
+									e.target.value = ""; //
 								}}
 								className="input-pagination flex text-center items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ff-inter  text-[#2565AA] placeholder-[#2565AA] focus:outline-[#2565AA]"
 							/>
 						)}
 
+						{/* Halaman terakhir */}
 						{totalPages > 3 && (
 							<button
 								onClick={() => handlePageChange(totalPages)}
@@ -664,6 +557,7 @@ function page() {
 							</button>
 						)}
 
+						{/* Icon kanan */}
 						{currentPage < totalPages && (
 							<button
 								onClick={() => handlePageChange(currentPage + 1)}
@@ -673,10 +567,8 @@ function page() {
 							</button>
 						)}
 					</div>
-				)}
+				</div>
 			</div>
 		</>
 	);
 }
-
-export default page;

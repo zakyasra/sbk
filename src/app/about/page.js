@@ -1,13 +1,9 @@
 "use client";
 import "../../styles/about.scss";
 import Image from "next/image";
-import lineDown from "@/assets/aboutSection/line-down.svg";
-import lineAbout from "@/assets/aboutSection/line-about.svg";
 import checklist from "@/assets/aboutSection/blue-check.svg";
 import advantage from "@/assets/aboutSection/icon-advantage.jpg";
 import Banner from "@/components/Banner";
-import ButtonToTop from "@/components/ButtonToTop";
-import WhatsappOverlay from "@/components/WhatsappOverlay";
 import HeroBanner from "@/components/HeroBanner";
 import HeroTop from "@/components/HeroTop/page";
 function page() {

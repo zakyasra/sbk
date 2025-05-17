@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 // import line from "@/assets/clients/line.svg";
 import lia from "@/assets/clientPerusahaan/YAYASAN-LIA.png";
-import kodeco from "@/assets/clientPerusahaan/KODECO.jpg";
+import kodeco from "@/assets/clientPerusahaan/logo-kodeco.png";
 import comtech from "@/assets/clientPerusahaan/COMTECH.jpg";
 import jayaNetwork from "@/assets/clientPerusahaan/jaya-network.png";
 import metalogix from "@/assets/clientPerusahaan/METALOGIX-INFOLINK-PERSANA.png";
@@ -57,6 +57,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			id: 2,
 			name: "PT Tiara Marga Trakindo",
 			image: tiara,
+			status: "",
 			link: "https://www.tiaramarga.co.id/",
 		},
 		{
@@ -70,6 +71,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			id: 4,
 			name: "PT KODECO",
 			image: kodeco,
+			status: "",
 			link: "https://www.kodeco.com/",
 		},
 		{
@@ -84,12 +86,14 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			id: 7,
 			name: "PT Aneka Tambang Pongkor Bogor",
 			image: anekaBogor,
+			status: "",
 			link: "https://antam.com/id/products/emas",
 		},
 		{
 			id: 8,
 			name: "PT Aneka Tambang Pongkor Manado",
 			image: anekaManado,
+			status: "",
 			link: "https://antam.com/id/products/emas",
 		},
 		{
@@ -117,6 +121,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			id: 12,
 			name: "PT Metropolitan Reatailmart",
 			image: metropolitan,
+			status: "",
 			link: "https://metroindonesia.com/",
 		},
 		{
@@ -137,6 +142,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			id: 15,
 			name: "PT NEC Nusantara",
 			image: nec,
+			status: "",
 			link: "https://id.nec.com/",
 		},
 		{
@@ -150,18 +156,21 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			id: 17,
 			name: "PT Sigma Cipta Utama",
 			image: sigma,
+			status: "",
 			link: "https://id.linkedin.com/company/pt-sigma-cipta-utama",
 		},
 		{
 			id: 18,
 			name: "PT Traktor Nusantara",
 			image: traktor,
+			status: "",
 			link: "https://traknus.co.id/",
 		},
 		{
 			id: 19,
 			name: "PT Uninet Media Sakti",
 			image: uninet,
+			status: "",
 			link: "https://uninet.net.id/",
 		},
 		{
@@ -175,25 +184,36 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			id: 21,
 			name: "PT Mastersystem",
 			image: mastersystem,
+			status: "",
 			link: "https://www.mastersystem.co.id/",
 		},
 		{
 			id: 22,
 			name: "PT Matahari Putra Prima",
 			image: matahari,
+			status: "",
 			link: "https://www.mppa.co.id/",
 		},
 		{
 			id: 23,
 			name: "Universitas Mercu Buana",
 			image: mercu,
+			status: "",
 			link: "https://mercubuana.ac.id/",
 		},
-		{ id: 24, name: "Yayasan Lia", image: lia, link: "https://lia.or.id/" },
+		{
+			id: 24,
+			name: "Yayasan Lia",
+			image: lia,
+
+			status: "",
+			link: "https://lia.or.id/",
+		},
 		{
 			id: 25,
 			name: "Universitas Sumatera Utara",
 			image: sumatera,
+			status: "",
 			link: "https://www.usu.ac.id/",
 		},
 		{
@@ -235,12 +255,14 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			id: 31,
 			name: "PT Segara Pacific Maju",
 			image: segara,
+			status: "",
 			link: "https://www.esegara.com/",
 		},
 		{
 			id: 32,
 			name: "PT Valbury Asia Futures",
 			image: valbury,
+			status: "",
 			link: "https://valbury.co.id/",
 		},
 		{
@@ -248,27 +270,38 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			name: "PT Puninar Jaya",
 			image: puninar,
 			customSize: "w-[190px] h-[190px]",
+			status: "",
 			link: "https://id.linkedin.com/company/pt.puninar-jaya",
 		},
 		{
 			id: 34,
 			name: "PT Realta",
 			image: realta,
+			status: "",
 			link: "https://www.realta.co.id/",
 		},
 		{
 			id: 35,
 			name: "PT Datanet",
 			image: datanet,
+			status: "",
 			link: "https://www.datanet.co.id/",
 		},
 		{
 			id: 36,
 			name: "PT Microreksa",
 			image: microreksa,
+			status: "",
 			link: "http://www.microreksa.com/",
 		},
-		{ id: 37, name: "Comtech", image: comtech, link: "https://comtech.com/" },
+		{
+			id: 37,
+			name: "Comtech",
+			image: comtech,
+
+			status: "",
+			link: "https://comtech.com/",
+		},
 		{
 			id: 38,
 			name: "PT Dewataagung Wibawa",
@@ -309,6 +342,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			id: 44,
 			name: "PT Metalogix Infolink Persana",
 			image: metalogix,
+			status: "",
 			link: "https://www.xlinksoftware.com/about/",
 		},
 		{
@@ -322,6 +356,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			id: 46,
 			name: "PT Darya Varia Laboratoria",
 			image: darya,
+			status: "",
 			link: "https://www.darya-varia.com/",
 		},
 		{
@@ -335,42 +370,49 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			id: 48,
 			name: "PT Surya Toto Indonesia",
 			image: suryaToto,
+			status: "",
 			link: "https://www.investor.toto.co.id/",
 		},
 		{
 			id: 49,
 			name: "PT Primatech",
 			image: primatech,
+			status: "",
 			link: "https://primatech.id/",
 		},
 		{
 			id: 50,
 			name: "PT Dimension Data Indonesia",
 			image: dimension,
+			status: "",
 			link: "https://triloker.com/id/company/detail/26579",
 		},
 		{
 			id: 51,
 			name: "PT Multipolar Technology",
 			image: multipolar,
+			status: "",
 			link: "https://www.multipolar.com/",
 		},
 		{
 			id: 52,
 			name: "PT Siwali Swantika",
 			image: siwali,
+			status: "",
 			link: "https://siwali.com/",
 		},
 		{
 			id: 53,
 			name: "PT Pertamina Hulu Energi W",
 			image: pertamina,
+			status: "",
 			link: "https://phe.pertamina.com/",
 		},
 		{
 			id: 54,
 			name: "PT Altros Teknologi",
 			image: altros,
+			status: "",
 			link: "https://altros-tech.com/",
 		},
 		{
@@ -384,6 +426,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			id: 56,
 			name: "PT Schenker Petrolog Utama",
 			image: schenker,
+			status: "",
 			link: "https://www.dbschenker.com/id-en",
 		},
 		{
@@ -391,6 +434,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			name: "PT Surya Prima Sakti",
 			image: surya,
 			customSize: "w-[120px] h-[120px]",
+			status: "",
 			link: "https://supras.co.id/",
 		},
 		{
@@ -419,6 +463,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 			name: "Jaya Network",
 			image: jayaNetwork,
 			link: "https://www.jayanetwork.id/",
+			status: "",
 			customSize: "w-[90px] h-[90px]",
 		},
 	];
@@ -558,30 +603,32 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 									"grid-cols-1 sm:grid-cols-3 lg:grid-cols-4"
 								}
 							>
-								{paginatedLogos.map((data, i) => (
-									<div
-										key={data.id}
-										className={`card w-full h-full ${
-											data.status == "white" ? "bg-[#2565AA]" : "bg-white"
-										}  rounded-xl shadow flex items-center justify-center`}
-									>
-										{data.status == "noImage" ? (
-											<p className="xl:text-[16px] font-semibold text-dark text-center ">
-												{data.name}
-											</p>
-										) : (
-											<Image
-												alt={data.name}
-												src={data.image}
-												className={` ${
-													data.customSize
-														? data.customSize
-														: "max-w-[80%] max-h-[80%]"
-												} object-contain`}
-											/>
-										)}
-									</div>
-								))}
+								<>
+									{paginatedLogos.map((data, i) => (
+										<div
+											key={i}
+											className={`card w-full h-full ${
+												data.status == "white" ? "bg-[#2565AA]" : "bg-white"
+											}  rounded-xl shadow flex items-center justify-center`}
+										>
+											{data.status == "noImage" ? (
+												<p className="xl:text-[16px] font-semibold text-dark text-center ">
+													{data.name}
+												</p>
+											) : (
+												<Image
+													alt={data.name}
+													src={data.image}
+													className={` ${
+														data.customSize
+															? data.customSize
+															: "max-w-[80%] max-h-[80%]"
+													} object-contain`}
+												/>
+											)}
+										</div>
+									))}
+								</>
 							</motion.div>
 						</AnimatePresence>
 					</div>

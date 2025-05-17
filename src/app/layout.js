@@ -30,9 +30,9 @@ export const metadata = {
 		"IT infrastructure",
 	],
 	icons: {
-		icon: "/logo-dark.png",
-		shortcut: "/logo-dark.png",
-		apple: "/logo-dark.png",
+		icon: "/favicon.png",
+		shortcut: "/favicon.png",
+		apple: "/favicon.png",
 	},
 	openGraph: {
 		title: "PT. Sumber Berkat Komputindo",
@@ -42,7 +42,7 @@ export const metadata = {
 		siteName: "PT. Sumber Berkat Komputindo",
 		images: [
 			{
-				url: "https://sbk.co.id/logo-dark.png",
+				url: "https://sbk.co.id/favicon.png",
 				width: 1200,
 				height: 630,
 				alt: "PT. Sumber Berkat Komputindo Logo",
@@ -56,7 +56,7 @@ export const metadata = {
 		title: "PT. Sumber Berkat Komputindo",
 		description:
 			"End-to-end ICT solutions for network integration, data communication, and more — trusted by public and private sectors.",
-		images: ["https://sbk.co.id/logo-dark.png"],
+		images: ["https://sbk.co.id/favicon.png"],
 	},
 };
 
@@ -79,7 +79,7 @@ export default function RootLayout({ children }) {
 					href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 					rel="stylesheet"
 				/>
-				<link rel="icon" href="/logo-dark.png" type="image/png" sizes="any" />
+				<link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
 				<title>Sumber berkat Komputindo</title>
 			</head>
 			<body
@@ -87,9 +87,11 @@ export default function RootLayout({ children }) {
 			>
 				<ButtonToTop />
 				<Navbar />
-				<Providers>
-					<AosWrapper>{children}</AosWrapper>
-				</Providers>
+				<div className="overflow-hidden ">
+					<Providers>
+						<AosWrapper>{children}</AosWrapper>
+					</Providers>
+				</div>
 				<Footer />
 			</body>
 		</html>

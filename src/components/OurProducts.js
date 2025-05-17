@@ -17,32 +17,39 @@ import atop from "@/assets/products/atop.png";
 import cisco from "@/assets/products/cisco.jpg";
 import eaton from "@/assets/products/eaton.png";
 import gigalight from "@/assets/products/gigalight.png";
-import linksys from "@/assets/products/linksys.svg";
+import opticlan from "@/assets/products/opticlan.jpg";
 import phoenix from "@/assets/products/phoenix.ico";
+import aerech from "@/assets/products/aerech.webp";
+import tarluz from "@/assets/products/tarluz.png";
+import noImage from "@/assets/products/no-image.png";
+import linksys from "@/assets/products/linksys.svg";
 import planet from "@/assets/products/planet.svg";
 import sunde from "@/assets/products/sunde.png";
 import techwise from "@/assets/products/techwise.jpg";
-import noImage from "@/assets/products/no-image.png";
-import Link from "next/link";
-// const dummyData = Array.from({ length: 100 }, (_, i) => ({
-// 	id: i + 1,
-// 	image: card,
-// 	title: `Mini Bus Terminal Box ${i + 1}`,
-// 	desc: "Write an amazing description in this dedicated card section. Each word counts.",
-// 	link: "#",
-// }));
 const dataProducts = [
-	{
-		image: techwise,
-		title: "TECHWISE",
-		desc: "IT solutions provider offering consulting, system integration, and support services.",
-		link: "https://www.techwisetech.com",
-	},
 	{
 		image: cisco,
 		title: "CISCO",
 		desc: "Global leader in networking, cybersecurity, and IT infrastructure solutions.",
 		link: "https://www.cisco.com",
+	},
+	{
+		image: opticlan,
+		title: "Opticlan",
+		desc: " Indonesian provider of optical networking and IT hardware solutions.",
+		link: "https://www.opticlan.id",
+	},
+	{
+		image: aerech,
+		title: "Aerech",
+		desc: "Chinese manufacturer of optical transceivers and network connectivity products.",
+		link: "https://www.aerech.com",
+	},
+	{
+		image: tarluz,
+		title: "Tarluz",
+		desc: "Global supplier of fiber optic cables and telecom solutions based in Shanghai.",
+		link: "https://www.tarluz.com",
 	},
 	{
 		image: phoenix,
@@ -58,9 +65,9 @@ const dataProducts = [
 	},
 	{
 		image: "",
-		title: "AMP",
+		title: "Commscope",
 		desc: "Australian firm offering wealth management and financial services.",
-		link: "https://www.amp.com",
+		link: "https://www.commscope.com",
 	},
 	{
 		image: com,
@@ -74,12 +81,7 @@ const dataProducts = [
 		desc: "Enterprise networking solutions brand under HPE, now part of Aruba.",
 		link: "https://www.arubanetworking.hpe.com",
 	},
-	{
-		image: planet,
-		title: "PLANET",
-		desc: "Satellite imaging company delivering daily Earth observation data.",
-		link: "https://www.planet.com",
-	},
+
 	{
 		image: atop,
 		title: "ATOP",
@@ -88,15 +90,10 @@ const dataProducts = [
 	},
 	{
 		image: "",
-		title: "ALLIED TELESYN",
+		title: "ALLIED TELESY",
+		// Allied telesy
 		desc: "Japanese company offering network infrastructure and telecom products",
-		link: "https://www.alliedtelesyn.com",
-	},
-	{
-		image: linksys,
-		title: "LINKSYS",
-		desc: "Consumer and small business networking devices, known for Wi-Fi routers.",
-		link: "https://www.linksys.com",
+		link: "https://www.alliedtelesis.com",
 	},
 	{
 		image: eaton,
@@ -105,22 +102,10 @@ const dataProducts = [
 		link: "https://www.eaton.com",
 	},
 	{
-		image: "",
-		title: "DYNAMIC POWER",
-		desc: "Chinese manufacturer of UPS and energy storage systems.",
-		link: "https://www.dpc.com.cn",
-	},
-	{
 		image: gigalight,
 		title: "GIGALIGHT",
 		desc: "Optical interconnect and transceiver solutions for data centers.",
 		link: "https://www.gigalight.com",
-	},
-	{
-		image: sunde,
-		title: "SUNDE THIN CLIENT H4",
-		desc: "Thin client computing solutions for cost-effective shared access.",
-		link: "https://www.sundeindonesia.com",
 	},
 ];
 const useDebounce = (value, delay) => {

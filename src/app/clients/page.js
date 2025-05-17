@@ -3,7 +3,6 @@ import Banner from "@/components/Banner";
 import ButtonToTop from "@/components/ButtonToTop";
 import Clients from "@/components/Clients";
 import HeroBanner from "@/components/HeroBanner";
-import WhatsappOverlay from "@/components/WhatsappOverlay";
 
 export default function page() {
 	return (

@@ -60,8 +60,8 @@ const AboutUs = () => {
 					and private corporations.
 					<br />
 					<br />
-					With over 5 years of experience in the IT industry, we understand the
-					core of the technology environment, especially networking — a key
+					With over 20+ years of experience in the IT industry, we understand
+					the core of the technology environment, especially networking — a key
 					factor in business success. We are committed to delivering
 					high-quality solutions backed by consulting, support, and management
 					services.

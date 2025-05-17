@@ -4,8 +4,8 @@
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import logo from "../app/logo.svg";
-import underline from "@/assets/navbar/nav-underline.svg";
+import logo from "../assets/navbar/logo-sbk-new.png";
+
 import "../styles/navbar.scss";
 import Link from "next/link";
 import { forwardRef } from "react";
@@ -64,6 +64,31 @@ const Navbar = forwardRef(function Navbar(props, ref) {
 			<Link href={"/"} className="lg:m-0 sm:mx-auto ms-6 mr-auto">
 				<Image src={logo} alt="Logo SBK" className=" main-logo" />
 			</Link>
+			{/* <Link
+				href={"/"}
+				className="flex items-center gap-3 lg:m-0 sm:mx-auto md:ms-6 mr-auto"
+			>
+				<div className=" p-4">
+					<Image
+						src={logo}
+						alt="Logo PT. Sumber Berkat Komputindo"
+						className="object-contain	max-h-[100%]"
+					/>
+				</div>
+				<div
+					className="flex flex-col"
+					// style={{
+					// 	minWidth: "400px",
+					// }}
+				>
+					<p className="ff-poppins lg:text-[30px] md:text-[24px] sm:text-[20px] ssm:text-[16px] text-[14px] font-bold text-radial">
+						PT. Sumber Berkat Komputindo
+					</p>
+					<p className="ff-poppins lg:text-[18px] md:text-[16px] sm:text-[14px] ssm:text-[12px] text-[10px] font-normal text-[#C29D2B]">
+						Networking, Data Communication & Wiring Specialist
+					</p>
+				</div>
+			</Link> */}
 
 			{/* Desktop Menu */}
 			<div className="main-items hidden lg:block">

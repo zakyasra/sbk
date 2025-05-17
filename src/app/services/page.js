@@ -115,7 +115,7 @@ const page = () => {
 					<div className="sm:w-2/3 flex flex-col items-center justify-between md:mt-16 pt-10">
 						<div className="max-w-[80%] xl:pt-24 lg:pt-16 md:pt-12 sm:pt-9 pt-6 xl:pb-32 lg:pb-24 md:pb-20 sm:pb-16 pb-12">
 							<div
-								className=" mb-12 ff-poppins font-bold text-[#2A2A2A] mx-auto bg-white xxl:text-[40px] xl:text-[36px] lg:text-[32px] text-[28px]"
+								className=" mb-12 ff-poppins font-bold text-[#2A2A2A] mx-auto xxl:text-[40px] xl:text-[36px] lg:text-[32px] text-[28px]"
 								data-aos="fade-down"
 							>
 								Get To Know Our{" "}
@@ -138,12 +138,12 @@ const page = () => {
 									organization.{" "}
 								</p>
 								<p className="ff-poppins text-dark-fade" data-aos="fade-left">
-									Lectus erat, consectetur eu sapien eget rhoncus consectetur
-									sem. Proin cursus, dolor a mollis consectetur, risus dolor
-									fermentum massa, a commodo elit dui sit amet risus. Maecenas
-									ornare nisl a tortor ultrices bibendum. Nulla fermentum, metus
-									quis sodales tristique, augue mauris molestie augue, non
-									feugiat ligula neque nec felis{" "}
+									Our workflow is built on precision and reliability—starting
+									from in-depth consultation and infrastructure assessment,
+									followed by customized design, professional installation, and
+									thorough testing. We ensure every solution we deliver is
+									optimized, scalable, and aligned with your long-term business
+									goals.
 								</p>
 							</div>
 						</div>
