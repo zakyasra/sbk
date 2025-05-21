@@ -228,6 +228,7 @@ function page() {
 								<div className="flex flex-col gap-2">
 									<p>Telp +6221 63866484 (Hunting)</p>
 									<p>Fax +6221 63851410</p>
+									<p className="ff-outift lg:text-[18px] md:text-[16px] text-[14px] font-bold text-dark mt-2">Mobile Phone</p>
 									<a
 										className="hover:text-[#2565AA] active:text-[#2565AA] text-black duration-300 transition-colors "
 										href="https://wa.me/+6281513008267?text=Halo%20*Pak%Bendy	,%20PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "
