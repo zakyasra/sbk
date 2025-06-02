@@ -13,7 +13,12 @@ import logoLinkedin from "@/assets/footer/linkedin.svg";
 import Image from "next/image";
 function IconSocialMedia({ footer }) {
 	return (
-		<div className="flex items-center gap-4">
+		<div
+			className="flex items-center gap-4"
+			data-aos="fade-up"
+			data-aos-duration="400"
+			data-aos-delay="0"
+		>
 			<a
 				href="https://wa.me/6281513008267?text=Halo%20*PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "
 				target="_blank"
