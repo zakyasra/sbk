@@ -61,7 +61,7 @@ function page() {
 			`Halo sales@sbk.co.id,\n\nSaya ingin bertanya mengenai proyek:\n\nCompany: ${company}\nName: ${name}\nPhone Number: ${number}\nEmail: ${email}\nProject Detail: ${project}`
 		);
 
-		window.location.href = `mailto:sankurniawana28@gmail.com?subject=${subject}&body=${body}`;
+		window.location.href = `mailto:sales@sbk.co.id?subject=${subject}&body=${body}`;
 	};
 
 	return (
@@ -286,7 +286,8 @@ function page() {
 									data-aos-delay="0"
 								>
 									<p>Telp +6221 63866484 (Hunting)</p>
-									<p>Fax +6211 63851410</p>
+									<p>Fax +6221 63851410</p>
+									<p className="ff-outift lg:text-[18px] md:text-[16px] text-[14px] font-bold text-dark mt-2">Mobile Phone</p>
 									<a
 										className="hover:text-[#2565AA] active:text-[#2565AA] text-black duration-300 transition-colors "
 										// href="https://wa.me/+6281513008267?text=Halo%20*Pak%Bendy	,%20PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "
@@ -321,7 +322,7 @@ function page() {
 				data-aos-offset="bottom"
 			>
 				<iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.721743945769!2d106.8166768104835!3d-6.168003393793485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f523d9f98cdd%3A0xdc248eb960151db9!2sHarmoni%20Palace%20Apartment!5e0!3m2!1sen!2sid!4v1746772390065!5m2!1sen!2sid"
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.7214830753705!2d106.8167423757309!3d-6.168038260448041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f555564cd3f9%3A0xbb2263328d1ad85e!2sSUMBER%20BERKAT%20KOMPUTINDO%20PT!5e0!3m2!1sen!2sid!4v1747963901137!5m2!1sen!2sid"
 					className="mx-auto w-full md:h-[400px] sm:h-[300px] h-[250px]"
 					loading="lazy"
 					referrerPolicy="no-referrer-when-downgrade"
@@ -329,6 +330,15 @@ function page() {
 						border: "0",
 					}}
 				></iframe>
+				{/* <iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.721743945769!2d106.8166768104835!3d-6.168003393793485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f523d9f98cdd%3A0xdc248eb960151db9!2sHarmoni%20Palace%20Apartment!5e0!3m2!1sen!2sid!4v1746772390065!5m2!1sen!2sid"
+					className="mx-auto w-full md:h-[400px] sm:h-[300px] h-[250px]"
+					loading="lazy"
+					referrerPolicy="no-referrer-when-downgrade"
+					style={{
+						border: "0",
+					}}
+				></iframe> */}
 			</div>
 		</div>
 	);
