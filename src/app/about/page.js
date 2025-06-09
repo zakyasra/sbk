@@ -62,6 +62,7 @@ function page() {
 						Why Should We ?
 					</h2>
 					<Image
+						loading="eager"
 						src={advantage}
 						alt="icon advantage"
 						className="md:h-full w-full h-[300px] object-cover flex md:hidden"
@@ -85,7 +86,7 @@ function page() {
 									data-aos="fade-up"
 									data-aos-duration={timer}
 								>
-									<Image src={checklist} alt="Icon checklist" />
+									<Image loading="eager" src={checklist} alt="Icon checklist" />
 									<p className="ff-inter lg:text-[24px] md:text-[18px] text-[16px] text-[#19182599]">
 										{data}
 									</p>
@@ -96,6 +97,7 @@ function page() {
 				</div>
 				{/* right section */}
 				<Image
+					loading="eager"
 					src={advantage}
 					alt="icon advantage"
 					className="h-full w-auto object-cover md:flex hidden mx-auto"

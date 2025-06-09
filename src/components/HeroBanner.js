@@ -88,7 +88,7 @@ const HeroBanner = ({
 									style={{ right: 0 }}
 								>
 									{/* <FaSearch className="w-[24px] h-[24px] text-white" /> */}
-									<Image src={iconSearch} alt="icon seearch" />
+									<Image loading="eager" src={iconSearch} alt="icon seearch" />
 								</div>
 							</div>
 						</div>

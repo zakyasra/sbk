@@ -86,7 +86,13 @@ const LogoSlider = () => {
 								key={i}
 								className="bg-white rounded-lg p-4 flex items-center justify-center shadow"
 							>
-								<Image src={logo} alt={`logo-${i}`} width={120} height={60} />
+								<Image
+									loading="eager"
+									src={logo}
+									alt={`logo-${i}`}
+									width={120}
+									height={60}
+								/>
 							</div>
 						))}
 					</motion.div>

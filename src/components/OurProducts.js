@@ -212,6 +212,7 @@ function OurProducts({ search = "", limit, pagination }) {
 								{item.image ? (
 									<div className="w-full aspect-[4/3] overflow-hidden rounded-2xl mb-6">
 										<Image
+											loading="eager"
 											src={item.image}
 											alt="Card Products"
 											className="object-contain w-full h-full"
@@ -220,6 +221,7 @@ function OurProducts({ search = "", limit, pagination }) {
 								) : (
 									<div className="w-full aspect-[4/3] overflow-hidden rounded-2xl mb-6">
 										<Image
+											loading="eager"
 											src={noImage}
 											alt="Card Products"
 											className="object-contain h-fit w-auto"
@@ -267,10 +269,11 @@ function OurProducts({ search = "", limit, pagination }) {
 						{/* Halaman 1 */}
 						<button
 							onClick={() => handlePageChange(1)}
-							className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${currentPage === 1
-								? "bg-[#2565AA] text-white"
-								: "bg-white text-[#2565AA]"
-								}`}
+							className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
+								currentPage === 1
+									? "bg-[#2565AA] text-white"
+									: "bg-white text-[#2565AA]"
+							}`}
 						>
 							1
 						</button>
@@ -279,10 +282,11 @@ function OurProducts({ search = "", limit, pagination }) {
 						{totalPages > 1 && (
 							<button
 								onClick={() => handlePageChange(2)}
-								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${currentPage === 2
-									? "bg-[#2565AA] text-white"
-									: "bg-white text-[#2565AA]"
-									}`}
+								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
+									currentPage === 2
+										? "bg-[#2565AA] text-white"
+										: "bg-white text-[#2565AA]"
+								}`}
 							>
 								2
 							</button>
@@ -319,10 +323,11 @@ function OurProducts({ search = "", limit, pagination }) {
 						{totalPages > 3 && (
 							<button
 								onClick={() => handlePageChange(totalPages)}
-								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${currentPage === totalPages
-									? "bg-[#2565AA] text-white"
-									: "bg-white text-[#2565AA]"
-									}`}
+								className={`flex items-center justify-center cursor-pointer lg:w-[68px] lg:h-[68px] md:w-[56px] md:h-[58px] sm:w-[48px] sm:h-[60px] w-[42px] h-[48px] rounded border ff-inter font-bold lg:text-[24px] md:text-[20px] text-[16px] ${
+									currentPage === totalPages
+										? "bg-[#2565AA] text-white"
+										: "bg-white text-[#2565AA]"
+								}`}
 							>
 								{totalPages}
 							</button>

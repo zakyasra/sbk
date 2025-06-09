@@ -86,6 +86,7 @@ const page = () => {
 						{listServicesLeft.map((data) => (
 							<div className="flex items-start gap-4" key={data.title}>
 								<Image
+									loading="eager"
 									src={iconServices}
 									alt="Icon List"
 									className="h-auto xl:w-[44px] lg:w-[36px] md:w-[28px] w-[24px]"

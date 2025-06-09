@@ -14,6 +14,7 @@ const OurServices = () => {
 					<span className="relative inline-block text-[#2565AA]">
 						Services
 						<Image
+							loading="eager"
 							src={line}
 							alt="line"
 							className=" absolute top-[45px] w-[115%] left-0 object-cover"

@@ -452,6 +452,7 @@ function page() {
 						>
 							{/* <FaSearch className="w-[24px] h-[24px] text-white" /> */}
 							<Image
+								loading="eager"
 								src={iconSearch}
 								alt="icon seearch"
 								// className="w-[56px] h-auto"
@@ -500,6 +501,7 @@ function page() {
 										>
 											<div className="w-full overflow-hidden mb-6">
 												<Image
+													loading="eager"
 													src={item.image}
 													alt="Card Products"
 													className="object-contain w-full h-full"

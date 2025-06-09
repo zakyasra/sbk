@@ -33,6 +33,7 @@ const Testimonials = () => {
 								success.
 							</p>
 							<Image
+								loading="eager"
 								src={iconQuotation}
 								alt="icon-quotation"
 								className="icon-quotation"
@@ -40,6 +41,7 @@ const Testimonials = () => {
 						</div>
 						<div className="card-main">
 							<Image
+								loading="eager"
 								src={fotoTestimonials}
 								alt="person 1"
 								className="profile-picture"
@@ -62,6 +64,7 @@ const Testimonials = () => {
 								smoothly. I would highly recommend them for any event.
 							</p>
 							<Image
+								loading="eager"
 								src={iconQuotation}
 								alt="icon-quotation"
 								className="icon-quotation"
@@ -69,6 +72,7 @@ const Testimonials = () => {
 						</div>
 						<div className="card-main">
 							<Image
+								loading="eager"
 								src={fotoTestimonials}
 								alt="person 2"
 								className="profile-picture"
@@ -87,6 +91,7 @@ const Testimonials = () => {
 								effortless. We couldn&apos;t be happier with the results.
 							</p>
 							<Image
+								loading="eager"
 								src={iconQuotation}
 								alt="icon-quotation"
 								className="icon-quotation"
@@ -94,6 +99,7 @@ const Testimonials = () => {
 						</div>
 						<div className="card-main">
 							<Image
+								loading="eager"
 								src={fotoTestimonials}
 								alt="person 3"
 								className="profile-picture"

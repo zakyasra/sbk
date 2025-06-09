@@ -59,6 +59,7 @@ const ButtonToTop = () => {
 							<span>question please let us know!</span>
 						</div>
 						<Image
+							loading="eager"
 							src={iconClose}
 							alt="Icon Close"
 							onClick={buttonClick}
@@ -71,6 +72,7 @@ const ButtonToTop = () => {
 						rel="noopener noreferrer"
 					>
 						<Image
+							loading="eager"
 							alt="Icon Whatsapp"
 							src={whatsapp}
 							className="lg:w-[50px] md:w-[40px] w-[35px] h-auto cursor-pointer"

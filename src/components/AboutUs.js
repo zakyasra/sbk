@@ -35,6 +35,7 @@ const AboutUs = () => {
 				data-aos-anchor-placement="top-center"
 			>
 				<Image
+					loading="eager"
 					src={aboutImage}
 					alt="icon about"
 					className=" md:w-[400px] sm:w-[350px] w-[250px] h-auto  mx-auto max-w-[none]"
@@ -52,7 +53,7 @@ const AboutUs = () => {
 				<h2 className="inline w-auto sumber ff-poppins font-semibold xxl:text-[52px] xl:text-[48px] lg:text-[40px] md:text-[32px] sm:text-[38px] text-[30px] text-[#2565AA] ">
 					Sumber Berkat Komputindo
 				</h2>
-				<Image src={line} alt="line" className="w-[100%]" />
+				<Image loading="eager" src={line} alt="line" className="w-[100%]" />
 				<p className="mt-6 text-dark-fade lg:text-[20px] md:text-[18px] text-[14px] md:text-left text-justify">
 					PT. Sumber Berkat Komputindo (SBK) is an end-to-end ICT solution
 					provider established in the early 2000s. We specialize in network
