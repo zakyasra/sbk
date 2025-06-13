@@ -24,6 +24,7 @@ import tarluz from "@/assets/products/tarluz.png";
 import noImage from "@/assets/products/no-image.png";
 import AlliedTelesis from "@/assets/products/alliedtelesis.png";
 import CommScope from "@/assets/products/commscope.svg";
+import Qsfptek from "@/assets/products/qsfptek.png";
 
 const dataProducts = [
 	{
@@ -105,6 +106,12 @@ const dataProducts = [
 		title: "GIGALIGHT",
 		desc: "Optical interconnect and transceiver solutions for data centers.",
 		link: "https://www.gigalight.com",
+	},
+	{
+		image: Qsfptek,
+		title: "QSFPTEK",
+		desc: "Provider of high-quality optical transceivers and networking equipment.",
+		link: "https://www.qsfptek.com",
 	},
 ];
 const useDebounce = (value, delay) => {

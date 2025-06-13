@@ -229,7 +229,7 @@ function page() {
 								data-aos-duration="400"
 								data-aos-delay="200"
 							>
-								Apt. Istana Harmoni Lantai 1 #2Q Jl. Suropranoto No 2 Jakarta
+								Apt. Istana Harmoni Lantai 1 #2Q Jl. Suryopranoto No 2 Jakarta
 								10130
 							</p>
 							<h4
