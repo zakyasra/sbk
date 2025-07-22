@@ -13,15 +13,21 @@ import logoLinkedin from "@/assets/footer/linkedin.svg";
 import Image from "next/image";
 function IconSocialMedia({ footer }) {
 	return (
-		<div className="flex items-center gap-4">
+		<div
+			className="flex items-center gap-4"
+			data-aos="fade-up"
+			data-aos-duration="400"
+			data-aos-delay="0"
+		>
 			<a
 				href="https://wa.me/6281513008267?text=Halo%20*PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "
 				target="_blank"
 				rel="noopener noreferrer"
-				className={`lg:w-[40px] ${footer
-					? "text-[#2565AA] hover:text-[#283746] transition-all duration-300"
-					: "bg-[#2565AA]  hover:bg-[#283746] transition-all duration-300text-[white]"
-					} px-2.5 py-2 rounded-[8px]`}
+				className={`lg:w-[40px] ${
+					footer
+						? "text-[#2565AA] hover:text-[#283746] transition-all duration-300"
+						: "bg-[#2565AA]  hover:bg-[#283746] transition-all duration-300text-[white]"
+				} px-2.5 py-2 rounded-[8px]`}
 			>
 				{footer ? (
 					<RiWhatsappFill className="w-[30px] bg-[#fafafa] h-auto text-[inherit]" />
@@ -30,8 +36,9 @@ function IconSocialMedia({ footer }) {
 				)}
 			</a>
 			<div
-				className={`lg:w-[40px]${footer ? "bg-white text-[#2565AA]" : " bg-[#2565AA] text-white"
-					} px-2.5 py-2 rounded-[8px]`}
+				className={`lg:w-[40px]${
+					footer ? "bg-white text-[#2565AA]" : " bg-[#2565AA] text-white"
+				} px-2.5 py-2 rounded-[8px]`}
 				style={{ boxSizing: "border-box" }}
 			>
 				{footer ? (
@@ -41,8 +48,9 @@ function IconSocialMedia({ footer }) {
 				)}
 			</div>
 			<div
-				className={`lg:w-[40px]${footer ? "bg-white text-[#2565AA]" : " bg-[#2565AA] text-white"
-					} px-2.5 py-2 rounded-[8px]`}
+				className={`lg:w-[40px]${
+					footer ? "bg-white text-[#2565AA]" : " bg-[#2565AA] text-white"
+				} px-2.5 py-2 rounded-[8px]`}
 				style={{ boxSizing: "border-box" }}
 			>
 				{footer ? (
@@ -52,14 +60,19 @@ function IconSocialMedia({ footer }) {
 				)}
 			</div>
 			<div
-				className={`lg:w-[40px]${footer ? "bg-white text-[#2565AA]" : " bg-[#2565AA] text-white"
-					} px-2.5 py-2 rounded-[8px]`}
+				className={`lg:w-[40px]${
+					footer ? "bg-white text-[#2565AA]" : " bg-[#2565AA] text-white"
+				} px-2.5 py-2 rounded-[8px]`}
 				style={{ boxSizing: "border-box" }}
 			>
-				<a href="https://www.linkedin.com/in/bendy-prawira-5b71073b/" target="_blank"
-					rel="noopener noreferrer">
+				<a
+					href="https://www.linkedin.com/in/bendy-prawira-5b71073b/"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
 					{footer ? (
 						<Image
+							loading="eager"
 							src={logoLinkedin}
 							alt="icon linkedin"
 							className="w-[30px] h-auto"

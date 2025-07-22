@@ -62,7 +62,12 @@ const Navbar = forwardRef(function Navbar(props, ref) {
 			}}
 		>
 			<Link href={"/"} className="lg:m-0 sm:mx-auto ms-6 mr-auto">
-				<Image src={logo} alt="Logo SBK" className=" main-logo" />
+				<Image
+					loading="eager"
+					src={logo}
+					alt="Logo SBK"
+					className=" main-logo"
+				/>
 			</Link>
 			{/* <Link
 				href={"/"}
@@ -120,6 +125,7 @@ const Navbar = forwardRef(function Navbar(props, ref) {
 					<div className="cursor-pointer w-full">
 						{isHovered ? (
 							<Image
+								loading="eager"
 								src={hamburgerActive}
 								alt="Icon Hamburger"
 								onMouseEnter={() => setIsHovered(true)}
@@ -128,6 +134,7 @@ const Navbar = forwardRef(function Navbar(props, ref) {
 							/>
 						) : (
 							<Image
+								loading="eager"
 								src={hamburger}
 								alt="Icon Hamburger"
 								onMouseEnter={() => setIsHovered(true)}

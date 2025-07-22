@@ -34,6 +34,7 @@ const Footer = () => {
 					<div className="md:w-1/2">
 						<Link href={"/"}>
 							<Image
+								loading="eager"
 								src={logo}
 								alt="Logo PT. Sumber Berkat Komputindo"
 								className="mb-6 min-w-full"

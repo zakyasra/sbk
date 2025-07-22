@@ -75,19 +75,38 @@ function page() {
 					backgroundSize: "cover",
 				}}
 			>
-				<p>Contact Us</p>
+				<p data-aos="fade-down" data-aos-duration="400" data-aos-offset="50">
+					Contact Us
+				</p>
 			</div>
 			<div className="content-container">
 				<div className="flex md:flex-row flex-col md:gap-0 gap-12">
 					<div className="md:w-1/2 lg:px-20 md:px-12 sm:px-9 px-6 xl:py-16 lg:py-12 py-6">
-						<h3 className="text-secondary font-bold ff-outfit lg text-[24px] sm:mb-6 mb-2">
+						<h3
+							className="text-secondary font-bold ff-outfit lg text-[24px] sm:mb-6 mb-2"
+							data-aos="fade-right"
+							data-aos-duration="400"
+							data-aos-delay="0"
+						>
 							CONTACT
 						</h3>
 						<div className="form">
-							<h2 className="ff-poppins text-dark font-semibold lg:text-[48px] md:text-[40px] sm:text-[32px] text-[24px] mb-12">
+							<h2
+								className="ff-poppins text-dark font-semibold lg:text-[48px] md:text-[40px] sm:text-[32px] text-[24px] mb-12"
+								data-aos="fade-right"
+								data-aos-duration="400"
+								data-aos-delay="200"
+							>
 								Connect With Your Next Great Hire Today!
 							</h2>
+							<form
+								data-aos="fade-right"
+								data-aos-duration="500"
+								data-aos-delay="400"
+							>
+								{/* 
 							<form onSubmit={handleSubmit}>
+							 */}
 								<div className="grid sm:grid-cols-2 grid-cols-1 gap-x-6 sm:gap-y-10 gap-y-6">
 									<div>
 										<p className="ff-outfit font-semibold lg:text-[16px] md:text-[14px] text-[12px] text-dark mb-2">
@@ -188,26 +207,61 @@ function page() {
 						}}
 					>
 						<div className="flex flex-col xxl:w-[35%] xl:w-[40%] lg:w-[45%] sm:w-[60%] w-[80%]">
-							<h3 className="ff-poppins xl:text-[32px] lg:text-[28px] md:text-[24px] text-[20px] font-bold text-dark mb-5">
+							<h3
+								className="ff-poppins xl:text-[32px] lg:text-[28px] md:text-[24px] text-[20px] font-bold text-dark mb-5"
+								data-aos="fade-left"
+								data-aos-duration="400"
+								data-aos-delay="0"
+							>
 								Contact Info
 							</h3>
-							<h4 className="ff-outift lg:text-[18px] md:text-[16px] text-[14px] font-bold text-dark mb-1">
+							<h4
+								className="ff-outift lg:text-[18px] md:text-[16px] text-[14px] font-bold text-dark mb-1"
+								data-aos="fade-left"
+								data-aos-duration="400"
+								data-aos-delay="100"
+							>
 								Our Office
 							</h4>
-							<p className="ff-poppins lg:text-[16px] md:text-[14px] text-[12px] font-normal -text-dark mb-12 text-justify">
-								Apt. Istana Harmoni Lantai 1 #2Q Jl. Suropranoto No 2 Jakarta
+							<p
+								className="ff-poppins lg:text-[16px] md:text-[14px] text-[12px] font-normal -text-dark mb-12 text-justify"
+								data-aos="fade-left"
+								data-aos-duration="400"
+								data-aos-delay="200"
+							>
+								Apt. Istana Harmoni Lantai 1 #2Q Jl. Suryopranoto No 2 Jakarta
 								10130
 							</p>
-							<h4 className="ff-outift lg:text-[18px] md:text-[16px] text-[14px] font-bold text-dark mb-1">
+							<h4
+								className="ff-outift lg:text-[18px] md:text-[16px] text-[14px] font-bold text-dark mb-1"
+								data-aos="fade-left"
+								data-aos-duration="400"
+								data-aos-delay="300"
+							>
 								Open Office Hours
 							</h4>
-							<div className="ff-poppins lg:text-[16px] md:text-[14px] text-[12px] font-normal -text-dark mb-12">
+							<div
+								className="ff-poppins lg:text-[16px] md:text-[14px] text-[12px] font-normal -text-dark mb-12"
+								data-aos="fade-left"
+								data-aos-duration="400"
+								data-aos-delay="400"
+							>
 								<p>Monday to Friday: 08.00 - 16.00</p>
 							</div>
-							<h4 className="ff-outift lg:text-[18px] md:text-[16px] text-[14px] font-bold text-dark mb-1">
+							<h4
+								className="ff-outift lg:text-[18px] md:text-[16px] text-[14px] font-bold text-dark mb-1"
+								data-aos="fade-left"
+								data-aos-duration="400"
+								data-aos-delay="500"
+							>
 								Get in Touch
 							</h4>
-							<div className="ff-poppins lg:text-[16px] md:text-[14px] text-[12px] font-normal -text-dark mb-12">
+							<div
+								className="ff-poppins lg:text-[16px] md:text-[14px] text-[12px] font-normal -text-dark mb-12"
+								data-aos="fade-left"
+								data-aos-duration="400"
+								data-aos-delay="600"
+							>
 								<div className="flex flex-col gap-2 mb-4">
 									{emails.map((email) => (
 										<a
@@ -225,25 +279,36 @@ function page() {
 								</div>
 
 								<ToastContainer />
-								<div className="flex flex-col gap-2">
+								<div
+									className="flex flex-col gap-2"
+									data-aos="fade-left"
+									data-aos-duration="400"
+									data-aos-delay="0"
+								>
 									<p>Telp +6221 63866484 (Hunting)</p>
 									<p>Fax +6221 63851410</p>
-									<p className="ff-outift lg:text-[18px] md:text-[16px] text-[14px] font-bold text-dark mt-2">Mobile Phone</p>
+									<p className="ff-outift lg:text-[18px] md:text-[16px] text-[14px] font-bold text-dark mt-2">
+										Mobile Phone
+									</p>
 									<a
 										className="hover:text-[#2565AA] active:text-[#2565AA] text-black duration-300 transition-colors "
-										href="https://wa.me/+6281513008267?text=Halo%20*Pak%Bendy	,%20PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "
+										// href="https://wa.me/+6281513008267?text=Halo%20*Pak%Bendy	,%20PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										+62 815 1300 8267 (Bendy)
+										+62 815 8888 8888 (Bendy)
+										{/* +62 815 1300 8267 (Bendy) */}
 									</a>
 									<a
 										className="hover:text-[#2565AA] active:text-[#2565AA] text-black duration-300 transition-colors "
-										href="https://wa.me/+628551212127?text=Halo%20*Pak%Michael	,%20PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "
+										// href="https://wa.me/+628551212127?text=Halo%20*Pak%Michael	,%20PT%20SUMBER%20BERKAT%20KOMPUTINDO*%20saya%20ingin%20bertanya "
 										target="_blank"
 										rel="noopener noreferrer"
 									>
+										+62 855 8888 888 (Michael)
+										{/* 
 										+62 855 1212 127 (Michael)
+										 */}
 									</a>
 								</div>
 							</div>
@@ -252,25 +317,20 @@ function page() {
 					</div>
 				</div>
 			</div>
-			<div className="content-container mx-auto xl:px-[112px] xl:pt-[64px] lg:px-[86px]  lg:pt-[56px] md:px-[64px]  pt-[48px] sm:px-[48px]  px-[36px]">
+			<div
+				className="content-container mx-auto xl:px-[112px] xl:pt-[64px] lg:px-[86px]  lg:pt-[56px] md:px-[64px]  pt-[48px] sm:px-[48px]  px-[36px]"
+				data-aos="fade-up"
+				data-aos-duration="400"
+				data-aos-offset="bottom"
+			>
 				<iframe
 					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.7214830753705!2d106.8167423757309!3d-6.168038260448041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f555564cd3f9%3A0xbb2263328d1ad85e!2sSUMBER%20BERKAT%20KOMPUTINDO%20PT!5e0!3m2!1sen!2sid!4v1747963901137!5m2!1sen!2sid"
 					className="mx-auto w-full md:h-[400px] sm:h-[300px] h-[250px]"
-					loading="lazy"
 					referrerPolicy="no-referrer-when-downgrade"
 					style={{
 						border: "0",
 					}}
 				></iframe>
-				{/* <iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.721743945769!2d106.8166768104835!3d-6.168003393793485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f523d9f98cdd%3A0xdc248eb960151db9!2sHarmoni%20Palace%20Apartment!5e0!3m2!1sen!2sid!4v1746772390065!5m2!1sen!2sid"
-					className="mx-auto w-full md:h-[400px] sm:h-[300px] h-[250px]"
-					loading="lazy"
-					referrerPolicy="no-referrer-when-downgrade"
-					style={{
-						border: "0",
-					}}
-				></iframe> */}
 			</div>
 		</div>
 	);

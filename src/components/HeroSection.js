@@ -75,6 +75,7 @@ const HeroSection = () => {
 							20+ Years Experience with over 1000+ Clients
 						</span>
 						<Image
+							loading="eager"
 							src={iconMedal}
 							alt="icon medal"
 							className="absolute lg:top-[-18px] lg:right-[-25px] md:top-[-21px] sm:right-[-15px] sm:top-[-13px] right-[-12px] top-[-10px] lg:w-[48px] md:w-[42px] sm:w-[32px] w-[24px] h-auto"
@@ -123,6 +124,7 @@ const HeroSection = () => {
 			}`}
 			>
 				<Image
+					loading="eager"
 					src={heroImage}
 					alt="hero image"
 					className="xl:w-[500px] lg:w-[400px] md:w-[300px] w-[250px] max-w-[none]"

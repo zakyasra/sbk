@@ -617,6 +617,7 @@ const Clients = ({ customText, title, subTitle, titleBlue }) => {
 												</p>
 											) : (
 												<Image
+													loading="eager"
 													alt={data.name}
 													src={data.image}
 													className={` ${
