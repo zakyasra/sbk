@@ -141,7 +141,7 @@ const Footer = () => {
 				}}
 			>
 				{" "}
-				Copyright ©{new Date().getFullYear()} PT Sumber Berkat Komputindo
+				Copyright © PT Sumber Berkat Komputindo
 			</p>
 		</footer>
 	);
