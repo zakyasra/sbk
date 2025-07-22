@@ -296,8 +296,7 @@ function page() {
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										+62 815 8888 8888 (Bendy)
-										{/* +62 815 1300 8267 (Bendy) */}
+										+62 815 1300 8267 (Bendy)
 									</a>
 									<a
 										className="hover:text-[#2565AA] active:text-[#2565AA] text-black duration-300 transition-colors "
@@ -305,10 +304,7 @@ function page() {
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										+62 855 8888 888 (Michael)
-										{/* 
 										+62 855 1212 127 (Michael)
-										 */}
 									</a>
 								</div>
 							</div>
